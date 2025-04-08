@@ -4,11 +4,11 @@ struct ConsumerRegisterView: View {
     
     @State var username = ""
     @State var email = ""
-    @State var pass = ""
+    @State var password = ""
     
     var body: some View {
         VStack {
-            Section {
+            
                 
                 Image(.logotipo)
                     .resizable()
@@ -19,10 +19,10 @@ struct ConsumerRegisterView: View {
                     .font(.title.bold())
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity, alignment: .center)
-            }
+           
             
             
-            Section {
+            VStack(spacing: 10) {
                 TextField("Username", text: $username)
                     .textFieldStyle(.roundedBorder)
                 TextField("Email", text: $email)
@@ -30,7 +30,7 @@ struct ConsumerRegisterView: View {
                     .keyboardType(.emailAddress)
                     .autocorrectionDisabled()
                     .textInputAutocapitalization(.never)
-                SecureField("Password", text: $pass)
+                SecureField("Password", text: $password)
                     .textFieldStyle(.roundedBorder)
                 
                 Button {
@@ -42,8 +42,9 @@ struct ConsumerRegisterView: View {
                         .padding(.vertical, 7)
                         .frame(maxWidth: .infinity)
                         .background(.secondaryColor)
+                        .clipShape(.buttonBorder)
                 }
-                .clipShape(.buttonBorder)
+                
             }
         }
         .padding()
@@ -54,4 +55,5 @@ struct ConsumerRegisterView: View {
 
 #Preview {
     ConsumerRegisterView()
+//        .preferredColorScheme(.dark)
 }
