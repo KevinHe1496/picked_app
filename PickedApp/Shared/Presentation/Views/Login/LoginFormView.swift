@@ -12,7 +12,7 @@ struct LoginFormView: View {
     @Binding var pass: String
     
     var body: some View {
-        VStack(spacing: 30) {
+        VStack(spacing: 20) {
             TextField("Username", text: $email)
                 .textFieldStyle(.roundedBorder)
                 .keyboardType(.emailAddress)
@@ -33,7 +33,7 @@ struct LoginFormView: View {
                     .frame(maxWidth: .infinity)
                     .background(.secondaryColor)
             }
-            .clipShape(RoundedRectangle(cornerRadius: 8))
+            .clipShape(.buttonBorder)
         }
     }
 }

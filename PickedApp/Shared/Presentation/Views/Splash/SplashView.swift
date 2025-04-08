@@ -9,15 +9,14 @@ import SwiftUI
 
 struct SplashView: View {
     var body: some View {
-        ZStack {
-            Color.primaryColor
-                .ignoresSafeArea()
-            
+        ZStack { 
             Image(.logo)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 200)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.primaryColor)
     }
 }
 
