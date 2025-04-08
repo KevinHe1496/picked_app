@@ -13,6 +13,10 @@ struct LoginFormView: View {
     
     var body: some View {
         VStack(spacing: 10) {
+            Text("Login")
+                .font(.title.bold())
+                .foregroundStyle(.white)
+            
             TextField("Username", text: $email)
                 .textFieldStyle(.roundedBorder)
                 .keyboardType(.emailAddress)

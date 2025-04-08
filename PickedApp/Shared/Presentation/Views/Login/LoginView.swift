@@ -10,30 +10,25 @@ import SwiftUI
 struct LoginView: View {
     
     @State private var email = ""
-    @State private var pass = ""
+    @State private var password = ""
     
     var body: some View {
         NavigationStack {
  
             VStack {
-                Image(.logotipo)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 200, height: 200)
-                    
-                
-                Spacer()
-       
-                
-                Text("Login")
-                    .font(.title.bold())
-                    .foregroundStyle(.white)
-                
-                LoginFormView(email: $email, pass: $pass)
-                    .padding(.bottom, 100)
+                VStack {
+                    Image(.logotipo)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 250, height: 250)
+                }
+                .frame(maxHeight: .infinity, alignment: .top)
+
+                LoginFormView(email: $email, pass: $password)
+                    .frame(maxHeight: .infinity, alignment: .center)
   
                 
-                Spacer()
+                
                 
                 HStack {
                     Text("New to Picked?")
@@ -45,8 +40,10 @@ struct LoginView: View {
                             .underline()
                     }
                 }
+                .frame(maxHeight: .infinity, alignment: .bottom)
                 .padding(.bottom, 30)
             }
+            
             .padding(.horizontal, 16)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.primaryColor)
@@ -58,4 +55,5 @@ struct LoginView: View {
 
 #Preview {
     LoginView()
+        
 }
