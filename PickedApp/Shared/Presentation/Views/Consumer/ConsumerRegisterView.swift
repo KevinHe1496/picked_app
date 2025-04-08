@@ -1,10 +1,3 @@
-//
-//  ConsumerRegisterView.swift
-//  PickedApp
-//
-//  Created by Kevin Heredia on 8/4/25.
-//
-
 import SwiftUI
 
 struct ConsumerRegisterView: View {
@@ -14,35 +7,36 @@ struct ConsumerRegisterView: View {
     @State var pass = ""
     
     var body: some View {
-        
-        NavigationStack {
-            VStack(spacing: 20) {
+        VStack {
+            Section {
+                
                 Image(.logotipo)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 250, height: 250)
+                    .frame(width: 200, height: 200)
                 
                 Text("Consumer Register")
-                    .foregroundStyle(.white)
                     .font(.title.bold())
-                
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity, alignment: .center)
+            }
+            
+            
+            Section {
                 TextField("Username", text: $username)
                     .textFieldStyle(.roundedBorder)
-                
                 TextField("Email", text: $email)
                     .textFieldStyle(.roundedBorder)
                     .keyboardType(.emailAddress)
                     .autocorrectionDisabled()
                     .textInputAutocapitalization(.never)
-                
                 SecureField("Password", text: $pass)
                     .textFieldStyle(.roundedBorder)
                 
                 Button {
-                    // action here
+                    // acción de registro
                 } label: {
                     Text("Register")
-                    
                         .font(.system(size: 22).bold())
                         .foregroundStyle(.white)
                         .padding(.vertical, 7)
@@ -51,12 +45,10 @@ struct ConsumerRegisterView: View {
                 }
                 .clipShape(.buttonBorder)
             }
-            .padding(.horizontal, 16)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(.primaryColor)
         }
-        
-        
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(.primaryColor)
     }
 }
 

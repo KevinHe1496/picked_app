@@ -49,7 +49,7 @@ struct LoginView: View {
             }
             .padding(.horizontal, 16)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.primaryColor)
+            .background(.primaryColor)
             
         }
     }
