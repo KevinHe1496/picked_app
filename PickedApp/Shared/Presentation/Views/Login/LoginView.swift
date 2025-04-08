@@ -38,6 +38,7 @@ struct LoginView: View {
                 HStack {
                     Text("New to Picked?")
                         .foregroundStyle(.white)
+                    
                     NavigationLink(destination: RegisterView()) {
                         Text("Sign Up here")
                             .foregroundStyle(.black)

@@ -14,6 +14,8 @@
 		C9AB415D2DA57E7800752614 /* Color-Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB415C2DA57E7800752614 /* Color-Theme.swift */; };
 		C9AB41822DA5883100752614 /* LoginFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB41812DA5883100752614 /* LoginFormView.swift */; };
 		C9AB41852DA5904600752614 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB41842DA5904600752614 /* RegisterView.swift */; };
+		C9AB41892DA5957200752614 /* ConsumerRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB41882DA5957200752614 /* ConsumerRegisterView.swift */; };
+		C9AB418B2DA5957D00752614 /* RestaurantRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB418A2DA5957D00752614 /* RestaurantRegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		C9AB415C2DA57E7800752614 /* Color-Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Theme.swift"; sourceTree = "<group>"; };
 		C9AB41812DA5883100752614 /* LoginFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormView.swift; sourceTree = "<group>"; };
 		C9AB41842DA5904600752614 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		C9AB41882DA5957200752614 /* ConsumerRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerRegisterView.swift; sourceTree = "<group>"; };
+		C9AB418A2DA5957D00752614 /* RestaurantRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -233,6 +237,8 @@
 		C995D13F2DA566E800E72B7A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C9AB41872DA5956300752614 /* Restaurant */,
+				C9AB41862DA5955C00752614 /* Consumer */,
 				C9AB41832DA5901A00752614 /* Register */,
 				C995D1412DA56A2800E72B7A /* Login */,
 				C995D1442DA56A3E00E72B7A /* Splash */,
@@ -270,6 +276,22 @@
 				C9AB41842DA5904600752614 /* RegisterView.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		C9AB41862DA5955C00752614 /* Consumer */ = {
+			isa = PBXGroup;
+			children = (
+				C9AB41882DA5957200752614 /* ConsumerRegisterView.swift */,
+			);
+			path = Consumer;
+			sourceTree = "<group>";
+		};
+		C9AB41872DA5956300752614 /* Restaurant */ = {
+			isa = PBXGroup;
+			children = (
+				C9AB418A2DA5957D00752614 /* RestaurantRegisterView.swift */,
+			);
+			path = Restaurant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,10 +433,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AB418B2DA5957D00752614 /* RestaurantRegisterView.swift in Sources */,
 				C995D1432DA56A3700E72B7A /* LoginView.swift in Sources */,
 				C995D1462DA56A4C00E72B7A /* SplashView.swift in Sources */,
 				C9AB41822DA5883100752614 /* LoginFormView.swift in Sources */,
 				C9AB41852DA5904600752614 /* RegisterView.swift in Sources */,
+				C9AB41892DA5957200752614 /* ConsumerRegisterView.swift in Sources */,
 				C995D1282DA5655700E72B7A /* PickedAppApp.swift in Sources */,
 				C9AB415D2DA57E7800752614 /* Color-Theme.swift in Sources */,
 			);

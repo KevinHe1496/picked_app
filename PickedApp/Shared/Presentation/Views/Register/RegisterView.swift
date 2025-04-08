@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct RegisterView: View {
+    
+    @State private var navigateToRestaurant = false
+    @State private var navigateToConsumer = false
+    
     var body: some View {
         ZStack {
             Color.primaryColor
@@ -23,10 +27,10 @@ struct RegisterView: View {
                     .foregroundStyle(.white)
                     .font(.headline)
                 
-                HStack{
+                HStack(spacing: 4) {
                     
-                    Button {
-                        // action here
+                    NavigationLink {
+                        RestaurantRegisterView()
                     } label: {
                         Text("Restaurant")
                             .font(.system(size: 22).bold())
@@ -37,8 +41,10 @@ struct RegisterView: View {
                             .clipShape(.buttonBorder)
                     }
                     
-                    Button {
-                        // action here
+                    
+                    
+                    NavigationLink {
+                        ConsumerRegisterView()
                     } label: {
                         Text("Consumer")
                             .font(.system(size: 22).bold())
