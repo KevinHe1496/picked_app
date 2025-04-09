@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C93DBE2C2DA6BC3B00365931 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93DBE2B2DA6BC3B00365931 /* CustomButtonView.swift */; };
+		C93DBE2E2DA6BDF000365931 /* IconSecureFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93DBE2D2DA6BDF000365931 /* IconSecureFieldView.swift */; };
 		C995D1282DA5655700E72B7A /* PickedAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995D1252DA5655700E72B7A /* PickedAppApp.swift */; };
 		C995D1292DA5655700E72B7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C995D1232DA5655700E72B7A /* Assets.xcassets */; };
 		C995D1432DA56A3700E72B7A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995D1422DA56A3700E72B7A /* LoginView.swift */; };
 		C995D1462DA56A4C00E72B7A /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995D1452DA56A4C00E72B7A /* SplashView.swift */; };
 		C9AB415D2DA57E7800752614 /* Color-Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB415C2DA57E7800752614 /* Color-Theme.swift */; };
-		C9AB41822DA5883100752614 /* LoginFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB41812DA5883100752614 /* LoginFormView.swift */; };
 		C9AB41852DA5904600752614 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB41842DA5904600752614 /* RegisterView.swift */; };
 		C9AB41892DA5957200752614 /* ConsumerRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB41882DA5957200752614 /* ConsumerRegisterView.swift */; };
 		C9AB418B2DA5957D00752614 /* RestaurantRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB418A2DA5957D00752614 /* RestaurantRegisterView.swift */; };
+		C9B777792DA5F78B00E7CA95 /* IconTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B777782DA5F78B00E7CA95 /* IconTextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C93DBE2B2DA6BC3B00365931 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
+		C93DBE2D2DA6BDF000365931 /* IconSecureFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSecureFieldView.swift; sourceTree = "<group>"; };
 		C995D0F92DA5653600E72B7A /* PickedApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickedApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C995D1062DA5653700E72B7A /* PickedAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PickedAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C995D1102DA5653700E72B7A /* PickedAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PickedAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,10 +48,10 @@
 		C995D1422DA56A3700E72B7A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C995D1452DA56A4C00E72B7A /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C9AB415C2DA57E7800752614 /* Color-Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Theme.swift"; sourceTree = "<group>"; };
-		C9AB41812DA5883100752614 /* LoginFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormView.swift; sourceTree = "<group>"; };
 		C9AB41842DA5904600752614 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		C9AB41882DA5957200752614 /* ConsumerRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerRegisterView.swift; sourceTree = "<group>"; };
 		C9AB418A2DA5957D00752614 /* RestaurantRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRegisterView.swift; sourceTree = "<group>"; };
+		C9B777782DA5F78B00E7CA95 /* IconTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -237,6 +241,7 @@
 		C995D13F2DA566E800E72B7A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C9B777772DA5F73E00E7CA95 /* Tools */,
 				C9AB41872DA5956300752614 /* Restaurant */,
 				C9AB41862DA5955C00752614 /* Consumer */,
 				C9AB41832DA5901A00752614 /* Register */,
@@ -257,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				C995D1422DA56A3700E72B7A /* LoginView.swift */,
-				C9AB41812DA5883100752614 /* LoginFormView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -292,6 +296,16 @@
 				C9AB418A2DA5957D00752614 /* RestaurantRegisterView.swift */,
 			);
 			path = Restaurant;
+			sourceTree = "<group>";
+		};
+		C9B777772DA5F73E00E7CA95 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				C9B777782DA5F78B00E7CA95 /* IconTextFieldView.swift */,
+				C93DBE2B2DA6BC3B00365931 /* CustomButtonView.swift */,
+				C93DBE2D2DA6BDF000365931 /* IconSecureFieldView.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -436,8 +450,10 @@
 				C9AB418B2DA5957D00752614 /* RestaurantRegisterView.swift in Sources */,
 				C995D1432DA56A3700E72B7A /* LoginView.swift in Sources */,
 				C995D1462DA56A4C00E72B7A /* SplashView.swift in Sources */,
-				C9AB41822DA5883100752614 /* LoginFormView.swift in Sources */,
+				C93DBE2E2DA6BDF000365931 /* IconSecureFieldView.swift in Sources */,
 				C9AB41852DA5904600752614 /* RegisterView.swift in Sources */,
+				C93DBE2C2DA6BC3B00365931 /* CustomButtonView.swift in Sources */,
+				C9B777792DA5F78B00E7CA95 /* IconTextFieldView.swift in Sources */,
 				C9AB41892DA5957200752614 /* ConsumerRegisterView.swift in Sources */,
 				C995D1282DA5655700E72B7A /* PickedAppApp.swift in Sources */,
 				C9AB415D2DA57E7800752614 /* Color-Theme.swift in Sources */,

@@ -19,9 +19,11 @@ struct RegisterView: View {
             
             Text("Are you a restaurant owner or a consumer?")
                 .foregroundStyle(.white)
-                .font(.headline)
+                .font(.title.bold())
+                .multilineTextAlignment(.center)
+                
             
-            HStack(spacing: 4) {
+            VStack(spacing: 10) {
                 
                 NavigationLink {
                     RestaurantRegisterView()
@@ -29,7 +31,7 @@ struct RegisterView: View {
                     Text("Restaurant")
                         .font(.system(size: 22).bold())
                         .foregroundStyle(.white)
-                        .frame(maxWidth: 200)
+                        .frame(maxWidth: .infinity)
                         .padding(.vertical, 7)
                         .background(.secondaryColor)
                         .clipShape(.buttonBorder)
@@ -43,7 +45,7 @@ struct RegisterView: View {
                     Text("Consumer")
                         .font(.system(size: 22).bold())
                         .foregroundStyle(.white)
-                        .frame(maxWidth: 200)
+                        .frame(maxWidth: .infinity)
                         .padding(.vertical, 7)
                         .background(.secondaryColor)
                         .clipShape(.buttonBorder)
