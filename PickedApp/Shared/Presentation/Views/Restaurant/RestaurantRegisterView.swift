@@ -23,7 +23,7 @@ struct RestaurantRegisterView: View {
     
     var body: some View {
         ScrollView {
-            VStack{
+            VStack {
                 Image(.logotipo)
                     .resizable()
                     .scaledToFit()
@@ -42,15 +42,20 @@ struct RestaurantRegisterView: View {
                     IconSecureFieldView(icon: "lock.fill", placeholder: "Password", password: $password)
                     
                     HStack {
+                        
                         Image(systemName: "note.text")
                             .foregroundStyle(.secondaryColor)
                             .padding(.bottom, 110)
+                        
                         TextEditor(text: $description)
                             .frame(minHeight: 150)
+                            .padding(5)
+                            
                     }
                     .padding(.horizontal)
-                    .background(.white)
+                    .background(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
+                    
                     
                     IconTextFieldView(iconName: "flag.fill", placeholder: "Country", text: $country, keyboardType: .default)
                     
@@ -62,31 +67,30 @@ struct RestaurantRegisterView: View {
                     
                     VStack {
                         PhotosPicker(selection: $pickerItems, maxSelectionCount: 5 ,matching: .images) {
+                            
                             VStack {
                                 Text("Take a photo or choose from gallery")
-                                    .foregroundStyle(Color.white)
+                                    .foregroundStyle(Color.secondaryColor)
                                 Image(systemName: "photo.on.rectangle.angled")
                                     .font(.system(size: 60))
                                     .foregroundStyle(Color.secondaryColor)
                             }
-                            
-                            .frame(width: 200, height: 200)
-                            .shadow(radius: 10)
-                            
-//                            Label("Select a picture", systemImage: "photo.on.rectangle.angled")
-                        }
-                        
-                        // Mostramos las imagenes seleccionadas
-                        ScrollView {
-                            ForEach(0..<selectedImages.count, id:\.self) { i in
-                                selectedImages[i]
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 300, height: 300)
-                                    .padding(3)
-                            }
                         }
                     }
+                    .padding()
+                    .frame(width: 200, height: 200)
+                    .background(Color.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+                    
+                    // Muestra todas las imagenes
+                    ForEach(0..<selectedImages.count, id:\.self) { i in
+                        selectedImages[i]
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 300, height: 300)
+                            .padding(3)
+                    }
+                    
                     
                     
                     .onChange(of: pickerItems) { _ , newItems in
@@ -101,8 +105,11 @@ struct RestaurantRegisterView: View {
                             }
                         }
                     }
-                    
+                    CustomButtonView(title: "Register", color: .secondaryColor) {
+                        // action here
+                    }
                 }
+
             }
         }
         .padding()
