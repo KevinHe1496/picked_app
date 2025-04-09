@@ -112,7 +112,8 @@ struct RestaurantRegisterView: View {
 
             }
         }
-        .padding()
+        .scrollIndicators(.never)
+        .padding(.horizontal, 16)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.primaryColor)
     }
