@@ -15,6 +15,7 @@ struct IconSecureFieldView: View {
     var body: some View {
         HStack {
             Image(systemName: icon)
+                .foregroundStyle(.secondaryColor)
             SecureField(placeholder, text: $password)
                 .padding(.vertical, 7)
         }

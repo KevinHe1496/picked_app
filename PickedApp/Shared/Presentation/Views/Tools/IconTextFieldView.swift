@@ -16,6 +16,7 @@ struct IconTextFieldView: View {
     var body: some View {
         HStack {
             Image(systemName: iconName)
+                .foregroundStyle(.secondaryColor)
             TextField(placeholder, text: $text)
                 .padding(.vertical, 7)
                 .keyboardType(keyboardType)
