@@ -20,11 +20,12 @@ struct IconSecureFieldView: View {
                 .padding(.vertical, 7)
         }
         .padding(.horizontal)
-        .background(Color.white)
+        .background(Color(.systemBackground))
         .clipShape(.buttonBorder)
     }
 }
 
 #Preview {
     IconSecureFieldView(icon: "lock.fill", placeholder: "Password", password: .constant("123456"))
+        .preferredColorScheme(.dark)
 }

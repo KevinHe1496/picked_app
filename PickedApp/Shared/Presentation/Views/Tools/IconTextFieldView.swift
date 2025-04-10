@@ -23,11 +23,12 @@ struct IconTextFieldView: View {
 
         }
         .padding(.horizontal)
-        .background(Color.white)
+        .background(Color(.systemBackground))
         .clipShape(.buttonBorder)
     }
 }
 
 #Preview {
     IconTextFieldView(iconName: "person", placeholder: "Username", text: .constant("example@example.com"), keyboardType: .emailAddress)
+        
 }

@@ -27,4 +27,5 @@ struct CustomButtonView: View {
 
 #Preview {
     CustomButtonView(title: "Login", color: .primaryColor, action: {})
+    
 }

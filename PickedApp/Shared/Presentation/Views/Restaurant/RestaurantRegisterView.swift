@@ -53,7 +53,7 @@ struct RestaurantRegisterView: View {
                             
                     }
                     .padding(.horizontal)
-                    .background(Color.white)
+                    .background(Color(.systemBackground))
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                     
                     
