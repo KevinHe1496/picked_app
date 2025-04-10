@@ -14,6 +14,8 @@ struct IconTextFieldView: View {
     var keyboardType: UIKeyboardType
     
     var body: some View {
+        
+        //MARK: Custom TextField
         HStack {
             Image(systemName: iconName)
                 .foregroundStyle(.secondaryColor)
@@ -29,6 +31,13 @@ struct IconTextFieldView: View {
 }
 
 #Preview {
-    IconTextFieldView(iconName: "person", placeholder: "Username", text: .constant("example@example.com"), keyboardType: .emailAddress)
+    IconTextFieldView(
+        iconName: "person",
+        placeholder: "Username",
+        text: .constant(
+            "example@example.com"
+        ),
+        keyboardType: .emailAddress
+    )
         
 }

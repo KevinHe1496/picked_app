@@ -13,6 +13,8 @@ struct IconSecureFieldView: View {
     @Binding var password: String
     
     var body: some View {
+        
+        //MARK: Custom SecureField 
         HStack {
             Image(systemName: icon)
                 .foregroundStyle(.secondaryColor)

@@ -1,39 +1,60 @@
 import SwiftUI
 
+/// A view that displays a registration form for consumers.
 struct ConsumerRegisterView: View {
     
+    // MARK: - User Input State
     @State var username = ""
     @State var email = ""
     @State var password = ""
     
     var body: some View {
         VStack {
-                
-                Image(.logotipo)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 200, height: 200)
-                
-                Text("Consumer Register")
-                    .font(.title.bold())
-                    .foregroundStyle(.white)
-           
+            
+            // App logo
+            Image(.logotipo)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 200, height: 200)
+            
+            // Screen title
+            Text("Consumer Register")
+                .font(.title.bold())
+                .foregroundStyle(.white)
+            
             VStack(spacing: 10) {
                 
-                IconTextFieldView(iconName: "person.fill", placeholder: "Username", text: $username, keyboardType: .default)
-                    .autocorrectionDisabled()
-                    .textInputAutocapitalization(.never)
+                // Username field
+                IconTextFieldView(
+                    iconName: "person.fill",
+                    placeholder: "Username",
+                    text: $username,
+                    keyboardType: .default
+                )
+                .autocorrectionDisabled()
+                .textInputAutocapitalization(.never)
                 
-                IconTextFieldView(iconName: "envelope.fill", placeholder: "Email", text: $email, keyboardType: .emailAddress)
-                    .autocorrectionDisabled()
-                    .textInputAutocapitalization(.never)
+                // Email field
+                IconTextFieldView(
+                    iconName: "envelope.fill",
+                    placeholder: "Email",
+                    text: $email,
+                    keyboardType: .emailAddress
+                )
+                .autocorrectionDisabled()
+                .textInputAutocapitalization(.never)
                 
-                IconSecureFieldView(icon: "lock.fill", placeholder: "Password", password: $password)
+                // Password field
+                IconSecureFieldView(
+                    icon: "lock.fill",
+                    placeholder: "Password",
+                    password: $password
+                )
                 
+                // Register button
                 CustomButtonView(title: "Register", color: .secondaryColor) {
-                    // action here
+                    // Handle registration logic here
                 }
-                
             }
         }
         .padding()
@@ -44,5 +65,4 @@ struct ConsumerRegisterView: View {
 
 #Preview {
     ConsumerRegisterView()
-//        .preferredColorScheme(.dark)
 }

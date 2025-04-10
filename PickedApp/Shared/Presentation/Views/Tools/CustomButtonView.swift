@@ -13,6 +13,7 @@ struct CustomButtonView: View {
     var action: () -> Void
     
     var body: some View {
+        //MARK: Custom Button
         Button(action: action) {
             Text(title)
                 .font(.system(size: 22).bold())

@@ -1,0 +1,202 @@
+{
+  "restaurants": [
+    {
+      "name": "Restaurante El Sabor",
+      "photo": "https://images.unsplash.com/photo-1603052870150-6a8b865fa5cc",
+      "longitude": -78.467838,
+      "latitude": -0.180651,
+      "dishes": [
+        {
+          "name": "Plato de Pasta",
+          "description": "Pasta al dente con salsa casera",
+          "price": 12.5,
+          "address": "Calle Ficticia 123, Quito",
+          "photo": "https://images.unsplash.com/photo-1580717987730-f7e574dbdfab"
+        },
+        {
+          "name": "Ensalada César",
+          "description": "Ensalada fresca con aderezo César",
+          "price": 8.5,
+          "address": "Calle Ficticia 123, Quito",
+          "photo": "https://images.unsplash.com/photo-1599838252711-bb0a8ed2435e"
+        }
+      ]
+    },
+    {
+      "name": "La Buena Comida",
+      "photo": "https://images.unsplash.com/photo-1568484702-035d8273d8d7",
+      "longitude": -78.465001,
+      "latitude": -0.180100,
+      "dishes": [
+        {
+          "name": "Hamburguesa Gourmet",
+          "description": "Hamburguesa con carne premium, queso cheddar y bacon",
+          "price": 15.0,
+          "address": "Avenida Siempre Viva 456, Quito",
+          "photo": "https://images.unsplash.com/photo-1589036741323-67fe59d58d5f"
+        },
+        {
+          "name": "Pizza Margarita",
+          "description": "Pizza con tomate, mozzarella y albahaca fresca",
+          "price": 10.0,
+          "address": "Avenida Siempre Viva 456, Quito",
+          "photo": "https://images.unsplash.com/photo-1573586663193-8e50d1de8137"
+        }
+      ]
+    },
+    {
+      "name": "Comidas del Mundo",
+      "photo": "https://images.unsplash.com/photo-1513244702112-8a8ffb0a2202",
+      "longitude": -78.469888,
+      "latitude": -0.181111,
+      "dishes": [
+        {
+          "name": "Tacos Mexicanos",
+          "description": "Tacos tradicionales con carne asada y guacamole",
+          "price": 9.0,
+          "address": "Calle Internacional 789, Quito",
+          "photo": "https://images.unsplash.com/photo-1556740749-887f6717d7e4"
+        },
+        {
+          "name": "Sushi Roll",
+          "description": "Sushi con pescado fresco y arroz de calidad",
+          "price": 20.0,
+          "address": "Calle Internacional 789, Quito",
+          "photo": "https://images.unsplash.com/photo-1571213709651-c55954a445c5"
+        }
+      ]
+    },
+    {
+      "name": "Café y Pastelería La Delicia",
+      "photo": "https://images.unsplash.com/photo-1506748686213-5c3dbf6eb77f",
+      "longitude": -78.462222,
+      "latitude": -0.179500,
+      "dishes": [
+        {
+          "name": "Café Expreso",
+          "description": "Café 100% colombiano, servido con leche espumosa",
+          "price": 3.5,
+          "address": "Avenida Central 101, Quito",
+          "photo": "https://images.unsplash.com/photo-1567346474-b54866fe1f09"
+        },
+        {
+          "name": "Croissant de Chocolate",
+          "description": "Croissant relleno de chocolate belga",
+          "price": 5.0,
+          "address": "Avenida Central 101, Quito",
+          "photo": "https://images.unsplash.com/photo-1568598095-7b7c9b116c28"
+        }
+      ]
+    },
+    {
+      "name": "El Grill Ecuatoriano",
+      "photo": "https://images.unsplash.com/photo-1603052869887-5771d67ff520",
+      "longitude": -78.460555,
+      "latitude": -0.183333,
+      "dishes": [
+        {
+          "name": "Churrasco con Papas",
+          "description": "Churrasco jugoso acompañado de papas fritas",
+          "price": 18.0,
+          "address": "Calle del Sol 12, Quito",
+          "photo": "https://images.unsplash.com/photo-1594020625086-648ea56f91b6"
+        },
+        {
+          "name": "Empanadas de Viento",
+          "description": "Empanadas rellenas de carne y queso, acompañadas con ají",
+          "price": 6.5,
+          "address": "Calle del Sol 12, Quito",
+          "photo": "https://images.unsplash.com/photo-1571799991173-d402c6250e85"
+        }
+      ]
+    },
+    {
+      "name": "La Pizzeria del Valle",
+      "photo": "https://images.unsplash.com/photo-1604373588222-7cc225f1536b",
+      "longitude": -78.476332,
+      "latitude": -0.177777,
+      "dishes": [
+        {
+          "name": "Pizza Hawaiana",
+          "description": "Pizza con jamón y piña, perfecta para los amantes de lo dulce",
+          "price": 11.5,
+          "address": "Calle del Valle 5, Quito",
+          "photo": "https://images.unsplash.com/photo-1594537468985-8c07fba566bb"
+        },
+        {
+          "name": "Pizza Pepperoni",
+          "description": "Pizza con abundante pepperoni y queso derretido",
+          "price": 13.0,
+          "address": "Calle del Valle 5, Quito",
+          "photo": "https://images.unsplash.com/photo-1582663977171-f39ae62295d5"
+        }
+      ]
+    },
+    {
+      "name": "Restaurante El Marisco",
+      "photo": "https://images.unsplash.com/photo-1578320431329-b6020e56a40b",
+      "longitude": -78.480000,
+      "latitude": -0.176222,
+      "dishes": [
+        {
+          "name": "Ceviche de Camarón",
+          "description": "Ceviche de camarón fresco con jugo de limón y cilantro",
+          "price": 10.0,
+          "address": "Calle Marítima 22, Quito",
+          "photo": "https://images.unsplash.com/photo-1596118441675-c15b271f4ab9"
+        },
+        {
+          "name": "Arroz con Mariscos",
+          "description": "Arroz acompañado de diversos mariscos frescos",
+          "price": 15.0,
+          "address": "Calle Marítima 22, Quito",
+          "photo": "https://images.unsplash.com/photo-1599058912954-e3c17eb9f615"
+        }
+      ]
+    },
+    {
+      "name": "La Parrillada Ecuatoriana",
+      "photo": "https://images.unsplash.com/photo-1601166892877-2f4b0919bb3d",
+      "longitude": -78.485555,
+      "latitude": -0.182000,
+      "dishes": [
+        {
+          "name": "Costillas a la Barbacoa",
+          "description": "Costillas tiernas con salsa barbacoa casera",
+          "price": 16.5,
+          "address": "Avenida de la Parrilla 34, Quito",
+          "photo": "https://images.unsplash.com/photo-1560917416-5b2faffc9d91"
+        },
+        {
+          "name": "Chorizo Ecuatoriano",
+          "description": "Chorizo tradicional ecuatoriano con papas",
+          "price": 7.0,
+          "address": "Avenida de la Parrilla 34, Quito",
+          "photo": "https://images.unsplash.com/photo-1572635188799-d8b53c4f9d1c"
+        }
+      ]
+    },
+    {
+      "name": "La Casa del Té",
+      "photo": "https://images.unsplash.com/photo-1570642219829-255d5e19f7b6",
+      "longitude": -78.467333,
+      "latitude": -0.179888,
+      "dishes": [
+        {
+          "name": "Té Verde",
+          "description": "Té verde fresco con un toque de limón",
+          "price": 4.0,
+          "address": "Calle del Té 99, Quito",
+          "photo": "https://images.unsplash.com/photo-1507241052376-8696bc0b7d77"
+        },
+        {
+          "name": "Scones con Crema",
+          "description": "Scones caseros acompañados de crema y mermelada",
+          "price": 5.5,
+          "address": "Calle del Té 99, Quito",
+          "photo": "https://images.unsplash.com/photo-1565122884-d7b2c5825202"
+        }
+      ]
+    }
+  ]
+}
