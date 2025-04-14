@@ -20,6 +20,15 @@
 		C9AB418B2DA5957D00752614 /* RestaurantRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB418A2DA5957D00752614 /* RestaurantRegisterView.swift */; };
 		C9B777792DA5F78B00E7CA95 /* IconTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B777782DA5F78B00E7CA95 /* IconTextFieldView.swift */; };
 		C9CCC18E2DA804DF0086324B /* LocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCC18D2DA804DF0086324B /* LocationMapView.swift */; };
+		C9CD490E2DADB2F000E5B250 /* PKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD490D2DADB2F000E5B250 /* PKError.swift */; };
+		C9CD49102DADB33300E5B250 /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD490F2DADB33300E5B250 /* EndPoints.swift */; };
+		C9CD49122DADB41500E5B250 /* HttpMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD49112DADB41500E5B250 /* HttpMethods.swift */; };
+		C9CD49142DADB81F00E5B250 /* HttpResponseCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD49132DADB81F00E5B250 /* HttpResponseCodes.swift */; };
+		C9CD49162DADB84300E5B250 /* NetworkLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD49152DADB84300E5B250 /* NetworkLogin.swift */; };
+		C9CD49182DADB93400E5B250 /* ConstantsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD49172DADB93400E5B250 /* ConstantsApp.swift */; };
+		C9CD491A2DADC94A00E5B250 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD49192DADC94A00E5B250 /* User.swift */; };
+		C9CD491C2DADCB0C00E5B250 /* KeyChainPK.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD491B2DADCB0C00E5B250 /* KeyChainPK.swift */; };
+		C9CD491F2DADCB2F00E5B250 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C9CD491E2DADCB2F00E5B250 /* KeychainSwift */; };
 		C9E1FEC02DAD56F600FFFA76 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1FEBF2DAD56F600FFFA76 /* CustomTabBarView.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +59,14 @@
 		C9AB418A2DA5957D00752614 /* RestaurantRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRegisterView.swift; sourceTree = "<group>"; };
 		C9B777782DA5F78B00E7CA95 /* IconTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextFieldView.swift; sourceTree = "<group>"; };
 		C9CCC18D2DA804DF0086324B /* LocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapView.swift; sourceTree = "<group>"; };
+		C9CD490D2DADB2F000E5B250 /* PKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKError.swift; sourceTree = "<group>"; };
+		C9CD490F2DADB33300E5B250 /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		C9CD49112DADB41500E5B250 /* HttpMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethods.swift; sourceTree = "<group>"; };
+		C9CD49132DADB81F00E5B250 /* HttpResponseCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponseCodes.swift; sourceTree = "<group>"; };
+		C9CD49152DADB84300E5B250 /* NetworkLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogin.swift; sourceTree = "<group>"; };
+		C9CD49172DADB93400E5B250 /* ConstantsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsApp.swift; sourceTree = "<group>"; };
+		C9CD49192DADC94A00E5B250 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C9CD491B2DADCB0C00E5B250 /* KeyChainPK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainPK.swift; sourceTree = "<group>"; };
 		C9E1FEBF2DAD56F600FFFA76 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9CD491F2DADCB2F00E5B250 /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +159,7 @@
 			children = (
 				C995D1342DA5664700E72B7A /* Local */,
 				C995D1362DA5665200E72B7A /* BaseNetwork */,
+				C9CD49152DADB84300E5B250 /* NetworkLogin.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -163,6 +182,7 @@
 		C995D1352DA5664C00E72B7A /* KeyChain */ = {
 			isa = PBXGroup;
 			children = (
+				C9CD491B2DADCB0C00E5B250 /* KeyChainPK.swift */,
 			);
 			path = KeyChain;
 			sourceTree = "<group>";
@@ -170,6 +190,10 @@
 		C995D1362DA5665200E72B7A /* BaseNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				C9CD490D2DADB2F000E5B250 /* PKError.swift */,
+				C9CD490F2DADB33300E5B250 /* EndPoints.swift */,
+				C9CD49112DADB41500E5B250 /* HttpMethods.swift */,
+				C9CD49132DADB81F00E5B250 /* HttpResponseCodes.swift */,
 			);
 			path = BaseNetwork;
 			sourceTree = "<group>";
@@ -197,6 +221,7 @@
 		C995D1392DA5669800E72B7A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C9CD49172DADB93400E5B250 /* ConstantsApp.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -226,6 +251,7 @@
 		C995D13D2DA566B900E72B7A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C9CD49192DADC94A00E5B250 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -336,6 +362,7 @@
 			);
 			name = PickedApp;
 			packageProductDependencies = (
+				C9CD491E2DADCB2F00E5B250 /* KeychainSwift */,
 			);
 			productName = PickedApp;
 			productReference = C995D0F92DA5653600E72B7A /* PickedApp.app */;
@@ -392,6 +419,9 @@
 			);
 			mainGroup = C995D0F02DA5653600E72B7A;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				C9CD491D2DADCB2F00E5B250 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C995D0FA2DA5653600E72B7A /* Products */;
 			projectDirPath = "";
@@ -428,17 +458,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9AB418B2DA5957D00752614 /* RestaurantRegisterView.swift in Sources */,
+				C9CD49182DADB93400E5B250 /* ConstantsApp.swift in Sources */,
 				C995D1432DA56A3700E72B7A /* LoginView.swift in Sources */,
 				C995D1462DA56A4C00E72B7A /* SplashView.swift in Sources */,
 				C9E1FEC02DAD56F600FFFA76 /* CustomTabBarView.swift in Sources */,
 				C9CCC18E2DA804DF0086324B /* LocationMapView.swift in Sources */,
+				C9CD49122DADB41500E5B250 /* HttpMethods.swift in Sources */,
 				C93DBE2E2DA6BDF000365931 /* IconSecureFieldView.swift in Sources */,
 				C9AB41852DA5904600752614 /* RegisterView.swift in Sources */,
 				C93DBE2C2DA6BC3B00365931 /* CustomButtonView.swift in Sources */,
+				C9CD491C2DADCB0C00E5B250 /* KeyChainPK.swift in Sources */,
 				C9B777792DA5F78B00E7CA95 /* IconTextFieldView.swift in Sources */,
 				C9AB41892DA5957200752614 /* ConsumerRegisterView.swift in Sources */,
+				C9CD49102DADB33300E5B250 /* EndPoints.swift in Sources */,
+				C9CD490E2DADB2F000E5B250 /* PKError.swift in Sources */,
+				C9CD49162DADB84300E5B250 /* NetworkLogin.swift in Sources */,
 				C995D1282DA5655700E72B7A /* PickedAppApp.swift in Sources */,
 				C9AB415D2DA57E7800752614 /* Color-Theme.swift in Sources */,
+				C9CD49142DADB81F00E5B250 /* HttpResponseCodes.swift in Sources */,
+				C9CD491A2DADC94A00E5B250 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,6 +746,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C9CD491D2DADCB2F00E5B250 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 24.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C9CD491E2DADCB2F00E5B250 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9CD491D2DADCB2F00E5B250 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C995D0F12DA5653600E72B7A /* Project object */;
 }
