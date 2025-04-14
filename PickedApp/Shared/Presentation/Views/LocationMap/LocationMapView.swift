@@ -10,7 +10,7 @@ import MapKit
 
 struct LocationMapView: View {
     var body: some View {
-        Map()
+        Text("Map View")
     }
 }
 

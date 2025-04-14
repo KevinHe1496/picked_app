@@ -20,6 +20,7 @@
 		C9AB418B2DA5957D00752614 /* RestaurantRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB418A2DA5957D00752614 /* RestaurantRegisterView.swift */; };
 		C9B777792DA5F78B00E7CA95 /* IconTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B777782DA5F78B00E7CA95 /* IconTextFieldView.swift */; };
 		C9CCC18E2DA804DF0086324B /* LocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCC18D2DA804DF0086324B /* LocationMapView.swift */; };
+		C9E1FEC02DAD56F600FFFA76 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1FEBF2DAD56F600FFFA76 /* CustomTabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C9AB418A2DA5957D00752614 /* RestaurantRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRegisterView.swift; sourceTree = "<group>"; };
 		C9B777782DA5F78B00E7CA95 /* IconTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextFieldView.swift; sourceTree = "<group>"; };
 		C9CCC18D2DA804DF0086324B /* LocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapView.swift; sourceTree = "<group>"; };
+		C9E1FEBF2DAD56F600FFFA76 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -77,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C905B8002DA88A480034EB14 /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C9E1FEBF2DAD56F600FFFA76 /* CustomTabBarView.swift */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
 		C995D0F02DA5653600E72B7A = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +111,7 @@
 				C93DBE2F2DA6ED2F00365931 /* Info.plist */,
 				C995D1302DA565ED00E72B7A /* Shared */,
 				C995D1232DA5655700E72B7A /* Assets.xcassets */,
+				C905B7A02DA84E890034EB14 /* restaurants.json */,
 				C995D1252DA5655700E72B7A /* PickedAppApp.swift */,
 			);
 			path = PickedApp;
@@ -186,7 +197,6 @@
 		C995D1392DA5669800E72B7A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				C905B7A02DA84E890034EB14 /* restaurants.json */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -232,6 +242,7 @@
 		C995D13F2DA566E800E72B7A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C905B8002DA88A480034EB14 /* CustomTabBar */,
 				C9CCC18C2DA804D10086324B /* LocationMap */,
 				C9B777772DA5F73E00E7CA95 /* Tools */,
 				C9AB41872DA5956300752614 /* Restaurant */,
@@ -419,6 +430,7 @@
 				C9AB418B2DA5957D00752614 /* RestaurantRegisterView.swift in Sources */,
 				C995D1432DA56A3700E72B7A /* LoginView.swift in Sources */,
 				C995D1462DA56A4C00E72B7A /* SplashView.swift in Sources */,
+				C9E1FEC02DAD56F600FFFA76 /* CustomTabBarView.swift in Sources */,
 				C9CCC18E2DA804DF0086324B /* LocationMapView.swift in Sources */,
 				C93DBE2E2DA6BDF000365931 /* IconSecureFieldView.swift in Sources */,
 				C9AB41852DA5904600752614 /* RegisterView.swift in Sources */,
