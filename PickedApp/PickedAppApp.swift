@@ -11,7 +11,7 @@ import SwiftUI
 struct PickedAppApp: App {
     var body: some Scene {
         WindowGroup {
-            CustomTabBarView()
+            LoginView()
         }
     }
 }
