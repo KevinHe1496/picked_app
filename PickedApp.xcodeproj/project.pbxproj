@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C905B7A12DA84E920034EB14 /* restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = C905B7A02DA84E890034EB14 /* restaurants.json */; };
+		C92112582DAEC85A00D67BA4 /* NetworkConsumerRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92112572DAEC85A00D67BA4 /* NetworkConsumerRegister.swift */; };
+		C92112602DAED40000D67BA4 /* RequestRegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921125F2DAED40000D67BA4 /* RequestRegisterRequest.swift */; };
 		C93DBE2C2DA6BC3B00365931 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93DBE2B2DA6BC3B00365931 /* CustomButtonView.swift */; };
 		C93DBE2E2DA6BDF000365931 /* IconSecureFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93DBE2D2DA6BDF000365931 /* IconSecureFieldView.swift */; };
 		C995D1282DA5655700E72B7A /* PickedAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995D1252DA5655700E72B7A /* PickedAppApp.swift */; };
@@ -54,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		C905B7A02DA84E890034EB14 /* restaurants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = restaurants.json; sourceTree = "<group>"; };
+		C92112572DAEC85A00D67BA4 /* NetworkConsumerRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConsumerRegister.swift; sourceTree = "<group>"; };
+		C921125F2DAED40000D67BA4 /* RequestRegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRegisterRequest.swift; sourceTree = "<group>"; };
 		C93DBE2B2DA6BC3B00365931 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		C93DBE2D2DA6BDF000365931 /* IconSecureFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSecureFieldView.swift; sourceTree = "<group>"; };
 		C93DBE2F2DA6ED2F00365931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 				C995D1342DA5664700E72B7A /* Local */,
 				C995D1362DA5665200E72B7A /* BaseNetwork */,
 				C9CD49152DADB84300E5B250 /* NetworkLogin.swift */,
+				C92112572DAEC85A00D67BA4 /* NetworkConsumerRegister.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 		C995D13D2DA566B900E72B7A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C921125F2DAED40000D67BA4 /* RequestRegisterRequest.swift */,
 				C9CD49192DADC94A00E5B250 /* User.swift */,
 			);
 			path = Models;
@@ -520,6 +526,8 @@
 				C9CD491C2DADCB0C00E5B250 /* KeyChainPK.swift in Sources */,
 				C9B777792DA5F78B00E7CA95 /* IconTextFieldView.swift in Sources */,
 				C9CD49912DADD29600E5B250 /* RootView.swift in Sources */,
+				C92112582DAEC85A00D67BA4 /* NetworkConsumerRegister.swift in Sources */,
+				C92112602DAED40000D67BA4 /* RequestRegisterRequest.swift in Sources */,
 				C9AB41892DA5957200752614 /* ConsumerRegisterView.swift in Sources */,
 				C9CD49102DADB33300E5B250 /* EndPoints.swift in Sources */,
 				C9CD490E2DADB2F000E5B250 /* PKError.swift in Sources */,

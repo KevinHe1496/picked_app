@@ -53,7 +53,9 @@ struct ConsumerRegisterView: View {
                 
                 // Register button
                 CustomButtonView(title: "Register", color: .secondaryColor) {
-                    // Handle registration logic here
+                    Task {
+                       try await NetworkConsumerRegister().consumerRegister(name: username, email: email, password: password, role: "consumer")
+                    }
                 }
             }
         }
