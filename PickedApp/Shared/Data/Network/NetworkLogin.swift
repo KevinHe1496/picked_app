@@ -61,7 +61,7 @@ final class NetworkLogin: NetworkLoginProtocol {
 
 final class NetworkLoginMock: NetworkLoginProtocol {
     func loginUser(user: String, password: String) async throws -> String {
-        return UUID().uuidString
+        return "mockToken"
     }
 }
 

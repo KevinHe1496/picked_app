@@ -49,3 +49,44 @@ final class LoginUseCase: LoginUseCaseProtocol {
         }
     }
 }
+
+
+///MOCK SUCCESS
+final class LoginUseCaseSucessMock: LoginUseCaseProtocol {
+    var repo: LoginRepositoryProtocol
+    var token: String = ""
+    
+    init(repo: LoginRepositoryProtocol = DefaultLoginRepositoryMock()) {
+        self.repo = repo
+    }
+    
+    func loginUser(user: String, password: String) async throws -> Bool {
+        let result = try await repo.loginUser(user: user, password: password)
+        token = result
+        return !token.isEmpty
+    }
+    
+    func logout() async {
+        token = ""
+    }
+    
+    func validateToken() async -> Bool {
+        return !token.isEmpty
+    }
+}
+
+
+///MOCK FAILURE
+final class LoginUseCaseFailureMock: LoginUseCaseProtocol {
+    var repo: LoginRepositoryProtocol = DefaultLoginRepositoryMock()
+    
+    func loginUser(user: String, password: String) async throws -> Bool {
+        return false
+    }
+    
+    func logout() async { }
+    
+    func validateToken() async -> Bool {
+        return false
+    }
+}
