@@ -13,7 +13,9 @@ protocol NetworkLoginProtocol {
 
 final class NetworkLogin: NetworkLoginProtocol {
     func loginUser(user: String, password: String) async throws -> String {
+        
         var tokenJWT = ""
+        
         let urlCad = "\(ConstantsApp.CONS_API_URL)\(EndPoints.login.rawValue)"
         
         guard let url = URL(string: urlCad) else {
@@ -60,5 +62,11 @@ final class NetworkLogin: NetworkLoginProtocol {
 final class NetworkLoginMock: NetworkLoginProtocol {
     func loginUser(user: String, password: String) async throws -> String {
         return UUID().uuidString
+    }
+}
+
+final class NetworkLoginErrorMock: NetworkLoginProtocol {
+    func loginUser(user: String, password: String) async throws -> String {
+        throw PKError.authenticationFailed
     }
 }

@@ -10,6 +10,8 @@
 		C905B7A12DA84E920034EB14 /* restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = C905B7A02DA84E890034EB14 /* restaurants.json */; };
 		C92112582DAEC85A00D67BA4 /* NetworkConsumerRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92112572DAEC85A00D67BA4 /* NetworkConsumerRegister.swift */; };
 		C92112602DAED40000D67BA4 /* RequestRegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921125F2DAED40000D67BA4 /* RequestRegisterRequest.swift */; };
+		C92112632DAEE0EF00D67BA4 /* PickedAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92112612DAEE0EF00D67BA4 /* PickedAppTests.swift */; };
+		C92112672DAEE12000D67BA4 /* NetworkLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92112662DAEE12000D67BA4 /* NetworkLogin.swift */; };
 		C93DBE2C2DA6BC3B00365931 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93DBE2B2DA6BC3B00365931 /* CustomButtonView.swift */; };
 		C93DBE2E2DA6BDF000365931 /* IconSecureFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93DBE2D2DA6BDF000365931 /* IconSecureFieldView.swift */; };
 		C995D1282DA5655700E72B7A /* PickedAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995D1252DA5655700E72B7A /* PickedAppApp.swift */; };
@@ -58,6 +60,8 @@
 		C905B7A02DA84E890034EB14 /* restaurants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = restaurants.json; sourceTree = "<group>"; };
 		C92112572DAEC85A00D67BA4 /* NetworkConsumerRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConsumerRegister.swift; sourceTree = "<group>"; };
 		C921125F2DAED40000D67BA4 /* RequestRegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRegisterRequest.swift; sourceTree = "<group>"; };
+		C92112612DAEE0EF00D67BA4 /* PickedAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedAppTests.swift; sourceTree = "<group>"; };
+		C92112662DAEE12000D67BA4 /* NetworkLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogin.swift; sourceTree = "<group>"; };
 		C93DBE2B2DA6BC3B00365931 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		C93DBE2D2DA6BDF000365931 /* IconSecureFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSecureFieldView.swift; sourceTree = "<group>"; };
 		C93DBE2F2DA6ED2F00365931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -94,14 +98,6 @@
 		C9E1FEBF2DAD56F600FFFA76 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		C995D1092DA5653700E72B7A /* PickedAppTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PickedAppTests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
-
 /* Begin PBXFrameworksBuildPhase section */
 		C995D0F62DA5653600E72B7A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -129,11 +125,44 @@
 			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
+		C92112622DAEE0EF00D67BA4 /* PickedAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				C92112682DAEE25600D67BA4 /* Mocks */,
+				C92112642DAEE0F100D67BA4 /* Data */,
+				C92112612DAEE0EF00D67BA4 /* PickedAppTests.swift */,
+			);
+			path = PickedAppTests;
+			sourceTree = "<group>";
+		};
+		C92112642DAEE0F100D67BA4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C92112652DAEE10200D67BA4 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C92112652DAEE10200D67BA4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C92112662DAEE12000D67BA4 /* NetworkLogin.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C92112682DAEE25600D67BA4 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		C995D0F02DA5653600E72B7A = {
 			isa = PBXGroup;
 			children = (
 				C995D1262DA5655700E72B7A /* PickedApp */,
-				C995D1092DA5653700E72B7A /* PickedAppTests */,
+				C92112622DAEE0EF00D67BA4 /* PickedAppTests */,
 				C995D0FA2DA5653600E72B7A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -433,9 +462,6 @@
 			dependencies = (
 				C995D1082DA5653700E72B7A /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				C995D1092DA5653700E72B7A /* PickedAppTests */,
-			);
 			name = PickedAppTests;
 			packageProductDependencies = (
 			);
@@ -548,6 +574,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C92112672DAEE12000D67BA4 /* NetworkLogin.swift in Sources */,
+				C92112632DAEE0EF00D67BA4 /* PickedAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
