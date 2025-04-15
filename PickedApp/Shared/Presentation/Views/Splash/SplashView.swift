@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SplashView: View {
+    @Environment(AppStateVM.self) var appState
+    
     var body: some View {
         ZStack { 
             Image(.logo)
@@ -22,4 +24,5 @@ struct SplashView: View {
 
 #Preview {
     SplashView()
+        .environment(AppStateVM())
 }

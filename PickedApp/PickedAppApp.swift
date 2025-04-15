@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct PickedAppApp: App {
+    @State var AppState = AppStateVM()
+    
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            RootView()
+                .environment(AppState)
         }
     }
 }

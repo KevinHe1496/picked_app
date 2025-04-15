@@ -50,7 +50,7 @@ struct CustomTabBarView: View {
             }
             
             Tab("User", systemImage: "person.fill") {
-                Text("User")
+                UserProfileView()
             }
             
         }

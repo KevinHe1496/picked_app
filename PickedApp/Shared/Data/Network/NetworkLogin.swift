@@ -20,14 +20,20 @@ final class NetworkLogin: NetworkLoginProtocol {
             throw PKError.badUrl
         }
         
-        guard let encodeCredentials = "\(user):\(password)".data(using: .utf8)?.base64EncodedString() else {
-            throw PKError.authenticationFailed
-        }
+//        guard let encodeCredentials = "\(user):\(password)".data(using: .utf8)?.base64EncodedString() else {
+//            throw PKError.authenticationFailed
+//        }
+        
+        let body: [String: String] = [
+            "email": user,
+            "password": password
+        ]
         
         var request: URLRequest = URLRequest(url: url)
         request.httpMethod = HttpMethods.post
         request.addValue(HttpMethods.content, forHTTPHeaderField: HttpMethods.contentTypeID)
-        //request.addValue("Basic \(encodeCredentials)", forHTTPHeaderField: "Authorization")
+        request.httpBody = try JSONSerialization.data(withJSONObject: body, options: [])
+//        request.addValue("Basic \(encodeCredentials)", forHTTPHeaderField: "Authorization")
         
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
@@ -36,6 +42,9 @@ final class NetworkLogin: NetworkLoginProtocol {
                 throw PKError.errorFromApi(statusCode: -1)
             }
             guard httpResponse.statusCode == HttpResponseCodes.SUCESS else {
+                let errorBody = String(data: data, encoding: .utf8) ?? "Respuesta no legible"
+                  print("Código de error: \(httpResponse.statusCode)")
+                  print("Cuerpo del error: \(errorBody)")
                 throw PKError.errorFromApi(statusCode: httpResponse.statusCode)
             }
             
@@ -45,5 +54,11 @@ final class NetworkLogin: NetworkLoginProtocol {
             print("error fetching user \(error.localizedDescription)")
         }
         return tokenJWT
+    }
+}
+
+final class NetworkLoginMock: NetworkLoginProtocol {
+    func loginUser(user: String, password: String) async throws -> String {
+        return UUID().uuidString
     }
 }

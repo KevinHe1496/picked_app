@@ -10,10 +10,11 @@ import SwiftUI
 /// A login screen where users can enter their email and password to access the app.
 /// Also provides a link to register if the user is new.
 struct LoginView: View {
+    @Environment(AppStateVM.self) var appState
     
     // MARK: - State Properties
-    @State private var email = ""
-    @State private var password = ""
+    @State private var email = "kevin@example.com"
+    @State private var password = "123456"
     
     var body: some View {
         NavigationStack {
@@ -55,8 +56,7 @@ struct LoginView: View {
                     // Login button
                     CustomButtonView(title: "Login", color: .secondaryColor) {
                         // TODO: Handle login action
-                        print(email)
-                        print(password)
+                        appState.loginUser(user: email, pass: password)
                     }
                 }
                 .frame(maxHeight: .infinity, alignment: .center)
@@ -85,4 +85,5 @@ struct LoginView: View {
 
 #Preview {
     LoginView()
+        .environment(AppStateVM())
 }
