@@ -40,3 +40,15 @@ final class NetworkConsumerRegister: NetworkConsumerRegisterProtocol {
         }
     }
 }
+
+final class NetworkConsumerRegisterMock: NetworkConsumerRegisterProtocol {
+    func consumerRegister(name: String, email: String, password: String, role: String) async throws {
+        print("Mock success: User enrolled successfull")
+    }
+}
+
+final class NetworkConsumerRegisterFailureMock: NetworkConsumerRegisterProtocol {
+    func consumerRegister(name: String, email: String, password: String, role: String) async throws {
+        throw PKError.errorFromApi(statusCode: 400)
+    }
+}

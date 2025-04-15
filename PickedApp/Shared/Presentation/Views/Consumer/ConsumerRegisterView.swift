@@ -3,10 +3,28 @@ import SwiftUI
 /// A view that displays a registration form for consumers.
 struct ConsumerRegisterView: View {
     
-    // MARK: - User Input State
+    // MARK: - Properties
+    
+    @Environment(AppStateVM.self) private var appState
+    @State private var viewModel: ConsumerRegisterViewModel
+    
+    // User input state
     @State var username = ""
     @State var email = ""
     @State var password = ""
+    
+    // Alert state
+    @State private var showAlert = false
+    @State private var alertMessage = ""
+    
+    // MARK: - Initialization
+    
+    /// Initializes the view with the app state.
+    init(appState: AppStateVM) {
+        _viewModel = State(initialValue: ConsumerRegisterViewModel(appState: appState))
+    }
+    
+    // MARK: - Body
     
     var body: some View {
         VStack {
@@ -31,8 +49,6 @@ struct ConsumerRegisterView: View {
                     text: $username,
                     keyboardType: .default
                 )
-                .autocorrectionDisabled()
-                .textInputAutocapitalization(.never)
                 
                 // Email field
                 IconTextFieldView(
@@ -54,7 +70,18 @@ struct ConsumerRegisterView: View {
                 // Register button
                 CustomButtonView(title: "Register", color: .secondaryColor) {
                     Task {
-                       try await NetworkConsumerRegister().consumerRegister(name: username, email: email, password: password, role: "consumer")
+                        
+                        // Validate fields
+                        if let error = viewModel.validateFields(name: username, email: email, password: password) {
+                            alertMessage = error
+                            showAlert = true
+                            return
+                        }
+                        
+                        // Proceed with registration
+                        await viewModel.consumerRegister(name: username, email: email, password: password, role: "consumer")
+
+                        showAlert = true
                     }
                 }
             }
@@ -62,9 +89,17 @@ struct ConsumerRegisterView: View {
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.primaryColor)
+        .alert(isPresented: $showAlert) {
+            Alert(
+                title: Text("Registration"),
+                message: Text(alertMessage),
+                dismissButton: .default(Text("OK"))
+            )
+        }
     }
 }
 
 #Preview {
-    ConsumerRegisterView()
+    ConsumerRegisterView(appState: AppStateVM())
+        .environment(AppStateVM())
 }

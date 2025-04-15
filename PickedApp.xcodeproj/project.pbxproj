@@ -9,10 +9,14 @@
 /* Begin PBXBuildFile section */
 		C905B7A12DA84E920034EB14 /* restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = C905B7A02DA84E890034EB14 /* restaurants.json */; };
 		C92112582DAEC85A00D67BA4 /* NetworkConsumerRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92112572DAEC85A00D67BA4 /* NetworkConsumerRegister.swift */; };
-		C92112602DAED40000D67BA4 /* RequestRegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921125F2DAED40000D67BA4 /* RequestRegisterRequest.swift */; };
+		C92112602DAED40000D67BA4 /* RequestRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921125F2DAED40000D67BA4 /* RequestRegister.swift */; };
 		C92112632DAEE0EF00D67BA4 /* PickedAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92112612DAEE0EF00D67BA4 /* PickedAppTests.swift */; };
 		C92112672DAEE12000D67BA4 /* NetworkLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92112662DAEE12000D67BA4 /* NetworkLogin.swift */; };
 		C92112792DAEEAEB00D67BA4 /* AppStateVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92112782DAEEAEB00D67BA4 /* AppStateVMTest.swift */; };
+		C921127B2DAF14F600D67BA4 /* DefaultConsumerRegisterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921127A2DAF14F600D67BA4 /* DefaultConsumerRegisterRepository.swift */; };
+		C921127D2DAF151400D67BA4 /* ConsumerRegisterRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921127C2DAF151400D67BA4 /* ConsumerRegisterRepositoryProtocol.swift */; };
+		C921127F2DAF169C00D67BA4 /* ConsumerRegisterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921127E2DAF169C00D67BA4 /* ConsumerRegisterUseCase.swift */; };
+		C92112872DAF1B8800D67BA4 /* ConsumerRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92112862DAF1B8800D67BA4 /* ConsumerRegisterViewModel.swift */; };
 		C93DBE2C2DA6BC3B00365931 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93DBE2B2DA6BC3B00365931 /* CustomButtonView.swift */; };
 		C93DBE2E2DA6BDF000365931 /* IconSecureFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93DBE2D2DA6BDF000365931 /* IconSecureFieldView.swift */; };
 		C995D1282DA5655700E72B7A /* PickedAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C995D1252DA5655700E72B7A /* PickedAppApp.swift */; };
@@ -60,10 +64,14 @@
 /* Begin PBXFileReference section */
 		C905B7A02DA84E890034EB14 /* restaurants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = restaurants.json; sourceTree = "<group>"; };
 		C92112572DAEC85A00D67BA4 /* NetworkConsumerRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConsumerRegister.swift; sourceTree = "<group>"; };
-		C921125F2DAED40000D67BA4 /* RequestRegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRegisterRequest.swift; sourceTree = "<group>"; };
+		C921125F2DAED40000D67BA4 /* RequestRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRegister.swift; sourceTree = "<group>"; };
 		C92112612DAEE0EF00D67BA4 /* PickedAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedAppTests.swift; sourceTree = "<group>"; };
 		C92112662DAEE12000D67BA4 /* NetworkLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogin.swift; sourceTree = "<group>"; };
 		C92112782DAEEAEB00D67BA4 /* AppStateVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateVMTest.swift; sourceTree = "<group>"; };
+		C921127A2DAF14F600D67BA4 /* DefaultConsumerRegisterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultConsumerRegisterRepository.swift; sourceTree = "<group>"; };
+		C921127C2DAF151400D67BA4 /* ConsumerRegisterRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerRegisterRepositoryProtocol.swift; sourceTree = "<group>"; };
+		C921127E2DAF169C00D67BA4 /* ConsumerRegisterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerRegisterUseCase.swift; sourceTree = "<group>"; };
+		C92112862DAF1B8800D67BA4 /* ConsumerRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerRegisterViewModel.swift; sourceTree = "<group>"; };
 		C93DBE2B2DA6BC3B00365931 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		C93DBE2D2DA6BDF000365931 /* IconSecureFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSecureFieldView.swift; sourceTree = "<group>"; };
 		C93DBE2F2DA6ED2F00365931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -233,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				C9CD49202DADCE0800E5B250 /* DefaultLoginRepository.swift */,
+				C921127A2DAF14F600D67BA4 /* DefaultConsumerRegisterRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -281,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				C9CD49262DADCFD200E5B250 /* LoginUseCase.swift */,
+				C921127E2DAF169C00D67BA4 /* ConsumerRegisterUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -298,6 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				C9CD49222DADCE2900E5B250 /* LoginRepositoryProtocol.swift */,
+				C921127C2DAF151400D67BA4 /* ConsumerRegisterRepositoryProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -321,7 +332,7 @@
 		C995D13D2DA566B900E72B7A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C921125F2DAED40000D67BA4 /* RequestRegisterRequest.swift */,
+				C921125F2DAED40000D67BA4 /* RequestRegister.swift */,
 				C9CD49192DADC94A00E5B250 /* User.swift */,
 			);
 			path = Models;
@@ -357,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				C9CD49922DADD2B000E5B250 /* AppStateVM.swift */,
+				C92112862DAF1B8800D67BA4 /* ConsumerRegisterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -564,12 +576,16 @@
 				C9B777792DA5F78B00E7CA95 /* IconTextFieldView.swift in Sources */,
 				C9CD49912DADD29600E5B250 /* RootView.swift in Sources */,
 				C92112582DAEC85A00D67BA4 /* NetworkConsumerRegister.swift in Sources */,
-				C92112602DAED40000D67BA4 /* RequestRegisterRequest.swift in Sources */,
+				C92112602DAED40000D67BA4 /* RequestRegister.swift in Sources */,
 				C9AB41892DA5957200752614 /* ConsumerRegisterView.swift in Sources */,
+				C921127D2DAF151400D67BA4 /* ConsumerRegisterRepositoryProtocol.swift in Sources */,
 				C9CD49102DADB33300E5B250 /* EndPoints.swift in Sources */,
 				C9CD490E2DADB2F000E5B250 /* PKError.swift in Sources */,
+				C921127B2DAF14F600D67BA4 /* DefaultConsumerRegisterRepository.swift in Sources */,
 				C9CD49162DADB84300E5B250 /* NetworkLogin.swift in Sources */,
 				C9CD49212DADCE0800E5B250 /* DefaultLoginRepository.swift in Sources */,
+				C921127F2DAF169C00D67BA4 /* ConsumerRegisterUseCase.swift in Sources */,
+				C92112872DAF1B8800D67BA4 /* ConsumerRegisterViewModel.swift in Sources */,
 				C995D1282DA5655700E72B7A /* PickedAppApp.swift in Sources */,
 				C9AB415D2DA57E7800752614 /* Color-Theme.swift in Sources */,
 				C9CD49232DADCE2900E5B250 /* LoginRepositoryProtocol.swift in Sources */,

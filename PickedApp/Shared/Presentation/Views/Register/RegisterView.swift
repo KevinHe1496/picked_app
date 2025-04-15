@@ -9,6 +9,7 @@ import SwiftUI
 
 /// A view that allows users to choose whether to register as a restaurant or a consumer.
 struct RegisterView: View {
+    @Environment(AppStateVM.self) private var appState
     
     var body: some View {
         VStack {
@@ -42,7 +43,7 @@ struct RegisterView: View {
                 
                 // Navigation link to consumer registration
                 NavigationLink {
-                    ConsumerRegisterView()
+                    ConsumerRegisterView(appState: appState)
                 } label: {
                     Text("Consumer")
                         .font(.system(size: 22).bold())
@@ -62,4 +63,5 @@ struct RegisterView: View {
 
 #Preview {
     RegisterView()
+        .environment(AppStateVM())
 }
