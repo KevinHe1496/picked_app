@@ -26,15 +26,13 @@ final class NetworkLogin: NetworkLoginProtocol {
 //            throw PKError.authenticationFailed
 //        }
         
-        let body: [String: String] = [
-            "email": user,
-            "password": password
-        ]
+        let requestBody = UserLoginRequest(email: user, password: password)
+        let jsonData = try JSONEncoder().encode(requestBody)
         
         var request: URLRequest = URLRequest(url: url)
         request.httpMethod = HttpMethods.post
         request.addValue(HttpMethods.content, forHTTPHeaderField: HttpMethods.contentTypeID)
-        request.httpBody = try JSONSerialization.data(withJSONObject: body, options: [])
+        request.httpBody = jsonData
 //        request.addValue("Basic \(encodeCredentials)", forHTTPHeaderField: "Authorization")
         
         do {
