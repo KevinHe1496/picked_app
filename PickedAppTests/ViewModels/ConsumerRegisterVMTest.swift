@@ -27,12 +27,6 @@ final class ConsumerRegisterVMTest: XCTestCase {
         viewModel = ConsumerRegisterViewModel(useCase: mockUseCase, appState: appState)
     }
     
-    /// Cleans up after each test case.
-    /// Override to provide additional teardown logic if needed.
-    override func tearDownWithError() throws {
-        // Cleanup code (if any) can go here.
-    }
-    
     // MARK: - Test Cases
     
     /// Tests the validation of registration fields (name, email, and password).

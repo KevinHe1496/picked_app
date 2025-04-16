@@ -11,18 +11,13 @@ import XCTest
 /// Tests for the `AppStateVM` view model, validating login flow, logout behavior, and status management.
 final class AppStateVMTest: XCTestCase {
     
-    // MARK: - Setup / Teardown
+    var viewModel: AppStateVM!
+    var mockUsecase: LoginUseCaseProtocol!
     
     override func setUpWithError() throws {
-        // Called before the invocation of each test method in the class.
-        // Useful to reset shared resources or state if needed.
+        mockUsecase = LoginUseCaseSucessMock()
+        viewModel = AppStateVM(loginUseCase: mockUsecase)
     }
-    
-    override func tearDownWithError() throws {
-        // Called after the invocation of each test method in the class.
-        // Clean up resources that might impact other tests.
-    }
-    
     // MARK: - Login Tests
     
     /// Tests that the login flow with correct credentials sets the status to `.loaded`.
@@ -33,7 +28,7 @@ final class AppStateVMTest: XCTestCase {
         
         // When
         Task {
-            await sut.loginUser(user: "test@example.com", pass: "123456")
+          _ = await sut.loginUser(user: "test@example.com", pass: "123456")
             try? await Task.sleep(nanoseconds: 300_000_000) // Allow async process to complete
             
             // Then
@@ -51,11 +46,14 @@ final class AppStateVMTest: XCTestCase {
         
         // When
         Task {
-            await sut.loginUser(user: "test@example.com", pass: "wrongPassword")
+            
+            let errorMessage = await sut.loginUser(user: "test@example.com", pass: "example")
+            _ = await sut.loginUser(user: "test@example.com", pass: "wrongPassword")
             try? await Task.sleep(nanoseconds: 300_000_000)
             
             // Then
             XCTAssertEqual(sut.status, .error(error: "Incorrect username or password"))
+            XCTAssertEqual(errorMessage, "Incorrect username or password")
             expectation.fulfill()
         }
         await fulfillment(of: [expectation], timeout: 1)
@@ -67,10 +65,10 @@ final class AppStateVMTest: XCTestCase {
         let vm = AppStateVM(loginUseCase: LoginUseCaseSucessMock())
         
         // When
-        await vm.loginUser(user: "invalidemail", pass: "123")
+        let validationError = await vm.loginUser(user: "invalidemail", pass: "123")
         
         // Then
-        XCTAssertEqual(vm.loginError, "Invalid email or password.")
+        XCTAssertEqual(validationError, "Invalid email or password.")
         XCTAssertEqual(vm.status, .none)
     }
     
@@ -82,7 +80,7 @@ final class AppStateVMTest: XCTestCase {
         
         // When
         Task {
-            await vm.loginUser(user: "example@example.com", pass: "123456")
+            _ = await vm.loginUser(user: "example@example.com", pass: "123456")
             try? await Task.sleep(nanoseconds: 300_000_000)
             
             // Then

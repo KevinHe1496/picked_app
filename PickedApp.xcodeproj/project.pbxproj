@@ -10,7 +10,6 @@
 		C905B7A12DA84E920034EB14 /* restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = C905B7A02DA84E890034EB14 /* restaurants.json */; };
 		C92112582DAEC85A00D67BA4 /* NetworkConsumerRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92112572DAEC85A00D67BA4 /* NetworkConsumerRegister.swift */; };
 		C92112602DAED40000D67BA4 /* RequestRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921125F2DAED40000D67BA4 /* RequestRegister.swift */; };
-		C92112632DAEE0EF00D67BA4 /* PickedAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92112612DAEE0EF00D67BA4 /* PickedAppTests.swift */; };
 		C92112672DAEE12000D67BA4 /* NetworkLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92112662DAEE12000D67BA4 /* NetworkLogin.swift */; };
 		C92112792DAEEAEB00D67BA4 /* AppStateVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92112782DAEEAEB00D67BA4 /* AppStateVMTest.swift */; };
 		C921127B2DAF14F600D67BA4 /* DefaultConsumerRegisterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921127A2DAF14F600D67BA4 /* DefaultConsumerRegisterRepository.swift */; };
@@ -67,7 +66,6 @@
 		C905B7A02DA84E890034EB14 /* restaurants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = restaurants.json; sourceTree = "<group>"; };
 		C92112572DAEC85A00D67BA4 /* NetworkConsumerRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConsumerRegister.swift; sourceTree = "<group>"; };
 		C921125F2DAED40000D67BA4 /* RequestRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRegister.swift; sourceTree = "<group>"; };
-		C92112612DAEE0EF00D67BA4 /* PickedAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickedAppTests.swift; sourceTree = "<group>"; };
 		C92112662DAEE12000D67BA4 /* NetworkLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogin.swift; sourceTree = "<group>"; };
 		C92112782DAEEAEB00D67BA4 /* AppStateVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateVMTest.swift; sourceTree = "<group>"; };
 		C921127A2DAF14F600D67BA4 /* DefaultConsumerRegisterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultConsumerRegisterRepository.swift; sourceTree = "<group>"; };
@@ -110,6 +108,7 @@
 		C9E1FEBF2DAD56F600FFFA76 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		C9E81C932DB02B4C00B4FD0D /* NetworkConsumerRegisterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConsumerRegisterTest.swift; sourceTree = "<group>"; };
 		C9E81C952DB02F9900B4FD0D /* ConsumerRegisterVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerRegisterVMTest.swift; sourceTree = "<group>"; };
+		C9E81C972DB0346500B4FD0D /* PickedApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = PickedApp.xctestplan; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,10 +141,10 @@
 		C92112622DAEE0EF00D67BA4 /* PickedAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				C9E81C972DB0346500B4FD0D /* PickedApp.xctestplan */,
 				C92112772DAEEAC000D67BA4 /* ViewModels */,
 				C92112682DAEE25600D67BA4 /* Mocks */,
 				C92112642DAEE0F100D67BA4 /* Data */,
-				C92112612DAEE0EF00D67BA4 /* PickedAppTests.swift */,
 			);
 			path = PickedAppTests;
 			sourceTree = "<group>";
@@ -611,7 +610,6 @@
 				C9E81C942DB02B4C00B4FD0D /* NetworkConsumerRegisterTest.swift in Sources */,
 				C9E81C962DB02F9900B4FD0D /* ConsumerRegisterVMTest.swift in Sources */,
 				C92112672DAEE12000D67BA4 /* NetworkLogin.swift in Sources */,
-				C92112632DAEE0EF00D67BA4 /* PickedAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
