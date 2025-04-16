@@ -1,24 +1,25 @@
 //
-//  LoginView.swift
+//  LoginView 2.swift
 //  PickedApp
 //
-//  Created by Kevin Heredia on 8/4/25.
+//  Created by Kevin Heredia on 16/4/25.
 //
+
 
 import SwiftUI
 
 /// A login screen where users can enter their email and password to access the app.
 /// Also provides a link to register if the user is new.
 struct LoginView: View {
-    @Environment(AppStateVM.self) var appState
+    @Environment(AppStateVM.self) var appState // Access to app state
     
     // MARK: - State Properties
-    @State private var email = "kevin@example.com"
-    @State private var password = "123456"
+    @State private var email = "kevin@example.com" // Email input
+    @State private var password = "123456" // Password input
     
     // MARK: - Alert state
-    @State private var showAlert = false
-    @State private var alertMessage = ""
+    @State private var showAlert = false // Determines if the alert is shown
+    @State private var alertMessage = "" // Alert message
     
     var body: some View {
         NavigationStack {
@@ -60,7 +61,7 @@ struct LoginView: View {
                     
                     // Login button
                     CustomButtonView(title: "Login", color: .secondaryColor) {
-                        // TODO: Handle login action
+                        // Handle login action
                         Task {
                             if let error = await appState.loginUser(user: email, pass: password) {
                                 alertMessage = error
@@ -94,7 +95,7 @@ struct LoginView: View {
             .alert("Login", isPresented: $showAlert) {
                 Button("OK", role: .cancel) { }
             } message: {
-                Text(alertMessage)
+                Text(alertMessage) // Displays error message in alert
             }
         }
     }
@@ -102,5 +103,5 @@ struct LoginView: View {
 
 #Preview {
     LoginView()
-        .environment(AppStateVM())
+        .environment(AppStateVM()) // Previews the view with app state
 }

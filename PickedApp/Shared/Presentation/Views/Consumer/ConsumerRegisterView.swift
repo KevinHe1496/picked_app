@@ -5,17 +5,17 @@ struct ConsumerRegisterView: View {
     
     // MARK: - Properties
     
-    @Environment(AppStateVM.self) private var appState
-    @State private var viewModel: ConsumerRegisterViewModel
+    @Environment(AppStateVM.self) private var appState // Access to app state
+    @State private var viewModel: ConsumerRegisterViewModel // ViewModel for consumer registration
     
     // User input state
-    @State var username = ""
-    @State var email = ""
-    @State var password = ""
+    @State var username = "" // Username input
+    @State var email = "" // Email input
+    @State var password = "" // Password input
     
     // Alert state
-    @State private var showAlert = false
-    @State private var alertMessage = ""
+    @State private var showAlert = false // Determines if the alert is shown
+    @State private var alertMessage = "" // Alert message
     
     // MARK: - Initialization
     
@@ -42,7 +42,7 @@ struct ConsumerRegisterView: View {
             
             VStack(spacing: 10) {
                 
-                // Username field
+                // Username input field
                 IconTextFieldView(
                     iconName: "person.fill",
                     placeholder: "Username",
@@ -50,7 +50,7 @@ struct ConsumerRegisterView: View {
                     keyboardType: .default
                 )
                 
-                // Email field
+                // Email input field
                 IconTextFieldView(
                     iconName: "envelope.fill",
                     placeholder: "Email",
@@ -60,18 +60,18 @@ struct ConsumerRegisterView: View {
                 .autocorrectionDisabled()
                 .textInputAutocapitalization(.never)
                 
-                // Password field
+                // Password input field
                 IconSecureFieldView(
                     icon: "lock.fill",
                     placeholder: "Password",
                     password: $password
                 )
                 
-                // Register button
+                // Sign up button
                 CustomButtonView(title: "Sign Up", color: .secondaryColor) {
                     Task {
                         
-                        // Validate fields
+                        // Validate fields and handle registration
                         if let error = await viewModel.consumerRegister(name: username, email: email, password: password, role: "consumer") {
                             alertMessage = error
                             showAlert = true
@@ -86,12 +86,12 @@ struct ConsumerRegisterView: View {
         .alert("Consumer Register", isPresented: $showAlert) {
             Button("OK", role: .cancel) { }
         } message: {
-            Text(alertMessage)
+            Text(alertMessage) // Displays error message in alert
         }
     }
 }
 
 #Preview {
     ConsumerRegisterView(appState: AppStateVM())
-        .environment(AppStateVM())
+        .environment(AppStateVM()) // Previews the view with app state
 }

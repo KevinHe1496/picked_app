@@ -8,19 +8,24 @@
 import Foundation
 import Combine
 
+/// ViewModel that manages the app's global authentication state.
 @Observable
 final class AppStateVM {
-    var status = Status.none
-    var tokenJWT: String = ""
-    var loginError: String?
+    
+    // MARK: - Properties
+    
+    var status = Status.none // Current app state (loading, login, etc.)
+    var tokenJWT: String = "" // Auth token
+    var loginError: String? // Login error message
     
     @ObservationIgnored
     private var loginUseCase: LoginUseCaseProtocol
     @ObservationIgnored
-    var isLogged: Bool = false
+    var isLogged: Bool = false // Indicates if the user is logged in
+
+    // MARK: - Init
     
-    
-    
+    /// Creates the view model and validates login status on launch.
     init(loginUseCase: LoginUseCaseProtocol = LoginUseCase()) {
         self.loginUseCase = loginUseCase
         
@@ -29,6 +34,9 @@ final class AppStateVM {
         }
     }
     
+    // MARK: - Methods
+    
+    /// Logs in the user and updates the app state.
     @MainActor
     func loginUser(user: String, pass: String) async -> String? {
         loginError = nil
@@ -53,7 +61,8 @@ final class AppStateVM {
             return "An error occurred during login."
         }
     }
-    
+
+    /// Logs out the user and resets the state.
     @MainActor
     func closeSessionUser() {
         Task {
@@ -61,7 +70,8 @@ final class AppStateVM {
             self.status = .login
         }
     }
-    
+
+    /// Validates if the user is already logged in using a stored token.
     @MainActor
     func validateControlLogin() {
         Task {
@@ -73,10 +83,10 @@ final class AppStateVM {
             }
         }
     }
-    
+
     // MARK: - Navigation Helpers
     
-    /// Navigates from splash screen to login view after a short delay
+    /// Shows splash screen and then navigates to login view.
     func startSplashToLoginView() {
         self.status = .none
         
@@ -86,12 +96,11 @@ final class AppStateVM {
             }
         }
     }
-    
+
     // MARK: - Validation
     
-    /// Validates the input fields for registration.
-    /// - Returns: An error message if validation fails, otherwise nil.
-     func isValidEmailPassword(_ email: String, _ password: String) -> String? {
+    /// Validates email and password fields.
+    func isValidEmailPassword(_ email: String, _ password: String) -> String? {
         if email.isEmpty || password.isEmpty {
             return "All fields are required."
         }

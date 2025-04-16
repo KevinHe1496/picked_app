@@ -7,34 +7,33 @@
 
 import Foundation
 
-/// ViewModel for managing consumer registration.
+/// ViewModel that handles user registration.
 @Observable
 final class ConsumerRegisterViewModel {
     
     // MARK: - Properties
     
     private var appState: AppStateVM
-    var isloading: Bool = false
-    var isRegistered: Bool = false
-    var errorMessage: String?
-    
+    var isloading: Bool = false // Shows if loading is in progress
+    var isRegistered: Bool = false // Shows if user is registered
+    var errorMessage: String? // Stores error messages
+
     @ObservationIgnored
     private let useCase: ConsumerRegisterUseCaseProtocol
     
     // MARK: - Initialization
-    
-    /// Initializes the view model with the use case and app state.
+
+    /// Creates the view model with a use case and app state.
     init(useCase: ConsumerRegisterUseCaseProtocol = ConsumerRegisterUseCase(), appState: AppStateVM) {
         self.useCase = useCase
         self.appState = appState
     }
     
     // MARK: - Methods
-    
-    /// Registers a consumer asynchronously, updating app state based on success or failure.
+
+    /// Registers a consumer and updates the app state based on the result.
     @MainActor
     func consumerRegister(name: String, email: String, password: String, role: String) async -> String? {
-
         if let validationError = validateFields(name: name, email: email, password: password) {
             isloading = false
             return validationError
@@ -63,9 +62,8 @@ final class ConsumerRegisterViewModel {
     }
     
     // MARK: - Validation
-    
-    /// Validates the input fields for registration.
-    /// - Returns: An error message if validation fails, otherwise nil.
+
+    /// Checks that all fields are filled and email/password are valid.
     func validateFields(name: String, email: String, password: String) -> String? {
         if name.isEmpty || email.isEmpty || password.isEmpty {
             return "All fields are required."
