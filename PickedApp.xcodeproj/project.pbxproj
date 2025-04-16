@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C905B7A12DA84E920034EB14 /* restaurants.json in Resources */ = {isa = PBXBuildFile; fileRef = C905B7A02DA84E890034EB14 /* restaurants.json */; };
+		C908B7312DB0401300CAF301 /* TabBarStyleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C908B7302DB0401300CAF301 /* TabBarStyleHelper.swift */; };
 		C92112582DAEC85A00D67BA4 /* NetworkConsumerRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92112572DAEC85A00D67BA4 /* NetworkConsumerRegister.swift */; };
 		C92112602DAED40000D67BA4 /* RequestRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921125F2DAED40000D67BA4 /* RequestRegister.swift */; };
 		C92112672DAEE12000D67BA4 /* NetworkLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92112662DAEE12000D67BA4 /* NetworkLogin.swift */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		C905B7A02DA84E890034EB14 /* restaurants.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = restaurants.json; sourceTree = "<group>"; };
+		C908B7302DB0401300CAF301 /* TabBarStyleHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarStyleHelper.swift; sourceTree = "<group>"; };
 		C92112572DAEC85A00D67BA4 /* NetworkConsumerRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConsumerRegister.swift; sourceTree = "<group>"; };
 		C921125F2DAED40000D67BA4 /* RequestRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRegister.swift; sourceTree = "<group>"; };
 		C92112662DAEE12000D67BA4 /* NetworkLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogin.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 			children = (
 				C9CD49172DADB93400E5B250 /* ConstantsApp.swift */,
 				C9CD49282DADCFEA00E5B250 /* pkPersistenceKeyChain.swift */,
+				C908B7302DB0401300CAF301 /* TabBarStyleHelper.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				C9CD49972DADDC7900E5B250 /* ErrorView.swift in Sources */,
 				C9E1FEC02DAD56F600FFFA76 /* CustomTabBarView.swift in Sources */,
 				C9CCC18E2DA804DF0086324B /* LocationMapView.swift in Sources */,
+				C908B7312DB0401300CAF301 /* TabBarStyleHelper.swift in Sources */,
 				C9CD49122DADB41500E5B250 /* HttpMethods.swift in Sources */,
 				C9CD49292DADCFEA00E5B250 /* pkPersistenceKeyChain.swift in Sources */,
 				C93DBE2E2DA6BDF000365931 /* IconSecureFieldView.swift in Sources */,
