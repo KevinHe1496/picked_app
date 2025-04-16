@@ -11,13 +11,6 @@ import XCTest
 /// Tests for the `AppStateVM` view model, validating login flow, logout behavior, and status management.
 final class AppStateVMTest: XCTestCase {
     
-    var viewModel: AppStateVM!
-    var mockUsecase: LoginUseCaseProtocol!
-    
-    override func setUpWithError() throws {
-        mockUsecase = LoginUseCaseSucessMock()
-        viewModel = AppStateVM(loginUseCase: mockUsecase)
-    }
     // MARK: - Login Tests
     
     /// Tests that the login flow with correct credentials sets the status to `.loaded`.
