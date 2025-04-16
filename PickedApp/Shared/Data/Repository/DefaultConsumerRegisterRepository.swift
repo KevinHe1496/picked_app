@@ -40,3 +40,15 @@ final class DefaultConsumerRegisterRepositoryMock: ConsumerRegisterRepositoryPro
         }
     }
 }
+
+final class DefaultConsumerRegisterRepositoryFailureMock: ConsumerRegisterRepositoryProtocol {
+    private var network: NetworkConsumerRegisterProtocol
+    
+    init(network: NetworkConsumerRegisterProtocol = NetworkConsumerRegisterMock()) {
+        self.network = network
+    }
+    
+    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> Bool{
+        throw PKError.errorFromApi(statusCode: 400)
+    }
+}

@@ -50,6 +50,7 @@
 		C9CD499A2DADE5A400E5B250 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD49992DADE5A400E5B250 /* UserProfileView.swift */; };
 		C9E1FEC02DAD56F600FFFA76 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1FEBF2DAD56F600FFFA76 /* CustomTabBarView.swift */; };
 		C9E81C942DB02B4C00B4FD0D /* NetworkConsumerRegisterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E81C932DB02B4C00B4FD0D /* NetworkConsumerRegisterTest.swift */; };
+		C9E81C962DB02F9900B4FD0D /* ConsumerRegisterVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E81C952DB02F9900B4FD0D /* ConsumerRegisterVMTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		C9CD49992DADE5A400E5B250 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		C9E1FEBF2DAD56F600FFFA76 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		C9E81C932DB02B4C00B4FD0D /* NetworkConsumerRegisterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConsumerRegisterTest.swift; sourceTree = "<group>"; };
+		C9E81C952DB02F9900B4FD0D /* ConsumerRegisterVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerRegisterVMTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				C92112782DAEEAEB00D67BA4 /* AppStateVMTest.swift */,
+				C9E81C952DB02F9900B4FD0D /* ConsumerRegisterVMTest.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -606,6 +609,7 @@
 			files = (
 				C92112792DAEEAEB00D67BA4 /* AppStateVMTest.swift in Sources */,
 				C9E81C942DB02B4C00B4FD0D /* NetworkConsumerRegisterTest.swift in Sources */,
+				C9E81C962DB02F9900B4FD0D /* ConsumerRegisterVMTest.swift in Sources */,
 				C92112672DAEE12000D67BA4 /* NetworkLogin.swift in Sources */,
 				C92112632DAEE0EF00D67BA4 /* PickedAppTests.swift in Sources */,
 			);
