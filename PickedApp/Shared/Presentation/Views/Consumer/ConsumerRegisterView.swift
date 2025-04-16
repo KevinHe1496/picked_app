@@ -72,16 +72,10 @@ struct ConsumerRegisterView: View {
                     Task {
                         
                         // Validate fields
-                        if let error = viewModel.validateFields(name: username, email: email, password: password) {
+                        if let error = await viewModel.consumerRegister(name: username, email: email, password: password, role: "consumer") {
                             alertMessage = error
                             showAlert = true
-                            return
                         }
-                        
-                        // Proceed with registration
-                        await viewModel.consumerRegister(name: username, email: email, password: password, role: "consumer")
-
-                        showAlert = true
                     }
                 }
             }

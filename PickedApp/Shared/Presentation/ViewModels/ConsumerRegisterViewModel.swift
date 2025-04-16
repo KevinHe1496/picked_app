@@ -33,20 +33,33 @@ final class ConsumerRegisterViewModel {
     
     /// Registers a consumer asynchronously, updating app state based on success or failure.
     @MainActor
-    func consumerRegister(name: String, email: String, password: String, role: String) async {
+    func consumerRegister(name: String, email: String, password: String, role: String) async -> String? {
+
+        if let validationError = validateFields(name: name, email: email, password: password) {
+            isloading = false
+            return validationError
+        }
+
         isloading = true
         errorMessage = nil
         appState.status = .loading
-
+        
         do {
             let result = try await useCase.consumerRegisterUser(name: name, email: email, password: password, role: role)
-            appState.status = result ? .login : .error(error: "Incorrect username or password.")
+            if result {
+                appState.status = .login
+                isloading = false
+                return nil
+            } else {
+                appState.status = .error(error: "Incorrect username or password.")
+                isloading = false
+                return "Incorrect username or password."
+            }
         } catch {
             appState.status = .error(error: "Something went wrong.")
-            errorMessage = error.localizedDescription
+            isloading = false
+            return "Something went wrong."
         }
-
-        isloading = false
     }
     
     // MARK: - Validation
