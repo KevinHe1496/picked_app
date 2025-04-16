@@ -8,32 +8,7 @@
 import SwiftUI
 
 struct CustomTabBarView: View {
-    
-    init() {
-        // Create a custom appearance
-        let appearance = UITabBarAppearance()
-        appearance.configureWithOpaqueBackground()
         
-        // Use your custom color as the background
-        appearance.backgroundColor = UIColor(Color.primaryColor)
-        
-        // Selected icon and text: mainBrownColor
-        appearance.stackedLayoutAppearance.selected.iconColor = UIColor(Color.white)
-        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [
-            .foregroundColor: UIColor(Color.white)
-        ]
-        
-        // Unselected icon and text: white
-        appearance.stackedLayoutAppearance.normal.iconColor = UIColor(Color.secondaryColor)
-        appearance.stackedLayoutAppearance.normal.titleTextAttributes = [
-            .foregroundColor: UIColor(Color.secondaryColor)
-        ]
-        
-        // Apply appearance to the TabBar
-        UITabBar.appearance().standardAppearance = appearance
-        UITabBar.appearance().scrollEdgeAppearance = appearance
-    }
-    
     var body: some View {
         TabView {
             
@@ -54,6 +29,20 @@ struct CustomTabBarView: View {
             }
             
         }
+        .onAppear {
+                let appearance = UITabBarAppearance()
+                appearance.configureWithOpaqueBackground()
+                appearance.backgroundColor = UIColor(Color.primaryColor)
+
+                appearance.stackedLayoutAppearance.selected.iconColor = UIColor.white
+                appearance.stackedLayoutAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.white]
+
+                appearance.stackedLayoutAppearance.normal.iconColor = UIColor(Color.secondaryColor)
+                appearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor(Color.secondaryColor)]
+
+                UITabBar.appearance().standardAppearance = appearance
+                UITabBar.appearance().scrollEdgeAppearance = appearance
+            }
     }
 }
 
