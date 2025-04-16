@@ -68,7 +68,7 @@ struct ConsumerRegisterView: View {
                 )
                 
                 // Register button
-                CustomButtonView(title: "Register", color: .secondaryColor) {
+                CustomButtonView(title: "Sign Up", color: .secondaryColor) {
                     Task {
                         
                         // Validate fields
@@ -89,12 +89,10 @@ struct ConsumerRegisterView: View {
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.primaryColor)
-        .alert(isPresented: $showAlert) {
-            Alert(
-                title: Text("Registration"),
-                message: Text(alertMessage),
-                dismissButton: .default(Text("OK"))
-            )
+        .alert("Consumer Register", isPresented: $showAlert) {
+            Button("OK", role: .cancel) { }
+        } message: {
+            Text(alertMessage)
         }
     }
 }

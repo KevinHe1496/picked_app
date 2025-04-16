@@ -16,6 +16,10 @@ struct LoginView: View {
     @State private var email = "kevin@example.com"
     @State private var password = "123456"
     
+    // MARK: - Alert state
+    @State private var showAlert = false
+    @State private var alertMessage = ""
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -28,6 +32,7 @@ struct LoginView: View {
                         .frame(width: 250, height: 250)
                 }
                 .frame(maxHeight: .infinity, alignment: .top)
+                .ignoresSafeArea(.keyboard)
                 
                 // MARK: - Login Form Section
                 VStack(spacing: 10) {
@@ -56,8 +61,14 @@ struct LoginView: View {
                     // Login button
                     CustomButtonView(title: "Login", color: .secondaryColor) {
                         // TODO: Handle login action
-                        appState.loginUser(user: email, pass: password)
+                        Task {
+                            if let error = await appState.loginUser(user: email, pass: password) {
+                                alertMessage = error
+                                showAlert = true
+                            }
+                        }
                     }
+
                 }
                 .frame(maxHeight: .infinity, alignment: .center)
                 
@@ -75,10 +86,16 @@ struct LoginView: View {
                 }
                 .frame(maxHeight: .infinity, alignment: .bottom)
                 .padding(.bottom, 30)
+                .ignoresSafeArea(.keyboard)
             }
             .padding(.horizontal, 16)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(.primaryColor)
+            .alert("Login", isPresented: $showAlert) {
+                Button("OK", role: .cancel) { }
+            } message: {
+                Text(alertMessage)
+            }
         }
     }
 }

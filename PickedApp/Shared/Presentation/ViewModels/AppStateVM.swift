@@ -19,6 +19,8 @@ final class AppStateVM {
     @ObservationIgnored
     var isLogged: Bool = false
     
+    
+    
     init(loginUseCase: LoginUseCaseProtocol = LoginUseCase()) {
         self.loginUseCase = loginUseCase
         
@@ -28,22 +30,27 @@ final class AppStateVM {
     }
     
     @MainActor
-    func loginUser(user: String, pass: String) {
+    func loginUser(user: String, pass: String) async -> String? {
         loginError = nil
         
-        guard isValidEmailPassword(user, pass) else {
-            loginError = "Invalid email or password."
-            return
+        if let validationError = isValidEmailPassword(user, pass) {
+            return validationError
         }
         
         self.status = .loading
         
-        Task {
-            if try await loginUseCase.loginUser(user: user, password: pass) == true {
+        do {
+            let success = try await loginUseCase.loginUser(user: user, password: pass)
+            if success {
                 self.status = .loaded
+                return nil
             } else {
                 self.status = .error(error: "Incorrect username or password")
+                return "Incorrect username or password"
             }
+        } catch {
+            self.status = .error(error: "An error occurred during login.")
+            return "An error occurred during login."
         }
     }
     
@@ -82,8 +89,18 @@ final class AppStateVM {
     
     // MARK: - Validation
     
-    /// Validates the format of email and password input
-    private func isValidEmailPassword(_ email: String, _ password: String) -> Bool {
-        return email.contains("@") && email.contains(".") && password.count > 5 && !password.isEmpty
+    /// Validates the input fields for registration.
+    /// - Returns: An error message if validation fails, otherwise nil.
+     func isValidEmailPassword(_ email: String, _ password: String) -> String? {
+        if email.isEmpty || password.isEmpty {
+            return "All fields are required."
+        }
+        if !email.contains("@") || !email.contains(".") {
+            return "Invalid email or password."
+        }
+        if password.count < 6 {
+            return "Invalid email or password."
+        }
+        return nil
     }
 }

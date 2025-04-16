@@ -9,7 +9,7 @@ import Foundation
 
 /// Server Side Endpoints
 enum EndPoints: String {
-    case login = "/login"
-    case consumerRegister = "/register-consumer"
+    case login = "/auth/login"
+    case consumerRegister = "/auth/register-consumer"
     case restaurantRegister = "/register-restaurant"
 }
