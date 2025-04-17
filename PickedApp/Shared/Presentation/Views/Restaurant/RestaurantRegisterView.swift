@@ -76,7 +76,7 @@ struct RestaurantRegisterView: View {
                     IconTextFieldView(iconName: "flag.fill", placeholder: "Country", text: $country, keyboardType: .default)
                     IconTextFieldView(iconName: "building.fill", placeholder: "City", text: $city, keyboardType: .default)
                     IconTextFieldView(iconName: "location.fill", placeholder: "Address", text: $address, keyboardType: .default)
-                    IconTextFieldView(iconName: "tag.fill", placeholder: "Zip Code", text: $zipCode, keyboardType: .numberPad)
+                    IconTextFieldView(iconName: "tag.fill", placeholder: "Zip Code", text: $zipCode, keyboardType: .asciiCapableNumberPad)
                     
                     // Image picker section
                     VStack {

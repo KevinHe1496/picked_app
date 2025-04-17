@@ -33,10 +33,6 @@ struct CustomTabBarView: View {
             }
             
         }
-        .accentColor(.white)
-        .toolbarBackground(Color.primaryColor, for: .tabBar)
-        .toolbarBackground(.visible, for: .tabBar)
-        
     }
 }
 
