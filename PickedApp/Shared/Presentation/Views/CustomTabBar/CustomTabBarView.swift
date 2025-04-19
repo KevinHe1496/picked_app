@@ -17,11 +17,11 @@ struct CustomTabBarView: View {
         TabView {
             
             Tab("Home", systemImage: "house.fill") {
-                Text("Home")
+                ConsumerView()
             }
             
             Tab("Map", systemImage: "map.fill") {
-                LocationMapView()
+                LocationMapView(restaurants: Bundle.main.decode("restaurants.json"))
             }
             
             Tab("Favorites", systemImage: "star.fill") {

@@ -8,76 +8,60 @@
 import Foundation
 
 protocol NetworkRestaurantRegisterProtocol {
-    func restaurantRegister(
-        name: String,
-        email: String,
-        password: String,
-        role: String,
-        restaurantName: String,
-        info: String,
-        photo: String,
-        address: String,
-        country: String,
-        city: String,
-        zipCode: Int,
-        latitude: Double,
-        longitude: Double
-    )
-    async throws
+    func restaurantRegister(from formData: RestaurantRegisterRequest) async throws -> String
 }
 
 final class NetworkRestaurantRegister: NetworkRestaurantRegisterProtocol {
-    func restaurantRegister(
-        name: String,
-        email: String,
-        password: String,
-        role: String,
-        restaurantName: String,
-        info: String,
-        photo: String,
-        address: String,
-        country: String,
-        city: String,
-        zipCode: Int,
-        latitude: Double,
-        longitude: Double
-    ) async throws {
+    
+    func restaurantRegister(from formData: RestaurantRegisterRequest) async throws -> String {
+        var tokenJWT = ""
+        
         guard let url = URL(string: "\(ConstantsApp.CONS_API_URL)\(EndPoints.restaurantRegister.rawValue)") else {
             throw PKError.badUrl
         }
         
-        let requestBody = RestaurantRegisterRequest(name: name, email: email, password: password, role: role, restaurantName: restaurantName, info: info, photo: photo, address: address, country: country, city: city, zipCode: zipCode, latitude: latitude, longitude: longitude)
-        let jsonData = try JSONEncoder().encode(requestBody)
-        
         var request = URLRequest(url: url)
         request.httpMethod = HttpMethods.post
-        request.setValue(HttpMethods.content, forHTTPHeaderField: HttpMethods.contentTypeID)
-        request.httpBody = jsonData
         
+        // Genera un boundary único válido
+        let boundary = "Boundary-\(UUID().uuidString)"
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        
+        let body = try createMultipartBody(from: formData, boundary: boundary)
+
+        request.httpBody = body
         do {
-            let (_, response) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await URLSession.shared.data(for: request)
             
             guard let httpResponse = response as? HTTPURLResponse else {
                 throw PKError.errorFromApi(statusCode: -1)
             }
             
+            if let responseString = String(data: data, encoding: .utf8) {
+                print("✅ Respuesta: \(responseString)")
+            }
+            
             guard httpResponse.statusCode == HttpResponseCodes.SUCESS else {
                 throw PKError.errorFromApi(statusCode: httpResponse.statusCode)
             }
+            
+            let result  = try JSONDecoder().decode(User.self, from: data)
+            tokenJWT = result.token
         } catch {
-            print("Error registering restaurant \(error.localizedDescription)")
+            print("Error registering Restaurant \(error.localizedDescription)")
         }
+        return tokenJWT
     }
 }
 
 final class NetworkRestaurantRegisterMock: NetworkRestaurantRegisterProtocol {
-    func restaurantRegister(name: String, email: String, password: String, role: String, restaurantName: String, info: String, photo: String, address: String, country: String, city: String, zipCode: Int, latitude: Double, longitude: Double) async throws {
-        print("Mock success")
+    func restaurantRegister(from formData: RestaurantRegisterRequest) async throws -> String {
+        return "mockToken"
     }
 }
 
 final class NetworkRestaurantRegisterFailureMock: NetworkRestaurantRegisterProtocol {
-    func restaurantRegister(name: String, email: String, password: String, role: String, restaurantName: String, info: String, photo: String, address: String, country: String, city: String, zipCode: Int, latitude: Double, longitude: Double) async throws {
+    func restaurantRegister(from formData: RestaurantRegisterRequest) async throws -> String {
         throw PKError.errorFromApi(statusCode: 400)
     }
 }

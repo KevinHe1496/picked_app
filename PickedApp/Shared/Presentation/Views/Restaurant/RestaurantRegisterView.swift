@@ -12,17 +12,22 @@ import PhotosUI
 struct RestaurantRegisterView: View {
     
     // MARK: - User Input State
-    @State var email = ""
-    @State var password = ""
-    @State var description = ""
-    @State var country = ""
-    @State var city = ""
-    @State var address = ""
-    @State var zipCode = ""
+    @State var email = "Anthonelarestaurante@example.com"
+    @State var password = "123456"
+    @State var info = "Restaurante Placos tipicos"
+    @State var country = "Ecuador"
+    @State var city = "Quito"
+    @State var address = "Av. Amazonas y Av. Patria"
+    @State var zipCode = "170507"
+    @State var name = "Anthonela"
+    @State var role = "restaursant"
+    @State var restaurantName = "Mi restaurante Ecuador"
     
     // MARK: - Image Picker State
-    @State private var pickerItems = [PhotosPickerItem]()
-    @State private var selectedImages = [Image]()
+    @State private var pickerItem: PhotosPickerItem? = nil
+    @State private var selectedImage: Image? = nil
+    @State private var selectedPhotoData: Data?
+    @State private var network = NetworkRestaurantRegister()
     
     var body: some View {
         ScrollView {
@@ -64,7 +69,7 @@ struct RestaurantRegisterView: View {
                             .foregroundStyle(.secondaryColor)
                             .padding(.bottom, 110)
                         
-                        TextEditor(text: $description)
+                        TextEditor(text: $info)
                             .frame(minHeight: 150)
                             .padding(5)
                     }
@@ -76,11 +81,11 @@ struct RestaurantRegisterView: View {
                     IconTextFieldView(iconName: "flag.fill", placeholder: "Country", text: $country, keyboardType: .default)
                     IconTextFieldView(iconName: "building.fill", placeholder: "City", text: $city, keyboardType: .default)
                     IconTextFieldView(iconName: "location.fill", placeholder: "Address", text: $address, keyboardType: .default)
-                    IconTextFieldView(iconName: "tag.fill", placeholder: "Zip Code", text: $zipCode, keyboardType: .asciiCapableNumberPad)
+                    IconTextFieldView(iconName: "tag.fill", placeholder: "Zip Code", text: $zipCode, keyboardType: .default)
                     
                     // Image picker section
                     VStack {
-                        PhotosPicker(selection: $pickerItems, maxSelectionCount: 5, matching: .images) {
+                        PhotosPicker(selection: $pickerItem, matching: .images) {
                             VStack {
                                 Text("Take a photo or choose from gallery")
                                     .foregroundStyle(Color.secondaryColor)
@@ -95,30 +100,35 @@ struct RestaurantRegisterView: View {
                     .background(Color.white)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                     
-                    // Show selected images
-                    ForEach(0..<selectedImages.count, id: \.self) { i in
-                        selectedImages[i]
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 300, height: 300)
-                            .padding(3)
-                    }
-                    
-                    // Handle changes in the image picker
-                    .onChange(of: pickerItems) { _, newItems in
+                    CustomButtonView(title: "Register", color: .secondaryColor) {
+                        print("🔘 Botón presionado")
+
                         Task {
-                            selectedImages.removeAll()
-                            for item in newItems {
-                                if let loadedImage = try await item.loadTransferable(type: Image.self) {
-                                    selectedImages.append(loadedImage)
-                                }
+                            do {
+                                try await network.restaurantRegister(from: RestaurantRegisterRequest(email: email, password: password, role: "restaurant", restaurantName: restaurantName, info: info, address: address, country: country, city: city, zipCode: zipCode, latitude: 0.0, longitude: 0.0, name: name, photo: selectedPhotoData))
+                            } catch {
+                                print("❌ Error en el registro: \(error)")
                             }
                         }
                     }
                     
-                    // Register button
-                    CustomButtonView(title: "Register", color: .secondaryColor) {
-                        // Handle registration logic here
+                    
+                }
+                // Handle changes in the image picker
+                .onChange(of: pickerItem) { _, newItem in
+                    Task {
+                        if let selectedItem = newItem {
+                            do {
+                                // Load the selected photo data
+                                if let data = try await selectedItem.loadTransferable(type: Data.self) {
+                                    // Store the data in the selectedPhotoData variable
+                                    self.selectedPhotoData = data
+                                    print("✅ Image loaded with size: \(data.count) bytes")
+                                }
+                            } catch {
+                                print("❌ Error loading image: \(error)")
+                            }
+                        }
                     }
                 }
             }
@@ -129,6 +139,7 @@ struct RestaurantRegisterView: View {
         .background(.primaryColor)
     }
 }
+
 
 #Preview {
     RestaurantRegisterView()

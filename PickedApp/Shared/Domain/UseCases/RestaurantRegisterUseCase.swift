@@ -9,141 +9,60 @@ import Foundation
 
 protocol RestaurantRegisterUseCaseProtocol {
     var repo: RestaurantRegisterRepositoryProtocol { get set }
-    func restaurantRegister(
-        name: String,
-        email: String,
-        password: String,
-        role: String,
-        restaurantName: String,
-        info: String,
-        photo: String,
-        address: String,
-        country: String,
-        city: String,
-        zipCode: Int,
-        latitude: Double,
-        longitude: Double
-    )
-    async throws
-    -> Bool
+    func restaurantRegister(formData: RestaurantRegisterRequest) async throws -> Bool
 }
+
 
 final class RestaurantRegisterUseCase: RestaurantRegisterUseCaseProtocol {
     var repo: RestaurantRegisterRepositoryProtocol
     
+    @pkPersistenceKeychain(key: ConstantsApp.CONS_TOKEN_ID_KEYCHAIN)
+    var tokenJWT
+
     init(repo: RestaurantRegisterRepositoryProtocol = DefaultRestaurantRepository()) {
         self.repo = repo
     }
-    
-    func restaurantRegister(
-        name: String,
-        email: String,
-        password: String,
-        role: String,
-        restaurantName: String,
-        info: String,
-        photo: String,
-        address: String,
-        country: String,
-        city: String,
-        zipCode: Int,
-        latitude: Double,
-        longitude: Double
-    ) async throws -> Bool {
-        return try await repo.restaurantRegister(
-            name: name,
-            email: email,
-            password: password,
-            role: role,
-            restaurantName: restaurantName,
-            info: info,
-            photo: photo,
-            address: address,
-            country: country,
-            city: city,
-            zipCode: zipCode,
-            latitude: latitude,
-            longitude: longitude
-        )
+
+    func restaurantRegister(formData: RestaurantRegisterRequest) async throws -> Bool {
+        let token = try await repo.restaurantRegister(from: formData)
+        
+        if token != "" {
+            tokenJWT = token
+            return true
+        } else {
+            tokenJWT = ""
+            return false
+        }
     }
 }
 
+
 final class RestaurantRegisterUseCaseMock: RestaurantRegisterUseCaseProtocol {
     var repo: RestaurantRegisterRepositoryProtocol
+
+    var token: String = ""
     
     init(repo: RestaurantRegisterRepositoryProtocol = DefaultRestaurantRepositoryMock()) {
         self.repo = repo
     }
-    
-    func restaurantRegister(
-        name: String,
-        email: String,
-        password: String,
-        role: String,
-        restaurantName: String,
-        info: String,
-        photo: String,
-        address: String,
-        country: String,
-        city: String,
-        zipCode: Int,
-        latitude: Double,
-        longitude: Double
-    ) async throws -> Bool {
-        return try await repo.restaurantRegister(
-            name: name,
-            email: email,
-            password: password,
-            role: role,
-            restaurantName: restaurantName,
-            info: info,
-            photo: photo,
-            address: address,
-            country: country,
-            city: city,
-            zipCode: zipCode,
-            latitude: latitude,
-            longitude: longitude
-        )
+
+    func restaurantRegister(formData: RestaurantRegisterRequest) async throws -> Bool {
+        let result = try await repo.restaurantRegister(from: formData)
+        token = result
+        return !token.isEmpty
     }
 }
 
+
 final class RestaurantRegisterUseCaseFailureMock: RestaurantRegisterUseCaseProtocol {
     var repo: RestaurantRegisterRepositoryProtocol
-    
+
     init(repo: RestaurantRegisterRepositoryProtocol = DefaultRestaurantRepositoryFailureMock()) {
         self.repo = repo
     }
-    
-    func restaurantRegister(
-        name: String,
-        email: String,
-        password: String,
-        role: String,
-        restaurantName: String,
-        info: String,
-        photo: String,
-        address: String,
-        country: String,
-        city: String,
-        zipCode: Int,
-        latitude: Double,
-        longitude: Double
-    ) async throws -> Bool {
-        return try await repo.restaurantRegister(
-            name: name,
-            email: email,
-            password: password,
-            role: role,
-            restaurantName: restaurantName,
-            info: info,
-            photo: photo,
-            address: address,
-            country: country,
-            city: city,
-            zipCode: zipCode,
-            latitude: latitude,
-            longitude: longitude
-        )
+
+    func restaurantRegister(formData: RestaurantRegisterRequest) async throws -> Bool {
+        return false
     }
 }
+

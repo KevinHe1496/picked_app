@@ -8,21 +8,5 @@
 import Foundation
 
 protocol RestaurantRegisterRepositoryProtocol {
-    func restaurantRegister(
-        name: String,
-        email: String,
-        password: String,
-        role: String,
-        restaurantName: String,
-        info: String,
-        photo: String,
-        address: String,
-        country: String,
-        city: String,
-        zipCode: Int,
-        latitude: Double,
-        longitude: Double
-    )
-    async throws
-    -> Bool
+    func restaurantRegister(from formData: RestaurantRegisterRequest) async throws -> String
 }

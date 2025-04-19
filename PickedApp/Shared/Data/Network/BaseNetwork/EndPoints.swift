@@ -11,5 +11,5 @@ import Foundation
 enum EndPoints: String {
     case login = "/auth/login"
     case consumerRegister = "/auth/register-consumer"
-    case restaurantRegister = "/register-restaurant"
+    case restaurantRegister = "/restaurants/register"
 }

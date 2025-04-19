@@ -4,7 +4,7 @@ import Foundation
 
 /// A protocol that defines a method for registering a consumer.
 protocol NetworkConsumerRegisterProtocol {
-    func consumerRegister(name: String, email: String, password: String, role: String) async throws
+    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> String
 }
 
 // MARK: - Network Consumer Register Implementation
@@ -19,7 +19,9 @@ final class NetworkConsumerRegister: NetworkConsumerRegisterProtocol {
     ///   - password: The password chosen by the consumer.
     ///   - role: The role assigned to the consumer (e.g., "consumer").
     /// - Throws: Throws an error if the registration request fails.
-    func consumerRegister(name: String, email: String, password: String, role: String) async throws {
+    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> String {
+        
+        var tokenJWT = ""
         // Construct the URL for the consumer registration endpoint
         guard let url = URL(string: "\(ConstantsApp.CONS_API_URL)\(EndPoints.consumerRegister.rawValue)") else {
             throw PKError.badUrl // Throw an error if the URL is invalid
@@ -37,7 +39,7 @@ final class NetworkConsumerRegister: NetworkConsumerRegisterProtocol {
         
         do {
             // Send the request and await the response
-            let (_, response) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await URLSession.shared.data(for: request)
             
             // Ensure the response is a valid HTTP response
             guard let httpResponse = response as? HTTPURLResponse else {
@@ -47,10 +49,16 @@ final class NetworkConsumerRegister: NetworkConsumerRegisterProtocol {
             guard httpResponse.statusCode == HttpResponseCodes.SUCESS else {
                 throw PKError.errorFromApi(statusCode: httpResponse.statusCode) // Throw an error if the status code indicates failure
             }
+            
+            let result = try JSONDecoder().decode(User.self, from: data)
+            tokenJWT = result.token
+            
         } catch {
             // Handle any errors that occur during the registration process
             print("Error registering Consumer \(error.localizedDescription)")
         }
+        
+        return tokenJWT
     }
 }
 
@@ -58,15 +66,15 @@ final class NetworkConsumerRegister: NetworkConsumerRegisterProtocol {
 
 /// A mock implementation for successfully registering a consumer.
 final class NetworkConsumerRegisterMock: NetworkConsumerRegisterProtocol {
-    func consumerRegister(name: String, email: String, password: String, role: String) async throws {
+    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> String {
         // Simulate successful registration
-        print("Mock success: User enrolled successfully")
+        return "mockToken"
     }
 }
 
 /// A mock implementation that simulates a registration failure.
 final class NetworkConsumerRegisterFailureMock: NetworkConsumerRegisterProtocol {
-    func consumerRegister(name: String, email: String, password: String, role: String) async throws {
+    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> String {
         // Simulate a failure with a specific error code
         throw PKError.errorFromApi(statusCode: 400)
     }

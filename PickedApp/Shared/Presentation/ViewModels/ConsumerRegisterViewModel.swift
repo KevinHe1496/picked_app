@@ -17,9 +17,12 @@ final class ConsumerRegisterViewModel {
     var isloading: Bool = false // Shows if loading is in progress
     var isRegistered: Bool = false // Shows if user is registered
     var errorMessage: String? // Stores error messages
+    var tokenJWT: String = ""
 
     @ObservationIgnored
     private let useCase: ConsumerRegisterUseCaseProtocol
+    @ObservationIgnored
+    var isLogged: Bool = false // Indicates if the user is logged in
     
     // MARK: - Initialization
 
@@ -34,6 +37,7 @@ final class ConsumerRegisterViewModel {
     /// Registers a consumer and updates the app state based on the result.
     @MainActor
     func consumerRegister(name: String, email: String, password: String, role: String) async -> String? {
+        
         if let validationError = validateFields(name: name, email: email, password: password) {
             isloading = false
             return validationError
@@ -46,7 +50,7 @@ final class ConsumerRegisterViewModel {
         do {
             let result = try await useCase.consumerRegisterUser(name: name, email: email, password: password, role: role)
             if result {
-                appState.status = .login
+                appState.status = .loaded
                 isloading = false
                 return nil
             } else {

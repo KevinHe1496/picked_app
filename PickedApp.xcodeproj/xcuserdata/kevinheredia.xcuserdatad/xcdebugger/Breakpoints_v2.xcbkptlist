@@ -3,4 +3,692 @@
    uuid = "2BFB62A2-39CA-4A4F-B495-CB4B9568B4F3"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "24DC176D-9D1D-42C1-B602-40B581174C14"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "restaurantRegister(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A9AD7446-CE2D-4A58-80F5-D2EBEE87A1B2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "restaurantRegister(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E5D55D4-8210-45DE-9483-2A7FAFF94123"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "restaurantRegister(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8AE672BF-5F44-4B40-A82C-3F72F2A60CFC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "restaurantRegister(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5E4F8382-7E5C-4BF9-9921-EF6A52CFC807"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "restaurantRegister(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C62E8715-5C27-4053-8F9E-04B0334BE522"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "restaurantRegister(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0C072A53-FE73-4DAD-9EC4-1ECEED025642"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "restaurantRegister(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7185A23F-CC9E-4397-837B-331B0E2EE060"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "restaurantRegister(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "22EC5A52-0C39-4415-B517-EDB50CB24FF9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "restaurantRegister(from:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "22EC5A52-0C39-4415-B517-EDB50CB24FF9 - 95c16c5b99d4ae99"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for PickedApp.NetworkRestaurantRegister.restaurantRegister(from: PickedApp.RestaurantRegisterRequest) async throws -&gt; Swift.String"
+                  moduleName = "PickedApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinheredia/Desktop/PickedApp/PickedApp/PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34">
+               </Location>
+               <Location
+                  uuid = "22EC5A52-0C39-4415-B517-EDB50CB24FF9 - 3d1567c2e79335d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for PickedApp.NetworkRestaurantRegister.restaurantRegister(from: PickedApp.RestaurantRegisterRequest) async throws -&gt; Swift.String"
+                  moduleName = "PickedApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinheredia/Desktop/PickedApp/PickedApp/PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5658AD12-F5CE-4A13-8BDE-78BB8DCE082A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "restaurantRegister(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E8A9E33-82EB-4038-A30D-7B7542DFDBBD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "restaurantRegister(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "52E3272D-F267-43D8-9292-219B98750DF1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "restaurantRegister(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A813EFA2-3A16-402F-A947-45B5448864D8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "restaurantRegister(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "70884F21-8BA2-4EA1-8735-177C011B1E03"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "restaurantRegister(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A2DB1DD0-CEAB-4E9F-9D60-CA1D3757D56B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "restaurantRegister(email:password:role:restaurantName:info:address:country:city:zipCode:name:photo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0AD2537E-2AE3-41A5-9141-1C827BCC305F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "restaurantRegister(email:password:role:restaurantName:info:address:country:city:zipCode:name:photo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E75276A-71B4-4999-8597-043111E0CBE6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "restaurantRegister(email:password:role:restaurantName:info:address:country:city:zipCode:name:photo:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3E75276A-71B4-4999-8597-043111E0CBE6 - f146b16322f95988"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for PickedApp.RestaurantResgisterViewModel.restaurantRegister(email: Swift.String, password: Swift.String, role: Swift.String, restaurantName: Swift.String, info: Swift.String, address: Swift.String, country: Swift.String, city: Swift.String, zipCode: Swift.String, name: Swift.String, photo: Swift.Optional&lt;Foundation.Data&gt;) async throws -&gt; ()"
+                  moduleName = "PickedApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinheredia/Desktop/PickedApp/PickedApp/PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78">
+               </Location>
+               <Location
+                  uuid = "3E75276A-71B4-4999-8597-043111E0CBE6 - 4d9c612a2f4ad194"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for PickedApp.RestaurantResgisterViewModel.restaurantRegister(email: Swift.String, password: Swift.String, role: Swift.String, restaurantName: Swift.String, info: Swift.String, address: Swift.String, country: Swift.String, city: Swift.String, zipCode: Swift.String, name: Swift.String, photo: Swift.Optional&lt;Foundation.Data&gt;) async throws -&gt; ()"
+                  moduleName = "PickedApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinheredia/Desktop/PickedApp/PickedApp/PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4D72A8AC-232B-4E9D-AAD8-E157C843238F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "restaurantRegister(email:password:role:restaurantName:info:address:country:city:zipCode:name:photo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "41C3374B-F2A3-4F47-AF90-618B1C5C5673"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "restaurantRegister(email:password:role:restaurantName:info:address:country:city:zipCode:name:photo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B56BDCBF-B42D-47B2-8D48-0665FEEB813D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "restaurantRegister(email:password:role:restaurantName:info:address:country:city:zipCode:name:photo:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B56BDCBF-B42D-47B2-8D48-0665FEEB813D - 5352295cbcd698d4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for PickedApp.RestaurantResgisterViewModel.restaurantRegister(email: Swift.String, password: Swift.String, role: Swift.String, restaurantName: Swift.String, info: Swift.String, address: Swift.String, country: Swift.String, city: Swift.String, zipCode: Swift.String, name: Swift.String, photo: Swift.Optional&lt;Foundation.Data&gt;) async throws -&gt; ()"
+                  moduleName = "PickedApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinheredia/Desktop/PickedApp/PickedApp/PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56">
+               </Location>
+               <Location
+                  uuid = "B56BDCBF-B42D-47B2-8D48-0665FEEB813D - 7ea1ad146a37b2c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for PickedApp.RestaurantResgisterViewModel.restaurantRegister(email: Swift.String, password: Swift.String, role: Swift.String, restaurantName: Swift.String, info: Swift.String, address: Swift.String, country: Swift.String, city: Swift.String, zipCode: Swift.String, name: Swift.String, photo: Swift.Optional&lt;Foundation.Data&gt;) async throws -&gt; ()"
+                  moduleName = "PickedApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinheredia/Desktop/PickedApp/PickedApp/PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F72C9814-8B76-4B65-8142-D3ECFA3CBA69"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "restaurantRegister(email:password:role:restaurantName:info:address:country:city:zipCode:name:photo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ADA0E6CD-3EFE-4BB3-A0AA-15A408EAEC2B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "restaurantRegister(email:password:role:restaurantName:info:address:country:city:zipCode:name:photo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1E9B5800-5F28-4127-818D-3E070DDB5ADD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "restaurantRegister(email:password:role:restaurantName:info:address:country:city:zipCode:name:photo:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1E9B5800-5F28-4127-818D-3E070DDB5ADD - 7ea1ad146a37b632"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for PickedApp.RestaurantResgisterViewModel.restaurantRegister(email: Swift.String, password: Swift.String, role: Swift.String, restaurantName: Swift.String, info: Swift.String, address: Swift.String, country: Swift.String, city: Swift.String, zipCode: Swift.String, name: Swift.String, photo: Swift.Optional&lt;Foundation.Data&gt;) async throws -&gt; ()"
+                  moduleName = "PickedApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinheredia/Desktop/PickedApp/PickedApp/PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81">
+               </Location>
+               <Location
+                  uuid = "1E9B5800-5F28-4127-818D-3E070DDB5ADD - 4d9c612a2f4ad031"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for PickedApp.RestaurantResgisterViewModel.restaurantRegister(email: Swift.String, password: Swift.String, role: Swift.String, restaurantName: Swift.String, info: Swift.String, address: Swift.String, country: Swift.String, city: Swift.String, zipCode: Swift.String, name: Swift.String, photo: Swift.Optional&lt;Foundation.Data&gt;) async throws -&gt; ()"
+                  moduleName = "PickedApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinheredia/Desktop/PickedApp/PickedApp/PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "81"
+                  endingLineNumber = "81">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2A58014A-5EA8-4094-8CF9-B405AE2F3BD2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "restaurantRegister(email:password:role:restaurantName:info:address:country:city:zipCode:name:photo:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2A58014A-5EA8-4094-8CF9-B405AE2F3BD2 - afabd907a92015d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for PickedApp.RestaurantResgisterViewModel.restaurantRegister(email: Swift.String, password: Swift.String, role: Swift.String, restaurantName: Swift.String, info: Swift.String, address: Swift.String, country: Swift.String, city: Swift.String, zipCode: Swift.String, name: Swift.String, photo: Swift.Optional&lt;Foundation.Data&gt;) async throws -&gt; ()"
+                  moduleName = "PickedApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinheredia/Desktop/PickedApp/PickedApp/PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80">
+               </Location>
+               <Location
+                  uuid = "2A58014A-5EA8-4094-8CF9-B405AE2F3BD2 - 7ea1ad146a37b7d1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for PickedApp.RestaurantResgisterViewModel.restaurantRegister(email: Swift.String, password: Swift.String, role: Swift.String, restaurantName: Swift.String, info: Swift.String, address: Swift.String, country: Swift.String, city: Swift.String, zipCode: Swift.String, name: Swift.String, photo: Swift.Optional&lt;Foundation.Data&gt;) async throws -&gt; ()"
+                  moduleName = "PickedApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinheredia/Desktop/PickedApp/PickedApp/PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80">
+               </Location>
+               <Location
+                  uuid = "2A58014A-5EA8-4094-8CF9-B405AE2F3BD2 - 4d9c612a2f4ad1d2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for PickedApp.RestaurantResgisterViewModel.restaurantRegister(email: Swift.String, password: Swift.String, role: Swift.String, restaurantName: Swift.String, info: Swift.String, address: Swift.String, country: Swift.String, city: Swift.String, zipCode: Swift.String, name: Swift.String, photo: Swift.Optional&lt;Foundation.Data&gt;) async throws -&gt; ()"
+                  moduleName = "PickedApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinheredia/Desktop/PickedApp/PickedApp/PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B751FDA7-54E5-441B-9B11-F1349105D1E1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "restaurantRegister(email:password:role:restaurantName:info:address:country:city:zipCode:name:photo:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B751FDA7-54E5-441B-9B11-F1349105D1E1 - afabd907a92014ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for PickedApp.RestaurantResgisterViewModel.restaurantRegister(email: Swift.String, password: Swift.String, role: Swift.String, restaurantName: Swift.String, info: Swift.String, address: Swift.String, country: Swift.String, city: Swift.String, zipCode: Swift.String, name: Swift.String, photo: Swift.Optional&lt;Foundation.Data&gt;) async throws -&gt; ()"
+                  moduleName = "PickedApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinheredia/Desktop/PickedApp/PickedApp/PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84">
+               </Location>
+               <Location
+                  uuid = "B751FDA7-54E5-441B-9B11-F1349105D1E1 - 7ea1ad146a37b6ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for PickedApp.RestaurantResgisterViewModel.restaurantRegister(email: Swift.String, password: Swift.String, role: Swift.String, restaurantName: Swift.String, info: Swift.String, address: Swift.String, country: Swift.String, city: Swift.String, zipCode: Swift.String, name: Swift.String, photo: Swift.Optional&lt;Foundation.Data&gt;) async throws -&gt; ()"
+                  moduleName = "PickedApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinheredia/Desktop/PickedApp/PickedApp/PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84">
+               </Location>
+               <Location
+                  uuid = "B751FDA7-54E5-441B-9B11-F1349105D1E1 - 4d9c612a2f4ad0ae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(7) suspend resume partial function for PickedApp.RestaurantResgisterViewModel.restaurantRegister(email: Swift.String, password: Swift.String, role: Swift.String, restaurantName: Swift.String, info: Swift.String, address: Swift.String, country: Swift.String, city: Swift.String, zipCode: Swift.String, name: Swift.String, photo: Swift.Optional&lt;Foundation.Data&gt;) async throws -&gt; ()"
+                  moduleName = "PickedApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinheredia/Desktop/PickedApp/PickedApp/PickedApp/Shared/Presentation/ViewModels/RestaurantResgisterViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5812C9E4-D984-472C-802B-18E05B2EC74F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "restaurantRegister(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2C5BA513-3EE1-40E2-B160-DAB9CAAC4816"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "restaurantRegister(from:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9438495-5A28-418B-A2B4-F2C1F15CE140"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "restaurantRegister(from:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B9438495-5A28-418B-A2B4-F2C1F15CE140 - 50596945f5be1440"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for PickedApp.NetworkRestaurantRegister.restaurantRegister(from: PickedApp.RestaurantRegisterRequest) async throws -&gt; Swift.String"
+                  moduleName = "PickedApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinheredia/Desktop/PickedApp/PickedApp/PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51">
+               </Location>
+               <Location
+                  uuid = "B9438495-5A28-418B-A2B4-F2C1F15CE140 - 3d1567c2e7933383"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for PickedApp.NetworkRestaurantRegister.restaurantRegister(from: PickedApp.RestaurantRegisterRequest) async throws -&gt; Swift.String"
+                  moduleName = "PickedApp.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kevinheredia/Desktop/PickedApp/PickedApp/PickedApp/Shared/Data/Network/NetworkRestaurantRegister.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
