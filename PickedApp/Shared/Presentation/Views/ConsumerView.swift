@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ConsumerView: View {
-    let restaurants: [Restaurant] = Bundle.main.decode("restaurants.json")
+    @Environment(AppStateVM.self) var appState
+    
+    @State var viewModel: AllRestaurantsViewModel
     
     let columns = [
         GridItem(.adaptive(minimum: 180))
@@ -16,13 +18,19 @@ struct ConsumerView: View {
     
     @State private var filterText = ""
     
+    init(viewModel: AllRestaurantsViewModel = AllRestaurantsViewModel()) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
         NavigationStack{
             ScrollView {
                 LazyVGrid(columns: columns) {
-                    ForEach(restaurants) { restaurant in
-                        NavigationLink(value: restaurant) {
-                           RestaurantRowView(restaurant: restaurant)
+                    ForEach(viewModel.restaurantsData){ restaurant in
+                        NavigationLink {
+                            
+                        } label: {
+                            RestaurantRowView(restaurant: restaurant)
                         }
                     }
                 }
@@ -35,4 +43,5 @@ struct ConsumerView: View {
 
 #Preview {
     ConsumerView()
+        .environment(AppStateVM())
 }

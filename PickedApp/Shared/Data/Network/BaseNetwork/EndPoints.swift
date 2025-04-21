@@ -12,4 +12,5 @@ enum EndPoints: String {
     case login = "/auth/login"
     case consumerRegister = "/auth/register-consumer"
     case restaurantRegister = "/restaurants/register"
+    case allRestaurants = "/restaurants/all"
 }

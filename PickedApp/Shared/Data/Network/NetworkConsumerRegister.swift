@@ -50,7 +50,7 @@ final class NetworkConsumerRegister: NetworkConsumerRegisterProtocol {
                 throw PKError.errorFromApi(statusCode: httpResponse.statusCode) // Throw an error if the status code indicates failure
             }
             
-            let result = try JSONDecoder().decode(User.self, from: data)
+            let result = try JSONDecoder().decode(UserModel.self, from: data)
             tokenJWT = result.token
             
         } catch {

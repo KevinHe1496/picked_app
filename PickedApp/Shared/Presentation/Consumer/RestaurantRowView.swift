@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct RestaurantRowView: View {
-    let restaurant: Restaurant
+    let restaurant: RestaurantModel
 
     var body: some View {
         ZStack(alignment: .bottom) { // El ZStack alineará los elementos al fondo
             // Imagen de fondo
-            AsyncImage(url: URL(string: restaurant.photo)) { image in
+            AsyncImage(url: URL(string: "http://localhost:8080\(restaurant.photo)")) { image in
                 image
                     .resizable()
                     .scaledToFill()
@@ -41,6 +41,7 @@ struct RestaurantRowView: View {
                 .padding([.leading, .bottom], 8) // Alineado a la izquierda y hacia abajo
                 .frame(maxWidth: .infinity, alignment: .leading) // Alinea el texto a la izquierda
                 .lineLimit(2)
+                .multilineTextAlignment(.leading)
         }
         .frame(width: 170, height: 170)
         .clipShape(RoundedRectangle(cornerRadius: 10)) // Bordes redondeados
@@ -48,12 +49,24 @@ struct RestaurantRowView: View {
     }
 }
 
-
-
-let previewRestaurants: [Restaurant] = Bundle.main.decode("restaurants.json")
-
 #Preview {
-    RestaurantRowView(restaurant: previewRestaurants[1])
+    RestaurantRowView(
+        restaurant: RestaurantModel(
+            id: UUID().uuidString,
+            name: "Restaurante San Pedrito",
+            info: "Comida tipica",
+            address: "Av. Amazonas",
+            zipCode: "120042",
+            city: "Quito",
+            country: "Ecuador",
+            photo: "example.jpg",
+            latitude: 0.0,
+            longitude: 0.0,
+            createdAt: "",
+            updatedAt: "",
+            user: Editor(id: "")
+        )
+    )
 }
 
 

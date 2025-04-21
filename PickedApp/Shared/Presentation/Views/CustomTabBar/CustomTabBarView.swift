@@ -44,7 +44,8 @@ struct CustomTabBarView: View {
             }
             
             Tab("Map", systemImage: "map.fill") {
-                LocationMapView(restaurants: Bundle.main.decode("restaurants.json"))
+                
+                
             }
             
             Tab("Favorites", systemImage: "star.fill") {

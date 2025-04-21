@@ -58,7 +58,7 @@ final class NetworkLogin: NetworkLoginProtocol {
             }
             
             // Decode the user data from the response
-            let result = try JSONDecoder().decode(User.self, from: data)
+            let result = try JSONDecoder().decode(UserModel.self, from: data)
             tokenJWT = result.token // Retrieve the JWT token from the response
         } catch {
             // Handle any errors during the login process

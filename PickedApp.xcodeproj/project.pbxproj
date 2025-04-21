@@ -35,7 +35,7 @@
 		C9AB418B2DA5957D00752614 /* RestaurantRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB418A2DA5957D00752614 /* RestaurantRegisterView.swift */; };
 		C9AFDFDE2DB2D2F7009B84B4 /* Data-extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFDFDD2DB2D2F7009B84B4 /* Data-extesion.swift */; };
 		C9AFDFE02DB3032A009B84B4 /* RestaurantOwnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFDFDF2DB3032A009B84B4 /* RestaurantOwnerView.swift */; };
-		C9AFDFE32DB30C31009B84B4 /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFDFE22DB30C31009B84B4 /* Restaurants.swift */; };
+		C9AFDFE32DB30C31009B84B4 /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFDFE22DB30C31009B84B4 /* RestaurantModel.swift */; };
 		C9AFDFE52DB30C8F009B84B4 /* ConsumerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFDFE42DB30C8F009B84B4 /* ConsumerView.swift */; };
 		C9AFE00E2DB30D12009B84B4 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFE00D2DB30D12009B84B4 /* Bundle-Decodable.swift */; };
 		C9AFE0102DB30E31009B84B4 /* RestaurantRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFE00F2DB30E31009B84B4 /* RestaurantRowView.swift */; };
@@ -50,7 +50,7 @@
 		C9CD49142DADB81F00E5B250 /* HttpResponseCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD49132DADB81F00E5B250 /* HttpResponseCodes.swift */; };
 		C9CD49162DADB84300E5B250 /* NetworkLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD49152DADB84300E5B250 /* NetworkLogin.swift */; };
 		C9CD49182DADB93400E5B250 /* ConstantsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD49172DADB93400E5B250 /* ConstantsApp.swift */; };
-		C9CD491A2DADC94A00E5B250 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD49192DADC94A00E5B250 /* User.swift */; };
+		C9CD491A2DADC94A00E5B250 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD49192DADC94A00E5B250 /* UserModel.swift */; };
 		C9CD491C2DADCB0C00E5B250 /* KeyChainPK.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD491B2DADCB0C00E5B250 /* KeyChainPK.swift */; };
 		C9CD491F2DADCB2F00E5B250 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C9CD491E2DADCB2F00E5B250 /* KeychainSwift */; };
 		C9CD49212DADCE0800E5B250 /* DefaultLoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD49202DADCE0800E5B250 /* DefaultLoginRepository.swift */; };
@@ -64,6 +64,11 @@
 		C9CD49972DADDC7900E5B250 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD49962DADDC7900E5B250 /* ErrorView.swift */; };
 		C9CD499A2DADE5A400E5B250 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD49992DADE5A400E5B250 /* UserProfileView.swift */; };
 		C9E1FEC02DAD56F600FFFA76 /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1FEBF2DAD56F600FFFA76 /* CustomTabBarView.swift */; };
+		C9E4F7752DB6B6E500A611B7 /* NetworkAllRestaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E4F7742DB6B6E500A611B7 /* NetworkAllRestaurants.swift */; };
+		C9E4F7772DB6BEC900A611B7 /* DefaultAllRestaurantsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E4F7762DB6BEC900A611B7 /* DefaultAllRestaurantsRepository.swift */; };
+		C9E4F7792DB6BEFE00A611B7 /* AllRestaurantsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E4F7782DB6BEFE00A611B7 /* AllRestaurantsRepositoryProtocol.swift */; };
+		C9E4F77B2DB6BF6500A611B7 /* AllRestaurantsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E4F77A2DB6BF6500A611B7 /* AllRestaurantsUseCase.swift */; };
+		C9E4F77D2DB6C05000A611B7 /* AllRestaurantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E4F77C2DB6C05000A611B7 /* AllRestaurantsViewModel.swift */; };
 		C9E81C942DB02B4C00B4FD0D /* NetworkConsumerRegisterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E81C932DB02B4C00B4FD0D /* NetworkConsumerRegisterTest.swift */; };
 		C9E81C962DB02F9900B4FD0D /* ConsumerRegisterVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E81C952DB02F9900B4FD0D /* ConsumerRegisterVMTest.swift */; };
 /* End PBXBuildFile section */
@@ -110,7 +115,7 @@
 		C9AB418A2DA5957D00752614 /* RestaurantRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRegisterView.swift; sourceTree = "<group>"; };
 		C9AFDFDD2DB2D2F7009B84B4 /* Data-extesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data-extesion.swift"; sourceTree = "<group>"; };
 		C9AFDFDF2DB3032A009B84B4 /* RestaurantOwnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantOwnerView.swift; sourceTree = "<group>"; };
-		C9AFDFE22DB30C31009B84B4 /* Restaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurants.swift; sourceTree = "<group>"; };
+		C9AFDFE22DB30C31009B84B4 /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
 		C9AFDFE42DB30C8F009B84B4 /* ConsumerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConsumerView.swift; path = ../Views/ConsumerView.swift; sourceTree = "<group>"; };
 		C9AFE00D2DB30D12009B84B4 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		C9AFE00F2DB30E31009B84B4 /* RestaurantRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRowView.swift; sourceTree = "<group>"; };
@@ -125,7 +130,7 @@
 		C9CD49132DADB81F00E5B250 /* HttpResponseCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpResponseCodes.swift; sourceTree = "<group>"; };
 		C9CD49152DADB84300E5B250 /* NetworkLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogin.swift; sourceTree = "<group>"; };
 		C9CD49172DADB93400E5B250 /* ConstantsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantsApp.swift; sourceTree = "<group>"; };
-		C9CD49192DADC94A00E5B250 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C9CD49192DADC94A00E5B250 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		C9CD491B2DADCB0C00E5B250 /* KeyChainPK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainPK.swift; sourceTree = "<group>"; };
 		C9CD49202DADCE0800E5B250 /* DefaultLoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoginRepository.swift; sourceTree = "<group>"; };
 		C9CD49222DADCE2900E5B250 /* LoginRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryProtocol.swift; sourceTree = "<group>"; };
@@ -138,6 +143,11 @@
 		C9CD49962DADDC7900E5B250 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		C9CD49992DADE5A400E5B250 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		C9E1FEBF2DAD56F600FFFA76 /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
+		C9E4F7742DB6B6E500A611B7 /* NetworkAllRestaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAllRestaurants.swift; sourceTree = "<group>"; };
+		C9E4F7762DB6BEC900A611B7 /* DefaultAllRestaurantsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAllRestaurantsRepository.swift; sourceTree = "<group>"; };
+		C9E4F7782DB6BEFE00A611B7 /* AllRestaurantsRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRestaurantsRepositoryProtocol.swift; sourceTree = "<group>"; };
+		C9E4F77A2DB6BF6500A611B7 /* AllRestaurantsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRestaurantsUseCase.swift; sourceTree = "<group>"; };
+		C9E4F77C2DB6C05000A611B7 /* AllRestaurantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRestaurantsViewModel.swift; sourceTree = "<group>"; };
 		C9E81C932DB02B4C00B4FD0D /* NetworkConsumerRegisterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConsumerRegisterTest.swift; sourceTree = "<group>"; };
 		C9E81C952DB02F9900B4FD0D /* ConsumerRegisterVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerRegisterVMTest.swift; sourceTree = "<group>"; };
 		C9E81C972DB0346500B4FD0D /* PickedApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = PickedApp.xctestplan; sourceTree = SOURCE_ROOT; };
@@ -272,6 +282,7 @@
 				C9CD49152DADB84300E5B250 /* NetworkLogin.swift */,
 				C92112572DAEC85A00D67BA4 /* NetworkConsumerRegister.swift */,
 				C982D0472DB16CD4006ED714 /* NetworkRestaurantRegister.swift */,
+				C9E4F7742DB6B6E500A611B7 /* NetworkAllRestaurants.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -282,6 +293,7 @@
 				C9CD49202DADCE0800E5B250 /* DefaultLoginRepository.swift */,
 				C921127A2DAF14F600D67BA4 /* DefaultConsumerRegisterRepository.swift */,
 				C982D0492DB173CE006ED714 /* DefaultRestaurantRepository.swift */,
+				C9E4F7762DB6BEC900A611B7 /* DefaultAllRestaurantsRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -332,6 +344,7 @@
 				C9CD49262DADCFD200E5B250 /* LoginUseCase.swift */,
 				C921127E2DAF169C00D67BA4 /* ConsumerRegisterUseCase.swift */,
 				C982D0C62DB176DA006ED714 /* RestaurantRegisterUseCase.swift */,
+				C9E4F77A2DB6BF6500A611B7 /* AllRestaurantsUseCase.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -351,6 +364,7 @@
 				C9CD49222DADCE2900E5B250 /* LoginRepositoryProtocol.swift */,
 				C921127C2DAF151400D67BA4 /* ConsumerRegisterRepositoryProtocol.swift */,
 				C982D04B2DB173FE006ED714 /* RestaurantRegisterRepositoryProtocol.swift */,
+				C9E4F7782DB6BEFE00A611B7 /* AllRestaurantsRepositoryProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -379,8 +393,8 @@
 			isa = PBXGroup;
 			children = (
 				C921125F2DAED40000D67BA4 /* RequestRegister.swift */,
-				C9CD49192DADC94A00E5B250 /* User.swift */,
-				C9AFDFE22DB30C31009B84B4 /* Restaurants.swift */,
+				C9CD49192DADC94A00E5B250 /* UserModel.swift */,
+				C9AFDFE22DB30C31009B84B4 /* RestaurantModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -419,6 +433,7 @@
 				C9CD49922DADD2B000E5B250 /* AppStateVM.swift */,
 				C92112862DAF1B8800D67BA4 /* ConsumerRegisterViewModel.swift */,
 				C982D0C82DB177C1006ED714 /* RestaurantResgisterViewModel.swift */,
+				C9E4F77C2DB6C05000A611B7 /* AllRestaurantsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -636,6 +651,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9CD49932DADD2B000E5B250 /* AppStateVM.swift in Sources */,
+				C9E4F77D2DB6C05000A611B7 /* AllRestaurantsViewModel.swift in Sources */,
 				C9AB418B2DA5957D00752614 /* RestaurantRegisterView.swift in Sources */,
 				C9CD49182DADB93400E5B250 /* ConstantsApp.swift in Sources */,
 				C995D1432DA56A3700E72B7A /* LoginView.swift in Sources */,
@@ -653,11 +669,14 @@
 				C982D04C2DB173FE006ED714 /* RestaurantRegisterRepositoryProtocol.swift in Sources */,
 				C9AFE0142DB31F80009B84B4 /* restaurant-coordinate.swift in Sources */,
 				C9AB41852DA5904600752614 /* RegisterView.swift in Sources */,
+				C9E4F7772DB6BEC900A611B7 /* DefaultAllRestaurantsRepository.swift in Sources */,
 				C982D0CB2DB1A82C006ED714 /* GeocodingHelper.swift in Sources */,
+				C9E4F77B2DB6BF6500A611B7 /* AllRestaurantsUseCase.swift in Sources */,
 				C93DBE2C2DA6BC3B00365931 /* CustomButtonView.swift in Sources */,
 				C9CD492E2DADD1A900E5B250 /* LoadingView.swift in Sources */,
 				C9CD491C2DADCB0C00E5B250 /* KeyChainPK.swift in Sources */,
 				C9B777792DA5F78B00E7CA95 /* IconTextFieldView.swift in Sources */,
+				C9E4F7752DB6B6E500A611B7 /* NetworkAllRestaurants.swift in Sources */,
 				C9CD49912DADD29600E5B250 /* RootView.swift in Sources */,
 				C92112582DAEC85A00D67BA4 /* NetworkConsumerRegister.swift in Sources */,
 				C9AFE0182DB323B4009B84B4 /* location-equatable.swift in Sources */,
@@ -665,7 +684,7 @@
 				C9AB41892DA5957200752614 /* ConsumerRegisterView.swift in Sources */,
 				C921127D2DAF151400D67BA4 /* ConsumerRegisterRepositoryProtocol.swift in Sources */,
 				C9CD49102DADB33300E5B250 /* EndPoints.swift in Sources */,
-				C9AFDFE32DB30C31009B84B4 /* Restaurants.swift in Sources */,
+				C9AFDFE32DB30C31009B84B4 /* RestaurantModel.swift in Sources */,
 				C9CD490E2DADB2F000E5B250 /* PKError.swift in Sources */,
 				C921127B2DAF14F600D67BA4 /* DefaultConsumerRegisterRepository.swift in Sources */,
 				C9CD49162DADB84300E5B250 /* NetworkLogin.swift in Sources */,
@@ -674,6 +693,7 @@
 				C92112872DAF1B8800D67BA4 /* ConsumerRegisterViewModel.swift in Sources */,
 				C995D1282DA5655700E72B7A /* PickedAppApp.swift in Sources */,
 				C9AB415D2DA57E7800752614 /* Color-Theme.swift in Sources */,
+				C9E4F7792DB6BEFE00A611B7 /* AllRestaurantsRepositoryProtocol.swift in Sources */,
 				C9AFE00E2DB30D12009B84B4 /* Bundle-Decodable.swift in Sources */,
 				C982D04A2DB173CE006ED714 /* DefaultRestaurantRepository.swift in Sources */,
 				C9CD49232DADCE2900E5B250 /* LoginRepositoryProtocol.swift in Sources */,
@@ -685,7 +705,7 @@
 				C982D0C92DB177C1006ED714 /* RestaurantResgisterViewModel.swift in Sources */,
 				C9AFDFE02DB3032A009B84B4 /* RestaurantOwnerView.swift in Sources */,
 				C9CD49252DADCF0E00E5B250 /* StatusModel.swift in Sources */,
-				C9CD491A2DADC94A00E5B250 /* User.swift in Sources */,
+				C9CD491A2DADC94A00E5B250 /* UserModel.swift in Sources */,
 				C9CD49272DADCFD200E5B250 /* LoginUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

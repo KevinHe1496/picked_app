@@ -55,7 +55,7 @@ final class NetworkRestaurantRegister: NetworkRestaurantRegisterProtocol {
             }
             
             // Decodifica el usuario de la respuesta JSON y obtiene el token.
-            let result  = try JSONDecoder().decode(User.self, from: data)
+            let result  = try JSONDecoder().decode(UserModel.self, from: data)
             tokenJWT = result.token
         } catch {
             // Captura e imprime cualquier error ocurrido durante el proceso.

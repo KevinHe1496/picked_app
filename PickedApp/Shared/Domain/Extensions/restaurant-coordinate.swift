@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-extension Restaurant {
+extension RestaurantModel {
     var coordinate: CLLocationCoordinate2D {
         CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
