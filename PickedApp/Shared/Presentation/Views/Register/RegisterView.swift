@@ -30,7 +30,7 @@ struct RegisterView: View {
                 
                 // Navigation link to restaurant registration
                 NavigationLink {
-                    RestaurantRegisterView()
+                    RestaurantRegisterView(appState: appState)
                 } label: {
                     Text("Restaurant")
                         .font(.system(size: 22).bold())

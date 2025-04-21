@@ -15,44 +15,48 @@ struct CustomTabBarView: View {
     
     var body: some View {
         TabView {
-            Group{
+            //            Group{
+            //                ConsumerView()
+            //                    .tabItem {
+            //                        Label("Firsts", systemImage: "1.circle")
+            //                    }
+            //                
+            //                LocationMapView(restaurants: Bundle.main.decode("restaurants.json"))
+            //                    .tabItem {
+            //                        Image(systemName: "map.fill")
+            //                        Text("Map")
+            //                    }
+            //                
+            //                UserProfileView()
+            //                    .tabItem {
+            //                        Image(systemName: "person.fill")
+            //                        
+            //                    }
+            //            }
+            //            .toolbarBackground(.primaryColor, for: .tabBar)
+            //            .toolbarBackground(.visible, for: .tabBar)
+            //        }
+            //        .accentColor(.white)
+            
+            
+            Tab("Home", systemImage: "house.fill") {
                 ConsumerView()
-                    .tabItem {
-                        Label("Firsts", systemImage: "1.circle")
-                    }
-                
-                LocationMapView(restaurants: Bundle.main.decode("restaurants.json"))
-                    .tabItem {
-                        Image(systemName: "map.fill")
-                        Text("Map")
-                    }
-                
-                UserProfileView()
-                    .tabItem {
-                        Image(systemName: "person.fill")
-                        Text("User")
-                    }
             }
-            .toolbarBackground(.primaryColor, for: .tabBar)
-            .toolbarBackground(.visible, for: .tabBar)
+            
+            Tab("Map", systemImage: "map.fill") {
+                LocationMapView(restaurants: Bundle.main.decode("restaurants.json"))
+            }
+            
+            Tab("Favorites", systemImage: "star.fill") {
+                Text("Favorites")
+            }
+            
+            Tab("User", systemImage: "person.fill") {
+                UserProfileView()
+            }
+            
+            
         }
-        //            Tab("Home", systemImage: "house.fill") {
-        //                ConsumerView()
-        //            }
-        //
-        //            Tab("Map", systemImage: "map.fill") {
-        //                LocationMapView(restaurants: Bundle.main.decode("restaurants.json"))
-        //            }
-        //
-        //            Tab("Favorites", systemImage: "star.fill") {
-        //                Text("Favorites")
-        //            }
-        //
-        //            Tab("User", systemImage: "person.fill") {
-        //                UserProfileView()
-        //            }
-        
-        
     }
         
 }

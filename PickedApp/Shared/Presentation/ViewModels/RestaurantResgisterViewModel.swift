@@ -12,21 +12,22 @@ import SwiftUI
 
 @Observable
 final class RestaurantResgisterViewModel {
+    
+    private var appState: AppStateVM
     var address: String = ""
     var latitude: Double?
     var longitude: Double?
     var isLoading: Bool = false
     var errorMessage: String?
-    var selectedPhoto: PhotosPickerItem?
-    var imageData: Data?
     var tokenJWT: String = ""
     var isRegistered: Bool = false
     
     @ObservationIgnored
     private let useCase: RestaurantRegisterUseCaseProtocol
     
-    init(useCase: RestaurantRegisterUseCaseProtocol = RestaurantRegisterUseCase()) {
+    init(useCase: RestaurantRegisterUseCaseProtocol = RestaurantRegisterUseCase(), appState: AppStateVM) {
         self.useCase = useCase
+        self.appState = appState
     }
     
     /// Envia el formulario utilizando el caso de uso.
@@ -42,10 +43,11 @@ final class RestaurantResgisterViewModel {
         zipCode: String,
         name: String,
         photo: Data?
-    ) async throws {
+    ) async throws -> String? {
+        
         guard !address.isEmpty else {
             self.errorMessage = "La dirección no puede estar vacía"
-            return
+            return errorMessage
         }
         
         isLoading = true
@@ -77,32 +79,25 @@ final class RestaurantResgisterViewModel {
                 latitude: coordinates.latitude,
                 longitude: coordinates.longitude,
                 name: name,
-                photo: imageData
+                photo: photo
             )
             
-            _ = try await useCase.restaurantRegister(formData: formData)
+            let result = try await useCase.restaurantRegister(formData: formData)
+            
+            if result {
+                appState.status = .loaded
+                isLoading = false
+                return nil
+            } else {
+                appState.status = .error(error: "Incorrect form")
+                isLoading = false
+                return "Incorrect"
+            }
             
         } catch {
             self.errorMessage = "Error al registrar el restaurante: \(error.localizedDescription)"
-        }
-        
-        isLoading = false
-    }
-    
-    /// Carga los datos binarios de la imagen seleccionada desde la galería.
-    func loadImageData() async {
-        guard let item = selectedPhoto else { return }
-        
-        do {
-            if let data = try await item.loadTransferable(type: Data.self) {
-                await MainActor.run {
-                    self.imageData = data
-                    print("✅ Imagen cargada: \(data.count) bytes")
-                }
-            }
-        } catch {
-            print("❌ Error cargando imagen: \(error)")
+            return "Something went wrong."
         }
     }
-    
+  
 }

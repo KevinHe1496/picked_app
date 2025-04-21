@@ -10,28 +10,28 @@ import PhotosUI
 
 /// A view that displays a registration form for restaurants.
 struct RestaurantRegisterView: View {
-    
+    @Environment(AppStateVM.self) private var appState // Access to app state
     // MARK: - User Input State
-    @State var email = "restauranteEjemplo3@example.com"
-    @State var password = "123456"
-    @State var info = "Restaurante Placos tipicos"
-    @State var country = "Ecuador"
-    @State var city = "Quito"
+    @State var email = ""
+    @State var password = ""
+    @State var info = ""
+    @State var country = ""
+    @State var city = ""
     @State var address = "Av. Amazonas y Av. Patria"
     @State var zipCode = "170507"
-    @State var name = "restaurante3 ejemplo"
-    @State var role = "restaursant"
-    @State var restaurantName = "Mi restaurante Ecuador"
+    @State var name = ""
+    @State var role = "restaurant"
+    @State var restaurantName = ""
     
     // MARK: - Image Picker State
     @State private var pickerItem: PhotosPickerItem? = nil
     @State private var selectedImage: Image? = nil
     @State private var selectedPhotoData: Data?
-    @State private var network = NetworkRestaurantRegister()
+
     @State var viewModel: RestaurantResgisterViewModel
     
-    init(viewModel: RestaurantResgisterViewModel = RestaurantResgisterViewModel()) {
-        self.viewModel = viewModel
+    init(appState: AppStateVM) {
+        _viewModel = State(initialValue: RestaurantResgisterViewModel(appState: appState))
     }
     
     var body: some View {
@@ -50,6 +50,8 @@ struct RestaurantRegisterView: View {
                     .foregroundStyle(.white)
                 
                 VStack(spacing: 10) {
+                    //Username field
+                    IconTextFieldView(iconName: "person.fill", placeholder: "Username", text: $name, keyboardType: .default)
                     
                     // Email field
                     IconTextFieldView(
@@ -83,6 +85,7 @@ struct RestaurantRegisterView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                     
                     // Address-related fields
+                    IconTextFieldView(iconName: "fork.knife", placeholder: "Restaurant name", text: $restaurantName, keyboardType: .default)
                     IconTextFieldView(iconName: "flag.fill", placeholder: "Country", text: $country, keyboardType: .default)
                     IconTextFieldView(iconName: "building.fill", placeholder: "City", text: $city, keyboardType: .default)
                     IconTextFieldView(iconName: "location.fill", placeholder: "Address", text: $address, keyboardType: .default)
@@ -156,5 +159,6 @@ struct RestaurantRegisterView: View {
 
 
 #Preview {
-    RestaurantRegisterView(viewModel: RestaurantResgisterViewModel())
+    RestaurantRegisterView(appState: AppStateVM())
+        .environment(AppStateVM())
 }
