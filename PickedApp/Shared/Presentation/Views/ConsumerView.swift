@@ -25,10 +25,17 @@ struct ConsumerView: View {
     var body: some View {
         NavigationStack{
             ScrollView {
+                
+                HStack {
+                    Text("All")
+                    Spacer()
+                }
+                .padding(.horizontal)
+                    
                 LazyVGrid(columns: columns) {
-                    ForEach(viewModel.restaurantsData){ restaurant in
+                    ForEach(viewModel.restaurantFilter){ restaurant in
                         NavigationLink {
-                            
+                            RestaurantDetail(restaurantID: restaurant.id)
                         } label: {
                             RestaurantRowView(restaurant: restaurant)
                         }
@@ -36,7 +43,7 @@ struct ConsumerView: View {
                 }
             }
             .navigationTitle("Restaurants")
-            .searchable(text: $filterText)
+            .searchable(text: $viewModel.search, prompt: "Search")
         }
     }
 }

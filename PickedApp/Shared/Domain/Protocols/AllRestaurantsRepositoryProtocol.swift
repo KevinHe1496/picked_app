@@ -8,5 +8,5 @@
 import Foundation
 
 protocol AllRestaurantsRepositoryProtocol {
-    func getRestaurants(filter: String) async throws -> [RestaurantModel]
+    func getRestaurants() async throws -> [RestaurantModel]
 }

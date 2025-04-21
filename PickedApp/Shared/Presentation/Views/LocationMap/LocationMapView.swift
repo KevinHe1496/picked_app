@@ -21,7 +21,13 @@ struct LocationMapView: View {
     // Posición del mapa que se actualiza cuando la ubicación está disponible
     @State private var cameraPosition: MapCameraPosition = .automatic
 
-    let restaurants: [RestaurantModel]
+//    let restaurants: [RestaurantModel]
+    
+    @State var viewModel: AllRestaurantsViewModel
+    
+    init(viewModel: AllRestaurantsViewModel = AllRestaurantsViewModel()) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         Map(position: $cameraPosition) {
@@ -30,7 +36,7 @@ struct LocationMapView: View {
             UserAnnotation()
 
             // Marcadores de restaurantes
-            ForEach(restaurants) { restaurant in
+            ForEach(viewModel.restaurantsData) { restaurant in
                 Annotation(restaurant.name, coordinate: restaurant.coordinate) {
                     VStack {
                         Image(systemName: "mappin.circle.fill")
@@ -66,9 +72,9 @@ struct LocationMapView: View {
     }
 }
 
-//#Preview {
-//    LocationMapView(restaurants: previewRestaurants)
-//}
+#Preview {
+    LocationMapView()
+}
 
 
 
