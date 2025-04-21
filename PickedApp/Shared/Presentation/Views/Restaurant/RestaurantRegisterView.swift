@@ -12,14 +12,14 @@ import PhotosUI
 struct RestaurantRegisterView: View {
     
     // MARK: - User Input State
-    @State var email = "Anthonelarestaurante@example.com"
+    @State var email = "restauranteEjemplo3@example.com"
     @State var password = "123456"
     @State var info = "Restaurante Placos tipicos"
     @State var country = "Ecuador"
     @State var city = "Quito"
     @State var address = "Av. Amazonas y Av. Patria"
     @State var zipCode = "170507"
-    @State var name = "Anthonela"
+    @State var name = "restaurante3 ejemplo"
     @State var role = "restaursant"
     @State var restaurantName = "Mi restaurante Ecuador"
     
@@ -28,6 +28,11 @@ struct RestaurantRegisterView: View {
     @State private var selectedImage: Image? = nil
     @State private var selectedPhotoData: Data?
     @State private var network = NetworkRestaurantRegister()
+    @State var viewModel: RestaurantResgisterViewModel
+    
+    init(viewModel: RestaurantResgisterViewModel = RestaurantResgisterViewModel()) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         ScrollView {
@@ -102,13 +107,22 @@ struct RestaurantRegisterView: View {
                     
                     CustomButtonView(title: "Register", color: .secondaryColor) {
                         print("🔘 Botón presionado")
-
+                        
+                        
                         Task {
-                            do {
-                                try await network.restaurantRegister(from: RestaurantRegisterRequest(email: email, password: password, role: "restaurant", restaurantName: restaurantName, info: info, address: address, country: country, city: city, zipCode: zipCode, latitude: 0.0, longitude: 0.0, name: name, photo: selectedPhotoData))
-                            } catch {
-                                print("❌ Error en el registro: \(error)")
-                            }
+                            try await viewModel.restaurantRegister(
+                                email: email,
+                                password: password,
+                                role: "restaurant",
+                                restaurantName: restaurantName,
+                                info: info,
+                                address: address,
+                                country: country,
+                                city: city,
+                                zipCode: zipCode,
+                                name: name,
+                                photo: selectedPhotoData
+                            )
                         }
                     }
                     
@@ -142,5 +156,5 @@ struct RestaurantRegisterView: View {
 
 
 #Preview {
-    RestaurantRegisterView()
+    RestaurantRegisterView(viewModel: RestaurantResgisterViewModel())
 }

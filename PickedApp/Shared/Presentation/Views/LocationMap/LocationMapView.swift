@@ -50,6 +50,7 @@ struct LocationMapView: View {
             MapUserLocationButton() // Botón para centrar en la ubicación del usuario
             MapCompass()
         }
+        .edgesIgnoringSafeArea(.top)
         .onChange(of: locationManager.userLocation) { (oldLocation, newLocation) in
             if let newCoordinate = newLocation {
                 // Actualizamos la posición del mapa con la nueva ubicación del usuario

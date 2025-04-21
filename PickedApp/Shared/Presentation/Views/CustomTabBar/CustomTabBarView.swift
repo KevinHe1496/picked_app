@@ -9,31 +9,52 @@ import SwiftUI
 
 struct CustomTabBarView: View {
     
-    init() {
-        TabBarStyleHelper.applyCustomAppearance()
-    }
+        init() {
+            TabBarStyleHelper.applyCustomAppearance()
+        }
     
     var body: some View {
         TabView {
-            
-            Tab("Home", systemImage: "house.fill") {
+            Group{
                 ConsumerView()
-            }
-            
-            Tab("Map", systemImage: "map.fill") {
+                    .tabItem {
+                        Label("Firsts", systemImage: "1.circle")
+                    }
+                
                 LocationMapView(restaurants: Bundle.main.decode("restaurants.json"))
-            }
-            
-            Tab("Favorites", systemImage: "star.fill") {
-                Text("Favorites")
-            }
-            
-            Tab("User", systemImage: "person.fill") {
+                    .tabItem {
+                        Image(systemName: "map.fill")
+                        Text("Map")
+                    }
+                
                 UserProfileView()
+                    .tabItem {
+                        Image(systemName: "person.fill")
+                        Text("User")
+                    }
             }
-            
+            .toolbarBackground(.primaryColor, for: .tabBar)
+            .toolbarBackground(.visible, for: .tabBar)
         }
+        //            Tab("Home", systemImage: "house.fill") {
+        //                ConsumerView()
+        //            }
+        //
+        //            Tab("Map", systemImage: "map.fill") {
+        //                LocationMapView(restaurants: Bundle.main.decode("restaurants.json"))
+        //            }
+        //
+        //            Tab("Favorites", systemImage: "star.fill") {
+        //                Text("Favorites")
+        //            }
+        //
+        //            Tab("User", systemImage: "person.fill") {
+        //                UserProfileView()
+        //            }
+        
+        
     }
+        
 }
 
 #Preview {
