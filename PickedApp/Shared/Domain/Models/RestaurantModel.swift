@@ -21,6 +21,13 @@ struct RestaurantModel: Identifiable, Codable {
     let createdAt: String
     let updatedAt: String
     let user: Editor
+    
+    var photoRestaurant: URL? {
+        guard let url = URL(string: "\(ConstantsApp.CONS_API_URL)\(photo)") else {
+            return nil
+        }
+        return url
+    }
 }
 
 struct Editor: Codable {

@@ -13,7 +13,7 @@ struct RestaurantRowView: View {
     var body: some View {
         ZStack(alignment: .bottom) { // El ZStack alineará los elementos al fondo
             // Imagen de fondo
-            AsyncImage(url: URL(string: "http://localhost:8080\(restaurant.photo)")) { image in
+            AsyncImage(url: restaurant.photoRestaurant) { image in
                 image
                     .resizable()
                     .scaledToFill()
