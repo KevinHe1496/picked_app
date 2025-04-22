@@ -34,3 +34,12 @@ struct RestaurantRegisterRequest: Codable {
     let name: String
     let photo: Data?
 }
+
+struct MealCreateRequest: Codable {
+    let name: String
+    let info: String
+    let units: Int
+    let price: Float
+    let type: String
+    let photo: Data?
+}
