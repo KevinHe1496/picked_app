@@ -13,7 +13,7 @@
 //
 
 import SwiftUI
-import MapKit
+import _MapKit_SwiftUI
 
 struct LocationMapView: View {
     @StateObject private var locationManager = LocationManager()

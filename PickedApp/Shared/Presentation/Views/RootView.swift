@@ -37,6 +37,10 @@ struct RootView: View {
             withAnimation {
                 ErrorView(textError: errorString)
             }
+        case .restaurantMeals:
+            withAnimation {
+                RestaurantMealsView()
+            }
         }
     }
 }

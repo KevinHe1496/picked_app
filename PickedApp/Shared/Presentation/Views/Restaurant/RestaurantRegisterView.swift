@@ -8,6 +8,7 @@
 import SwiftUI
 import PhotosUI
 
+
 /// A view that displays a registration form for restaurants.
 struct RestaurantRegisterView: View {
     @Environment(AppStateVM.self) private var appState // Access to app state

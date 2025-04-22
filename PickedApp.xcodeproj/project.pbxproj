@@ -78,6 +78,15 @@
 		C9E4F77D2DB6C05000A611B7 /* AllRestaurantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E4F77C2DB6C05000A611B7 /* AllRestaurantsViewModel.swift */; };
 		C9E81C942DB02B4C00B4FD0D /* NetworkConsumerRegisterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E81C932DB02B4C00B4FD0D /* NetworkConsumerRegisterTest.swift */; };
 		C9E81C962DB02F9900B4FD0D /* ConsumerRegisterVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E81C952DB02F9900B4FD0D /* ConsumerRegisterVMTest.swift */; };
+		FC03EA8A2DB7C062009BA718 /* JWTDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC03EA892DB7C062009BA718 /* JWTDecoder.swift */; };
+		FCC1AA622DB796D100370886 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1AA612DB796CD00370886 /* Meal.swift */; };
+		FCC1AA642DB7975800370886 /* NetworkMeal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1AA632DB7975200370886 /* NetworkMeal.swift */; };
+		FCC1AA662DB79DEE00370886 /* RestaurantMealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1AA652DB79DE300370886 /* RestaurantMealsView.swift */; };
+		FCC1AA692DB79E0800370886 /* MealRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1AA682DB79E0000370886 /* MealRowView.swift */; };
+		FCC1AA6B2DB79F9900370886 /* DefaultMealRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1AA6A2DB79F8A00370886 /* DefaultMealRepository.swift */; };
+		FCC1AA6D2DB79FD700370886 /* MealUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1AA6C2DB79FD300370886 /* MealUseCase.swift */; };
+		FCC1AA6F2DB7A0F500370886 /* RestaurantMealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1AA6E2DB7A0CD00370886 /* RestaurantMealsViewModel.swift */; };
+		FCC1AA712DB7A2CC00370886 /* MealRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1AA702DB7A2CC00370886 /* MealRepositoryProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +174,15 @@
 		C9E81C932DB02B4C00B4FD0D /* NetworkConsumerRegisterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConsumerRegisterTest.swift; sourceTree = "<group>"; };
 		C9E81C952DB02F9900B4FD0D /* ConsumerRegisterVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerRegisterVMTest.swift; sourceTree = "<group>"; };
 		C9E81C972DB0346500B4FD0D /* PickedApp.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = PickedApp.xctestplan; sourceTree = SOURCE_ROOT; };
+		FC03EA892DB7C062009BA718 /* JWTDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDecoder.swift; sourceTree = "<group>"; };
+		FCC1AA612DB796CD00370886 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		FCC1AA632DB7975200370886 /* NetworkMeal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMeal.swift; sourceTree = "<group>"; };
+		FCC1AA652DB79DE300370886 /* RestaurantMealsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMealsView.swift; sourceTree = "<group>"; };
+		FCC1AA682DB79E0000370886 /* MealRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRowView.swift; sourceTree = "<group>"; };
+		FCC1AA6A2DB79F8A00370886 /* DefaultMealRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultMealRepository.swift; sourceTree = "<group>"; };
+		FCC1AA6C2DB79FD300370886 /* MealUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealUseCase.swift; sourceTree = "<group>"; };
+		FCC1AA6E2DB7A0CD00370886 /* RestaurantMealsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMealsViewModel.swift; sourceTree = "<group>"; };
+		FCC1AA702DB7A2CC00370886 /* MealRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRepositoryProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +317,7 @@
 		C995D1322DA5662400E72B7A /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				FCC1AA632DB7975200370886 /* NetworkMeal.swift */,
 				C995D1342DA5664700E72B7A /* Local */,
 				C995D1362DA5665200E72B7A /* BaseNetwork */,
 				C9CD49152DADB84300E5B250 /* NetworkLogin.swift */,
@@ -313,6 +332,7 @@
 		C995D1332DA5662D00E72B7A /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				FCC1AA6A2DB79F8A00370886 /* DefaultMealRepository.swift */,
 				C9CD49202DADCE0800E5B250 /* DefaultLoginRepository.swift */,
 				C921127A2DAF14F600D67BA4 /* DefaultConsumerRegisterRepository.swift */,
 				C982D0492DB173CE006ED714 /* DefaultRestaurantRepository.swift */,
@@ -341,6 +361,7 @@
 		C995D1362DA5665200E72B7A /* BaseNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				FC03EA892DB7C062009BA718 /* JWTDecoder.swift */,
 				C9CD490D2DADB2F000E5B250 /* PKError.swift */,
 				C9CD490F2DADB33300E5B250 /* EndPoints.swift */,
 				C9CD49112DADB41500E5B250 /* HttpMethods.swift */,
@@ -365,6 +386,7 @@
 		C995D1382DA5668400E72B7A /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				FCC1AA6C2DB79FD300370886 /* MealUseCase.swift */,
 				C9CD49262DADCFD200E5B250 /* LoginUseCase.swift */,
 				C921127E2DAF169C00D67BA4 /* ConsumerRegisterUseCase.swift */,
 				C982D0C62DB176DA006ED714 /* RestaurantRegisterUseCase.swift */,
@@ -386,6 +408,7 @@
 		C995D13A2DA5669E00E72B7A /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				FCC1AA702DB7A2CC00370886 /* MealRepositoryProtocol.swift */,
 				C9CD49222DADCE2900E5B250 /* LoginRepositoryProtocol.swift */,
 				C921127C2DAF151400D67BA4 /* ConsumerRegisterRepositoryProtocol.swift */,
 				C982D04B2DB173FE006ED714 /* RestaurantRegisterRepositoryProtocol.swift */,
@@ -418,6 +441,7 @@
 		C995D13D2DA566B900E72B7A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FCC1AA612DB796CD00370886 /* Meal.swift */,
 				C921125F2DAED40000D67BA4 /* RequestRegister.swift */,
 				C9CD49192DADC94A00E5B250 /* UserModel.swift */,
 				C9AFDFE22DB30C31009B84B4 /* RestaurantModel.swift */,
@@ -458,6 +482,7 @@
 		C995D1402DA568B600E72B7A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				FCC1AA6E2DB7A0CD00370886 /* RestaurantMealsViewModel.swift */,
 				C9CD49922DADD2B000E5B250 /* AppStateVM.swift */,
 				C92112862DAF1B8800D67BA4 /* ConsumerRegisterViewModel.swift */,
 				C982D0C82DB177C1006ED714 /* RestaurantResgisterViewModel.swift */,
@@ -502,6 +527,8 @@
 		C9AB41872DA5956300752614 /* Restaurant */ = {
 			isa = PBXGroup;
 			children = (
+				FCC1AA672DB79DFB00370886 /* Rows */,
+				FCC1AA652DB79DE300370886 /* RestaurantMealsView.swift */,
 				C9AB418A2DA5957D00752614 /* RestaurantRegisterView.swift */,
 			);
 			path = Restaurant;
@@ -568,6 +595,14 @@
 				C9CD49992DADE5A400E5B250 /* UserProfileView.swift */,
 			);
 			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		FCC1AA672DB79DFB00370886 /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				FCC1AA682DB79E0000370886 /* MealRowView.swift */,
+			);
+			path = Rows;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -692,27 +727,32 @@
 				C995D1462DA56A4C00E72B7A /* SplashView.swift in Sources */,
 				C981CE182DB6F645004AA9EE /* NetworkRestaurantDetail.swift in Sources */,
 				C9CD49972DADDC7900E5B250 /* ErrorView.swift in Sources */,
+				FC03EA8A2DB7C062009BA718 /* JWTDecoder.swift in Sources */,
 				C9E1FEC02DAD56F600FFFA76 /* CustomTabBarView.swift in Sources */,
 				C9CCC18E2DA804DF0086324B /* LocationMapView.swift in Sources */,
 				C908B7312DB0401300CAF301 /* TabBarStyleHelper.swift in Sources */,
 				C9CD49122DADB41500E5B250 /* HttpMethods.swift in Sources */,
 				C9AFDFDE2DB2D2F7009B84B4 /* Data-extesion.swift in Sources */,
+				FCC1AA692DB79E0800370886 /* MealRowView.swift in Sources */,
 				C9CD49292DADCFEA00E5B250 /* pkPersistenceKeyChain.swift in Sources */,
 				C93DBE2E2DA6BDF000365931 /* IconSecureFieldView.swift in Sources */,
 				C982D04C2DB173FE006ED714 /* RestaurantRegisterRepositoryProtocol.swift in Sources */,
 				C9AFE0142DB31F80009B84B4 /* restaurant-coordinate.swift in Sources */,
 				C9AB41852DA5904600752614 /* RegisterView.swift in Sources */,
 				C9E4F7772DB6BEC900A611B7 /* DefaultAllRestaurantsRepository.swift in Sources */,
+				FCC1AA642DB7975800370886 /* NetworkMeal.swift in Sources */,
 				C982D0CB2DB1A82C006ED714 /* GeocodingHelper.swift in Sources */,
 				C9E4F77B2DB6BF6500A611B7 /* AllRestaurantsUseCase.swift in Sources */,
 				C93DBE2C2DA6BC3B00365931 /* CustomButtonView.swift in Sources */,
 				C9CD492E2DADD1A900E5B250 /* LoadingView.swift in Sources */,
 				C9CD491C2DADCB0C00E5B250 /* KeyChainPK.swift in Sources */,
+				FCC1AA712DB7A2CC00370886 /* MealRepositoryProtocol.swift in Sources */,
 				C9B777792DA5F78B00E7CA95 /* IconTextFieldView.swift in Sources */,
 				C9E4F7752DB6B6E500A611B7 /* NetworkAllRestaurants.swift in Sources */,
 				C9CD49912DADD29600E5B250 /* RootView.swift in Sources */,
 				C92112582DAEC85A00D67BA4 /* NetworkConsumerRegister.swift in Sources */,
 				C9AFE0182DB323B4009B84B4 /* location-equatable.swift in Sources */,
+				FCC1AA6F2DB7A0F500370886 /* RestaurantMealsViewModel.swift in Sources */,
 				C92112602DAED40000D67BA4 /* RequestRegister.swift in Sources */,
 				C9AB41892DA5957200752614 /* ConsumerRegisterView.swift in Sources */,
 				C981CE202DB70169004AA9EE /* RestaurantDetailUseCase.swift in Sources */,
@@ -723,9 +763,12 @@
 				C981CE1E2DB700CA004AA9EE /* RestaurantDetailRepositoryProtocol.swift in Sources */,
 				C9CD490E2DADB2F000E5B250 /* PKError.swift in Sources */,
 				C921127B2DAF14F600D67BA4 /* DefaultConsumerRegisterRepository.swift in Sources */,
+				FCC1AA662DB79DEE00370886 /* RestaurantMealsView.swift in Sources */,
 				C9CD49162DADB84300E5B250 /* NetworkLogin.swift in Sources */,
 				C9CD49212DADCE0800E5B250 /* DefaultLoginRepository.swift in Sources */,
 				C921127F2DAF169C00D67BA4 /* ConsumerRegisterUseCase.swift in Sources */,
+				FCC1AA622DB796D100370886 /* Meal.swift in Sources */,
+				FCC1AA6D2DB79FD700370886 /* MealUseCase.swift in Sources */,
 				C92112872DAF1B8800D67BA4 /* ConsumerRegisterViewModel.swift in Sources */,
 				C995D1282DA5655700E72B7A /* PickedAppApp.swift in Sources */,
 				C9AB415D2DA57E7800752614 /* Color-Theme.swift in Sources */,
@@ -734,6 +777,7 @@
 				C982D04A2DB173CE006ED714 /* DefaultRestaurantRepository.swift in Sources */,
 				C9CD49232DADCE2900E5B250 /* LoginRepositoryProtocol.swift in Sources */,
 				C9AFE0162DB32243009B84B4 /* LocationManagerHelper.swift in Sources */,
+				FCC1AA6B2DB79F9900370886 /* DefaultMealRepository.swift in Sources */,
 				C9CD499A2DADE5A400E5B250 /* UserProfileView.swift in Sources */,
 				C9CD49142DADB81F00E5B250 /* HttpResponseCodes.swift in Sources */,
 				C9AFE0102DB30E31009B84B4 /* RestaurantRowView.swift in Sources */,
@@ -896,7 +940,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F7BUD43D47;
+				DEVELOPMENT_TEAM = T5K323YN9M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PickedApp/Info.plist;
@@ -913,7 +957,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevinhe.PickedApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JorgeNavi.PickedApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -928,7 +972,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = F7BUD43D47;
+				DEVELOPMENT_TEAM = T5K323YN9M;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PickedApp/Info.plist;
@@ -945,7 +989,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kevinhe.PickedApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JorgeNavi.PickedApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

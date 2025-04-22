@@ -50,7 +50,18 @@ final class AppStateVM {
         do {
             let success = try await loginUseCase.loginUser(user: user, password: pass)
             if success {
-                self.status = .loaded
+                self.tokenJWT = KeyChainPK().loadPK(key: ConstantsApp.CONS_TOKEN_ID_KEYCHAIN) ?? ""
+
+                if let role = JWTDecoder.decodeRole(from: self.tokenJWT) {
+                    if role == "restaurant" {
+                        self.status = .restaurantMeals
+                    } else {
+                        self.status = .loaded
+                    }
+                } else {
+                    self.status = .error(error: "Invalid token role")
+                }
+
                 return nil
             } else {
                 self.status = .error(error: "Incorrect username or password")
@@ -76,7 +87,19 @@ final class AppStateVM {
     func validateControlLogin() {
         Task {
             if await loginUseCase.validateToken() == true {
-                self.status = .loaded
+                let savedToken = KeyChainPK().loadPK(key: ConstantsApp.CONS_TOKEN_ID_KEYCHAIN)
+                self.tokenJWT = savedToken
+
+                if let role = JWTDecoder.decodeRole(from: self.tokenJWT) {
+                    if role == "restaurant" {
+                        self.status = .restaurantMeals
+                    } else {
+                        self.status = .loaded
+                    }
+                } else {
+                    self.status = .error(error: "Invalid token role")
+                }
+
                 NSLog("Login ok")
             } else {
                 self.startSplashToLoginView()
