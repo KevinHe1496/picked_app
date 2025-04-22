@@ -17,6 +17,10 @@
 		C921127D2DAF151400D67BA4 /* ConsumerRegisterRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921127C2DAF151400D67BA4 /* ConsumerRegisterRepositoryProtocol.swift */; };
 		C921127F2DAF169C00D67BA4 /* ConsumerRegisterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921127E2DAF169C00D67BA4 /* ConsumerRegisterUseCase.swift */; };
 		C92112872DAF1B8800D67BA4 /* ConsumerRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92112862DAF1B8800D67BA4 /* ConsumerRegisterViewModel.swift */; };
+		C93C19FD2DB7F5B900608806 /* AppTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C19FC2DB7F5B900608806 /* AppTabBarView.swift */; };
+		C93C19FF2DB7FF3200608806 /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C19FE2DB7FF3200608806 /* CustomTabBarContainerView.swift */; };
+		C93C1A012DB8038600608806 /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C1A002DB8038600608806 /* TabBarItemsPreferenceKey.swift */; };
+		C93C1A032DB8077F00608806 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C1A022DB8077F00608806 /* TabBarItem.swift */; };
 		C93DBE2C2DA6BC3B00365931 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93DBE2B2DA6BC3B00365931 /* CustomButtonView.swift */; };
 		C93DBE2E2DA6BDF000365931 /* IconSecureFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93DBE2D2DA6BDF000365931 /* IconSecureFieldView.swift */; };
 		C981CD812DB6E499004AA9EE /* RestaurantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C981CD802DB6E499004AA9EE /* RestaurantDetail.swift */; };
@@ -110,6 +114,10 @@
 		C921127C2DAF151400D67BA4 /* ConsumerRegisterRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerRegisterRepositoryProtocol.swift; sourceTree = "<group>"; };
 		C921127E2DAF169C00D67BA4 /* ConsumerRegisterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerRegisterUseCase.swift; sourceTree = "<group>"; };
 		C92112862DAF1B8800D67BA4 /* ConsumerRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerRegisterViewModel.swift; sourceTree = "<group>"; };
+		C93C19FC2DB7F5B900608806 /* AppTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarView.swift; sourceTree = "<group>"; };
+		C93C19FE2DB7FF3200608806 /* CustomTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainerView.swift; sourceTree = "<group>"; };
+		C93C1A002DB8038600608806 /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
+		C93C1A022DB8077F00608806 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		C93DBE2B2DA6BC3B00365931 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		C93DBE2D2DA6BDF000365931 /* IconSecureFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconSecureFieldView.swift; sourceTree = "<group>"; };
 		C93DBE2F2DA6ED2F00365931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -207,7 +215,11 @@
 		C905B8002DA88A480034EB14 /* CustomTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				C93C19FC2DB7F5B900608806 /* AppTabBarView.swift */,
 				C9E1FEBF2DAD56F600FFFA76 /* CustomTabBarView.swift */,
+				C93C19FE2DB7FF3200608806 /* CustomTabBarContainerView.swift */,
+				C93C1A002DB8038600608806 /* TabBarItemsPreferenceKey.swift */,
+				C93C1A022DB8077F00608806 /* TabBarItem.swift */,
 			);
 			path = CustomTabBar;
 			sourceTree = "<group>";
@@ -718,12 +730,15 @@
 				C981CD812DB6E499004AA9EE /* RestaurantDetail.swift in Sources */,
 				C981CE222DB7026B004AA9EE /* RestaurantDetailViewModel.swift in Sources */,
 				C9E4F77D2DB6C05000A611B7 /* AllRestaurantsViewModel.swift in Sources */,
+				C93C1A032DB8077F00608806 /* TabBarItem.swift in Sources */,
+				C93C19FF2DB7FF3200608806 /* CustomTabBarContainerView.swift in Sources */,
 				C9AB418B2DA5957D00752614 /* RestaurantRegisterView.swift in Sources */,
 				C9CD49182DADB93400E5B250 /* ConstantsApp.swift in Sources */,
 				C995D1432DA56A3700E72B7A /* LoginView.swift in Sources */,
 				C982D0482DB16CD4006ED714 /* NetworkRestaurantRegister.swift in Sources */,
 				C981CE1A2DB6F8BE004AA9EE /* RestaurantDetailModel.swift in Sources */,
 				C982D0C72DB176DA006ED714 /* RestaurantRegisterUseCase.swift in Sources */,
+				C93C19FD2DB7F5B900608806 /* AppTabBarView.swift in Sources */,
 				C995D1462DA56A4C00E72B7A /* SplashView.swift in Sources */,
 				C981CE182DB6F645004AA9EE /* NetworkRestaurantDetail.swift in Sources */,
 				C9CD49972DADDC7900E5B250 /* ErrorView.swift in Sources */,
@@ -747,6 +762,7 @@
 				C9CD492E2DADD1A900E5B250 /* LoadingView.swift in Sources */,
 				C9CD491C2DADCB0C00E5B250 /* KeyChainPK.swift in Sources */,
 				FCC1AA712DB7A2CC00370886 /* MealRepositoryProtocol.swift in Sources */,
+				C93C1A012DB8038600608806 /* TabBarItemsPreferenceKey.swift in Sources */,
 				C9B777792DA5F78B00E7CA95 /* IconTextFieldView.swift in Sources */,
 				C9E4F7752DB6B6E500A611B7 /* NetworkAllRestaurants.swift in Sources */,
 				C9CD49912DADD29600E5B250 /* RootView.swift in Sources */,
