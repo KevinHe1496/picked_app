@@ -20,8 +20,6 @@ struct LocationMapView: View {
 
     // Posición del mapa que se actualiza cuando la ubicación está disponible
     @State private var cameraPosition: MapCameraPosition = .automatic
-
-//    let restaurants: [RestaurantModel]
     
     @State var viewModel: AllRestaurantsViewModel
     
