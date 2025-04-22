@@ -36,11 +36,6 @@ final class NetworkRestaurantDetail: NetworkRestaurantDetailProtocol {
                 throw PKError.errorFromApi(statusCode: -1)
             }
             
-            // Imprime la respuesta en formato string para depuración.
-            if let responseString = String(data: data, encoding: .utf8) {
-                print("✅ Respuesta: \(responseString)")
-            }
-            
             // Valida que el código de respuesta HTTP sea exitoso.
             guard httpResponse.statusCode == HttpResponseCodes.SUCESS else {
                 throw PKError.errorFromApi(statusCode: httpResponse.statusCode)

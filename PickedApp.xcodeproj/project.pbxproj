@@ -17,6 +17,7 @@
 		C921127D2DAF151400D67BA4 /* ConsumerRegisterRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921127C2DAF151400D67BA4 /* ConsumerRegisterRepositoryProtocol.swift */; };
 		C921127F2DAF169C00D67BA4 /* ConsumerRegisterUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921127E2DAF169C00D67BA4 /* ConsumerRegisterUseCase.swift */; };
 		C92112872DAF1B8800D67BA4 /* ConsumerRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92112862DAF1B8800D67BA4 /* ConsumerRegisterViewModel.swift */; };
+		C9298D462DB846BB00D3649B /* RestaurantMapDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9298D452DB846BB00D3649B /* RestaurantMapDetailView.swift */; };
 		C93C19FD2DB7F5B900608806 /* AppTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C19FC2DB7F5B900608806 /* AppTabBarView.swift */; };
 		C93C19FF2DB7FF3200608806 /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C19FE2DB7FF3200608806 /* CustomTabBarContainerView.swift */; };
 		C93C1A012DB8038600608806 /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C1A002DB8038600608806 /* TabBarItemsPreferenceKey.swift */; };
@@ -114,6 +115,7 @@
 		C921127C2DAF151400D67BA4 /* ConsumerRegisterRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerRegisterRepositoryProtocol.swift; sourceTree = "<group>"; };
 		C921127E2DAF169C00D67BA4 /* ConsumerRegisterUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerRegisterUseCase.swift; sourceTree = "<group>"; };
 		C92112862DAF1B8800D67BA4 /* ConsumerRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerRegisterViewModel.swift; sourceTree = "<group>"; };
+		C9298D452DB846BB00D3649B /* RestaurantMapDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMapDetailView.swift; sourceTree = "<group>"; };
 		C93C19FC2DB7F5B900608806 /* AppTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarView.swift; sourceTree = "<group>"; };
 		C93C19FE2DB7FF3200608806 /* CustomTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainerView.swift; sourceTree = "<group>"; };
 		C93C1A002DB8038600608806 /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
@@ -587,6 +589,7 @@
 			isa = PBXGroup;
 			children = (
 				C9CCC18D2DA804DF0086324B /* LocationMapView.swift */,
+				C9298D452DB846BB00D3649B /* RestaurantMapDetailView.swift */,
 			);
 			path = LocationMap;
 			sourceTree = "<group>";
@@ -741,6 +744,7 @@
 				C93C19FD2DB7F5B900608806 /* AppTabBarView.swift in Sources */,
 				C995D1462DA56A4C00E72B7A /* SplashView.swift in Sources */,
 				C981CE182DB6F645004AA9EE /* NetworkRestaurantDetail.swift in Sources */,
+				C9298D462DB846BB00D3649B /* RestaurantMapDetailView.swift in Sources */,
 				C9CD49972DADDC7900E5B250 /* ErrorView.swift in Sources */,
 				FC03EA8A2DB7C062009BA718 /* JWTDecoder.swift in Sources */,
 				C9E1FEC02DAD56F600FFFA76 /* CustomTabBarView.swift in Sources */,

@@ -38,7 +38,7 @@ struct RestaurantDetail: View {
                 }
                 HStack{
                     VStack(alignment: .leading){
-                        Text("IHOP (International House of Pancakes) is a popular American restaurant chain famous for its all-day breakfast menu. From fluffy buttermilk pancakes and golden waffles to hearty omelettes, crispy bacon, and savory burgers, IHOP offers a wide variety of comfort food that satisfies any craving. Whether you’re in the mood for classic eggs and hash browns or sweet treats like French toast topped with fruit and syrup, IHOP delivers a warm, family-friendly dining experience.")
+                        Text(viewModel.restaurantData.info)
                             
                         Text("All Dishes")
                             .font(.title)
