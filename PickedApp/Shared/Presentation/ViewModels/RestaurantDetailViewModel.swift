@@ -9,9 +9,8 @@ import Foundation
 
 @Observable
 final class RestaurantDetailViewModel {
-    
-    
-    var restaurantData = RestaurantDetailModel(id: "", photo: "", address: "", country: "", meals: [MealModel(id: "", photo: "", name: "", price: 0)], name: "", city: "", zipCode: "", info: "", latitude: 0.0, longitude: 0.0)
+
+    var restaurantData = RestaurantDetailModel(id: "", photo: "", address: "", country: "", meals: [Meal(id: UUID(), name: "", info: "", units: 0, price: 0.0, photo: "")], name: "", city: "", zipCode: "", info: "", latitude: 0.0, longitude: 0.0)
     
     @ObservationIgnored
     private var useCase: RestaurantDetailUseCaseProtocol

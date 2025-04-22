@@ -14,7 +14,7 @@ protocol NetworkRestaurantDetailProtocol {
 final class NetworkRestaurantDetail: NetworkRestaurantDetailProtocol {
     func getRestaurantDetail(restaurantId: String) async throws -> RestaurantDetailModel {
         
-        var modelReturn = RestaurantDetailModel(id: "", photo: "", address: "", country: "", meals: [MealModel(id: "", photo: "", name: "", price: 0)], name: "", city: "", zipCode: "", info: "", latitude: 0.0, longitude: 0.0)
+        var modelReturn = RestaurantDetailModel(id: "", photo: "", address: "", country: "", meals: [Meal(id: UUID(), name: "", info: "", units: 0, price: 0.0, photo: "")], name: "", city: "", zipCode: "", info: "", latitude: 0.0, longitude: 0.0)
         
         let urlCad = "\(ConstantsApp.CONS_API_URL)\(EndPoints.restaurantDetail.rawValue)\(restaurantId)"
         
