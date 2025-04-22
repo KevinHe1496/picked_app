@@ -9,7 +9,7 @@ import Foundation
 
 protocol AllRestaurantsUseCaseProtocol {
     var repo: AllRestaurantsRepositoryProtocol { get set }
-    func getRestaurants(filter: String) async throws -> [RestaurantModel]
+    func getRestaurants() async throws -> [RestaurantModel]
 }
 
 final class AllRestaurantsUseCase: AllRestaurantsUseCaseProtocol {
@@ -19,7 +19,7 @@ final class AllRestaurantsUseCase: AllRestaurantsUseCaseProtocol {
         self.repo = repo
     }
     
-    func getRestaurants(filter: String) async throws -> [RestaurantModel] {
-        return try await repo.getRestaurants(filter: filter)
+    func getRestaurants() async throws -> [RestaurantModel] {
+        return try await repo.getRestaurants()
     }
 }

@@ -15,7 +15,7 @@ final class DefaultAllRestaurantsRepository: AllRestaurantsRepositoryProtocol {
         self.network = network
     }
     
-    func getRestaurants(filter: String) async throws -> [RestaurantModel] {
-        return try await network.getRestaurants(filter: filter)
+    func getRestaurants() async throws -> [RestaurantModel] {
+        return try await network.getRestaurants()
     }
 }

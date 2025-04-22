@@ -1,5 +1,5 @@
 //
-//  NetworkAllRestaurants.swift
+//  NetworkRestaurantDetail.swift
 //  PickedApp
 //
 //  Created by Kevin Heredia on 21/4/25.
@@ -7,16 +7,16 @@
 
 import Foundation
 
-protocol NetworkAllRestaurantsProtocol {
-    func getRestaurants() async throws -> [RestaurantModel]
+protocol NetworkRestaurantDetailProtocol {
+    func getRestaurantDetail(restaurantId: String) async throws -> RestaurantDetailModel
 }
 
-final class NetworkAllRestaurants: NetworkAllRestaurantsProtocol {
-    
-    func getRestaurants() async throws -> [RestaurantModel] {
-        var modelReturn = [RestaurantModel]()
+final class NetworkRestaurantDetail: NetworkRestaurantDetailProtocol {
+    func getRestaurantDetail(restaurantId: String) async throws -> RestaurantDetailModel {
         
-        let urlCad = "\(ConstantsApp.CONS_API_URL)\(EndPoints.allRestaurants.rawValue)"
+        var modelReturn = RestaurantDetailModel(id: "", photo: "", address: "", country: "", meals: [MealModel(id: "", photo: "", name: "", price: 0)], name: "", city: "", zipCode: "", info: "", latitude: 0.0, longitude: 0.0)
+        
+        let urlCad = "\(ConstantsApp.CONS_API_URL)\(EndPoints.restaurantDetail.rawValue)\(restaurantId)"
         
         guard let url = URL(string: urlCad) else {
             throw PKError.badUrl
@@ -29,7 +29,7 @@ final class NetworkAllRestaurants: NetworkAllRestaurantsProtocol {
         request.addValue("Bearer \(jwtToken)", forHTTPHeaderField: "Authorization")
         
         do {
-            let (data,response) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await URLSession.shared.data(for: request)
             
             // Verifica que la respuesta sea válida y del tipo HTTPURLResponse.
             guard let httpResponse = response as? HTTPURLResponse else {
@@ -46,9 +46,8 @@ final class NetworkAllRestaurants: NetworkAllRestaurantsProtocol {
                 throw PKError.errorFromApi(statusCode: httpResponse.statusCode)
             }
             
-            let result = try JSONDecoder().decode([RestaurantModel].self, from: data)
+            let result = try JSONDecoder().decode(RestaurantDetailModel.self, from: data)
             modelReturn = result
-            
         } catch {
             print("Decoding error: \(error)")
             if let decodingError = error as? DecodingError {
@@ -66,7 +65,6 @@ final class NetworkAllRestaurants: NetworkAllRestaurantsProtocol {
                 }
             }
         }
-        
         return modelReturn
     }
 }

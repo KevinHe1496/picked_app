@@ -11,7 +11,17 @@ import Foundation
 final class AllRestaurantsViewModel {
     var restaurantsData = [RestaurantModel]()
     
-    var filterUI: String = ""
+    var search: String = ""
+    
+    var restaurantFilter: [RestaurantModel] {
+        if search.isEmpty {
+            restaurantsData
+        } else {
+            restaurantsData.filter { restaurant in
+                restaurant.name.localizedStandardContains(search)
+            }
+        }
+    }
     
     @ObservationIgnored
     private var useCase: AllRestaurantsUseCaseProtocol
@@ -25,8 +35,8 @@ final class AllRestaurantsViewModel {
     }
     
     @MainActor
-    func getRestaurants(newSearch: String = "") async throws {
-        let data = try await useCase.getRestaurants(filter: newSearch)
+    func getRestaurants() async throws {
+        let data = try await useCase.getRestaurants()
         self.restaurantsData = data
     }
 }

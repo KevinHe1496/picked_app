@@ -9,58 +9,31 @@ import SwiftUI
 
 struct CustomTabBarView: View {
     
-        init() {
-            TabBarStyleHelper.applyCustomAppearance()
-        }
+    
     
     var body: some View {
         TabView {
-            //            Group{
-            //                ConsumerView()
-            //                    .tabItem {
-            //                        Label("Firsts", systemImage: "1.circle")
-            //                    }
-            //                
-            //                LocationMapView(restaurants: Bundle.main.decode("restaurants.json"))
-            //                    .tabItem {
-            //                        Image(systemName: "map.fill")
-            //                        Text("Map")
-            //                    }
-            //                
-            //                UserProfileView()
-            //                    .tabItem {
-            //                        Image(systemName: "person.fill")
-            //                        
-            //                    }
-            //            }
-            //            .toolbarBackground(.primaryColor, for: .tabBar)
-            //            .toolbarBackground(.visible, for: .tabBar)
-            //        }
-            //        .accentColor(.white)
-            
             
             Tab("Home", systemImage: "house.fill") {
                 ConsumerView()
             }
             
             Tab("Map", systemImage: "map.fill") {
+                LocationMapView()
                 
-                
-            }
-            
-            Tab("Favorites", systemImage: "star.fill") {
-                Text("Favorites")
             }
             
             Tab("User", systemImage: "person.fill") {
                 UserProfileView()
             }
-            
-            
         }
-    }
+        .toolbarBackground(.primaryColor, for: .tabBar)
+        .toolbarBackground(.visible, for: .tabBar)
         
+    }
 }
+
+
 
 #Preview {
     CustomTabBarView()
