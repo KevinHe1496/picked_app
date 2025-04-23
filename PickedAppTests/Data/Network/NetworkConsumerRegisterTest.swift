@@ -33,7 +33,7 @@ final class NetworkConsumerRegisterTest: XCTestCase {
         
         do {
             // Attempt to register a consumer using the success mock.
-            try await networkConsumerRegisterMock.consumerRegister(name: name, email: email, password: password, role: role)
+           _ = try await networkConsumerRegisterMock.consumerRegister(name: name, email: email, password: password, role: role)
         } catch {
             // If an error occurs, the test fails.
             XCTFail("Expected success, but got error: \(error.localizedDescription)")
@@ -50,7 +50,7 @@ final class NetworkConsumerRegisterTest: XCTestCase {
         
         do {
             // Execute registration using the failure mock.
-            try await networkConsumerRegisterFailureMock.consumerRegister(name: name, email: email, password: password, role: role)
+            _ = try await networkConsumerRegisterFailureMock.consumerRegister(name: name, email: email, password: password, role: role)
             // If no error occurs, the test fails.
             XCTFail("Expected error, but registration succeeded.")
         } catch {
