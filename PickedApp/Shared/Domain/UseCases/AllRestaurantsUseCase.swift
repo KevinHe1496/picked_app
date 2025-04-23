@@ -23,3 +23,16 @@ final class AllRestaurantsUseCase: AllRestaurantsUseCaseProtocol {
         return try await repo.getRestaurants()
     }
 }
+
+
+final class AllRestaurantsUseCaseSuccessMock: AllRestaurantsUseCaseProtocol {
+    var repo: AllRestaurantsRepositoryProtocol
+    
+    init(repo: AllRestaurantsRepositoryProtocol) {
+        self.repo = repo
+    }
+    
+    func getRestaurants() async throws -> [RestaurantModel] {
+        throw PKError.badUrl
+    }
+}

@@ -65,3 +65,63 @@ final class NetworkAllRestaurants: NetworkAllRestaurantsProtocol {
         return modelReturn
     }
 }
+
+final class NetworkAllRestaurantsSuccessMock: NetworkAllRestaurantsProtocol {
+    func getRestaurants() async throws -> [RestaurantModel] {
+        let model1 = RestaurantModel(
+            id: "id",
+            name: "Test Restaurant",
+            info: "Info Test",
+            address: "test",
+            zipCode: "000000",
+            city: "test",
+            country: "test",
+            photo: "test",
+            latitude: 10.0,
+            longitude: 20.0,
+            createdAt: "",
+            updatedAt: "",
+            user: Editor(id: "")
+        )
+        
+        let model2 = RestaurantModel(
+            id: "id",
+            name: "Test Restaurant",
+            info: "Info Test",
+            address: "test",
+            zipCode: "000000",
+            city: "test",
+            country: "test",
+            photo: "test",
+            latitude: 10.0,
+            longitude: 20.0,
+            createdAt: "",
+            updatedAt: "",
+            user: Editor(id: "")
+        )
+        
+        let model3 = RestaurantModel(
+            id: "id",
+            name: "Test Restaurant",
+            info: "Info Test",
+            address: "test",
+            zipCode: "000000",
+            city: "test",
+            country: "test",
+            photo: "test",
+            latitude: 10.0,
+            longitude: 20.0,
+            createdAt: "",
+            updatedAt: "",
+            user: Editor(id: "")
+        )
+        
+        return [model1, model2, model3]
+    }
+}
+
+final class NetworkAllRestaurantsFailureMock: NetworkAllRestaurantsProtocol {
+    func getRestaurants() async throws -> [RestaurantModel] {
+        throw PKError.badUrl
+    }
+}

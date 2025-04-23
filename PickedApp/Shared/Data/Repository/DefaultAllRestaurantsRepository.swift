@@ -19,3 +19,30 @@ final class DefaultAllRestaurantsRepository: AllRestaurantsRepositoryProtocol {
         return try await network.getRestaurants()
     }
 }
+
+
+final class DefaultAllRestaurantsRepositorySuccessMock: AllRestaurantsRepositoryProtocol {
+    
+    private var network: NetworkAllRestaurantsProtocol
+    
+    init(network: NetworkAllRestaurantsProtocol = NetworkAllRestaurantsSuccessMock()) {
+        self.network = network
+    }
+    
+    func getRestaurants() async throws -> [RestaurantModel] {
+        try await network.getRestaurants()
+    }
+}
+
+final class DefaultAllRestaurantsRepositoryFailureMock: AllRestaurantsRepositoryProtocol {
+    
+    private var network: NetworkAllRestaurantsProtocol
+    
+    init(network: NetworkAllRestaurantsProtocol = NetworkAllRestaurantsFailureMock()) {
+        self.network = network
+    }
+    
+    func getRestaurants() async throws -> [RestaurantModel] {
+        throw PKError.badUrl
+    }
+}

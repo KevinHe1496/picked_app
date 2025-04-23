@@ -1,7 +1,7 @@
 {
   "configurations" : [
     {
-      "id" : "E786EA6F-A132-4E18-BAAD-15C04C4A621C",
+      "id" : "419C7BC2-C845-4958-B3C9-DC7BBC14D1AE",
       "name" : "Test Scheme Action",
       "options" : {
 
@@ -9,11 +9,7 @@
     }
   ],
   "defaultOptions" : {
-    "targetForVariableExpansion" : {
-      "containerPath" : "container:PickedApp.xcodeproj",
-      "identifier" : "C995D0F82DA5653600E72B7A",
-      "name" : "PickedApp"
-    }
+
   },
   "testTargets" : [
     {
