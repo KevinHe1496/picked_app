@@ -74,7 +74,13 @@ final class NetworkLogin: NetworkLoginProtocol {
 /// A mock implementation for successfully logging in a user.
 final class NetworkLoginMock: NetworkLoginProtocol {
     func loginUser(user: String, password: String) async throws -> UserModel {
-        return UserModel(id: UUID(), name: "Kevin", email: "kevin@example.com", role: "admin", token: "token") // Return a mock token
+        return UserModel(
+                    id: UUID(),
+                    name: "Test User",
+                    email: user,
+                    role: "admin",
+                    token: "mocked_jwt_token"
+                )
     }
 }
 

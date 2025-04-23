@@ -45,8 +45,8 @@ final class AppStateVMTest: XCTestCase {
             try? await Task.sleep(nanoseconds: 300_000_000)
             
             // Then
-            XCTAssertEqual(sut.status, .error(error: "Incorrect username or password"))
-            XCTAssertEqual(errorMessage, "Incorrect username or password")
+            XCTAssertEqual(sut.status, .error(error: "An error occurred during login."))
+            XCTAssertEqual(errorMessage, "An error occurred during login.")
             expectation.fulfill()
         }
         await fulfillment(of: [expectation], timeout: 1)

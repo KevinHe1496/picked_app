@@ -28,10 +28,12 @@ final class NetworkLogin: XCTestCase {
         let password = "example"
 
         // When
-        let token = try await sut.loginUser(user: email, password: password)
+        let userProfile = try await sut.loginUser(user: email, password: password)
         
         // Then
-        XCTAssertFalse(token.isEmpty, "The token shouldn't be empty")
+        XCTAssertEqual(userProfile.name, "Test User")
+        XCTAssertEqual(userProfile.email, "test@example.com")
+        XCTAssertEqual(userProfile.role, "admin")
     }
     
     // MARK: - Error

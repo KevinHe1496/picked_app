@@ -28,6 +28,7 @@ struct ConsumerView: View {
                 
                 HStack {
                     Text("All")
+                        .font(.title2)
                     Spacer()
                 }
                 .padding(.horizontal)

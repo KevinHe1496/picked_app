@@ -41,7 +41,7 @@ struct RestaurantDetail: View {
                         Text(viewModel.restaurantData.info)
                             
                         Text("All Dishes")
-                            .font(.title)
+                            .font(.title2)
                             .padding(.top, 30)
                     }
                     Spacer()
