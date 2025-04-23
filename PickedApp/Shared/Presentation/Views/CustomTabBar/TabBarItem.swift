@@ -8,13 +8,6 @@
 import Foundation
 import SwiftUI
 
-// MARK: - Modelo
-//struct TabBarItem: Hashable {
-//    let iconName: String
-//    let title: String
-//    let color: Color
-//}
-
 enum TabBarItem: Hashable {
     case home, map, profile
     

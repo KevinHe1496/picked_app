@@ -4,7 +4,7 @@ import Foundation
 
 /// A protocol that defines a method for logging in a user.
 protocol NetworkLoginProtocol {
-    func loginUser(user: String, password: String) async throws -> String
+    func loginUser(user: String, password: String) async throws -> UserModel
 }
 
 // MARK: - Network Login Implementation
@@ -18,9 +18,9 @@ final class NetworkLogin: NetworkLoginProtocol {
     ///   - password: The password entered by the user.
     /// - Returns: Returns a JWT token if the login is successful.
     /// - Throws: Throws an error if the login request fails.
-    func loginUser(user: String, password: String) async throws -> String {
+    func loginUser(user: String, password: String) async throws -> UserModel {
         
-        var tokenJWT = ""
+        var userProfile = UserModel(id: UUID(), name: "", email: "", role: "", token: "")
         
         // Construct the URL for the login endpoint
         let urlCad = "\(ConstantsApp.CONS_API_URL)\(EndPoints.login.rawValue)"
@@ -59,13 +59,13 @@ final class NetworkLogin: NetworkLoginProtocol {
             
             // Decode the user data from the response
             let result = try JSONDecoder().decode(UserModel.self, from: data)
-            tokenJWT = result.token // Retrieve the JWT token from the response
+            userProfile = result
         } catch {
             // Handle any errors during the login process
             print("Error fetching user: \(error.localizedDescription)")
         }
         
-        return tokenJWT // Return the JWT token
+        return userProfile // Return the JWT token
     }
 }
 
@@ -73,14 +73,14 @@ final class NetworkLogin: NetworkLoginProtocol {
 
 /// A mock implementation for successfully logging in a user.
 final class NetworkLoginMock: NetworkLoginProtocol {
-    func loginUser(user: String, password: String) async throws -> String {
-        return "mockToken" // Return a mock token
+    func loginUser(user: String, password: String) async throws -> UserModel {
+        return UserModel(id: UUID(), name: "Kevin", email: "kevin@example.com", role: "admin", token: "token") // Return a mock token
     }
 }
 
 /// A mock implementation that simulates a login failure.
 final class NetworkLoginErrorMock: NetworkLoginProtocol {
-    func loginUser(user: String, password: String) async throws -> String {
+    func loginUser(user: String, password: String) async throws -> UserModel {
         throw PKError.authenticationFailed // Simulate a login failure with an authentication error
     }
 }

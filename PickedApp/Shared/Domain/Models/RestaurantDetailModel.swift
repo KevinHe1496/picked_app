@@ -27,11 +27,3 @@ struct RestaurantDetailModel: Codable {
         return url
     }
 }
-
-// MARK: - Meal
-struct MealModel: Codable, Identifiable {
-    let id: String
-    let photo: String
-    let name: String
-    let price: Int
-}
