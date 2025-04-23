@@ -11,49 +11,47 @@ struct UserProfileView: View {
     @Environment(AppStateVM.self) var appState
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 20) {
-                // Imagen de usuario
-                Image(systemName: "person.circle.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 120, height: 120)
-                    .foregroundColor(.gray)
-                    .padding(.top, 40)
+        NavigationStack {
+            ScrollView {
+                VStack(spacing: 20) {
+                    Image(systemName: "person.circle.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 120, height: 120)
+                        .foregroundColor(.gray)
+                        .padding(.top, 40)
 
-                // Nombre
-                Text(appState.userProfileData.name)
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.primary)
+                    Text(appState.userProfileData.name)
+                        .font(.title)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.primary)
 
-                // Email
-                Text(appState.userProfileData.email)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
+                    Text(appState.userProfileData.email)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
 
-                // Rol
-                Text(appState.userProfileData.role.capitalized)
-                    .font(.footnote)
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 6)
-                    .background(Color.primaryColor.opacity(0.1))
-                    .foregroundColor(.primaryColor)
-                    .clipShape(Capsule())
+                    Text(appState.userProfileData.role.capitalized)
+                        .font(.footnote)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 6)
+                        .background(Color.primaryColor.opacity(0.1))
+                        .foregroundColor(.primaryColor)
+                        .clipShape(Capsule())
 
-                // Botón de cerrar sesión
-                CustomButtonView(title: "Log Out", color: .primaryColor) {
-                    appState.closeSessionUser()
+                    CustomButtonView(title: "Log Out", color: .primaryColor) {
+                        appState.closeSessionUser()
+                    }
+                    .padding(.top, 30)
+                    Spacer()
                 }
-                .padding(.top, 30)
-
-                Spacer()
+                .frame(maxWidth: .infinity)
+                .padding()
             }
-            .frame(maxWidth: .infinity)
-            .padding()
+            .navigationTitle("User Profile")
         }
     }
 }
+
 
 #Preview {
     UserProfileView()

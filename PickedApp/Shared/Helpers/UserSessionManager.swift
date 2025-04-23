@@ -8,8 +8,9 @@
 import Foundation
 
 class UserSessionManager {
-
-    private static let userKey = "userKey" // La clave para almacenar los datos del usuario sin el token
+    
+    // La clave para almacenar los datos del usuario sin el token
+    private static let userKey = ConstantsApp.CONS_USER_KEY
 
     // Función para guardar el usuario sin el token
     static func saveUser(_ user: UserProfile) {
