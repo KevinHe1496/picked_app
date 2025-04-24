@@ -8,10 +8,12 @@
 import XCTest
 @testable import PickedApp
 
+/// Pruebas unitarias para verificar el comportamiento de `NetworkAllRestaurants`.
 final class NetworkGetAllRestaurantsTest: XCTestCase {
     
     var network: NetworkAllRestaurants!
     
+    /// Configura una instancia de `NetworkAllRestaurants` con una sesión simulada antes de cada prueba.
     override func setUpWithError() throws {
         let config = URLSessionConfiguration.ephemeral
         config.protocolClasses = [URLProtocolMock.self]
@@ -20,6 +22,7 @@ final class NetworkGetAllRestaurantsTest: XCTestCase {
         network = NetworkAllRestaurants(session: session)
     }
     
+    /// Libera los recursos y restablece los mocks después de cada prueba.
     override func tearDownWithError() throws {
         network = nil
         URLProtocolMock.statusCode = 200
@@ -27,8 +30,8 @@ final class NetworkGetAllRestaurantsTest: XCTestCase {
         URLProtocolMock.error = nil
     }
     
-    
-    func testNetowkAllRestaurants_GivenASuccesfullJson_ShouldSuccess() async throws {
+    /// Verifica que `getRestaurants` devuelva una lista válida de restaurantes cuando el JSON es correcto.
+    func testNetworkAllRestaurants_GivenASuccesfullJson_ShouldSuccess() async throws {
         
         let data = try MockData.loadJSONData(name: "GetAllRestaurantsMock")
         URLProtocolMock.stubResponseData = data
@@ -42,7 +45,7 @@ final class NetworkGetAllRestaurantsTest: XCTestCase {
         }
     }
     
-    
+    /// Verifica que `getRestaurants` lance un error cuando el JSON es inválido o la API falla.
     func testNetworkAllRestaurants_GivenABadJson_ShouldFailure() async throws {
         let data = "{}".data(using: .utf8)
         URLProtocolMock.stubResponseData = data
@@ -53,12 +56,12 @@ final class NetworkGetAllRestaurantsTest: XCTestCase {
             XCTFail("We Expect failure")
         } catch let error as PKError {
             XCTAssertEqual(error, .errorFromApi(statusCode: 500))
-        
         } catch {
             XCTFail()
         }
     }
     
+    /// Verifica que el mock `NetworkAllRestaurantsSuccessMock` devuelva 3 restaurantes correctamente.
     func testGetAllRestaurantsSuccess() async throws {
         // Arrange
         let mock = NetworkAllRestaurantsSuccessMock()
@@ -68,9 +71,9 @@ final class NetworkGetAllRestaurantsTest: XCTestCase {
         
         // Assert
         XCTAssertEqual(result.count, 3, "Debería devolver 3 restaurantes de prueba.")
-        
     }
     
+    /// Verifica que `getRestaurants` lance un error usando el mock `NetworkAllRestaurantsFailureMock`.
     func test_getRestaurants_failure_shouldThrowError() async {
         // Arrange
         let network = NetworkAllRestaurantsFailureMock()
@@ -84,5 +87,4 @@ final class NetworkGetAllRestaurantsTest: XCTestCase {
             XCTAssertTrue(error is PKError, "El error lanzado no es del tipo PKError")
         }
     }
-    
 }
