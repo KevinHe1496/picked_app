@@ -36,7 +36,7 @@ final class GetAllRestaurantsVMTest: XCTestCase {
             let _ = try await viewModelFailure.getRestaurants()
            XCTFail("expected to fail")
         } catch let error as PKError {
-            print(error, "asdasdasd")
+            print(error, "error")
             XCTAssertEqual(error, .badUrl)
         } catch {
             XCTFail()
