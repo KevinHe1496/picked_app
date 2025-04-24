@@ -8,5 +8,5 @@
 import Foundation
 
 protocol LoginRepositoryProtocol {
-    func loginUser(user: String, password: String) async throws -> String
+    func loginUser(user: String, password: String) async throws -> UserModel
 }

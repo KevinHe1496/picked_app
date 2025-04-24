@@ -14,7 +14,7 @@ final class DefaultLoginRepository: LoginRepositoryProtocol {
         self.network = network
     }
     
-    func loginUser(user: String, password: String) async throws -> String {
+    func loginUser(user: String, password: String) async throws -> UserModel {
         return try await network.loginUser(user: user, password: password)
     }
 }
@@ -26,7 +26,7 @@ final class DefaultLoginRepositoryMock: LoginRepositoryProtocol {
         self.network = network
     }
     
-    func loginUser(user: String, password: String) async throws -> String {
+    func loginUser(user: String, password: String) async throws -> UserModel {
         return try await network.loginUser(user: user, password: password)
     }
 }

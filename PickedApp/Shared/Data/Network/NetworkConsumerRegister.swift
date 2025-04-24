@@ -37,19 +37,20 @@ final class NetworkConsumerRegister: NetworkConsumerRegisterProtocol {
         request.setValue(HttpMethods.content, forHTTPHeaderField: HttpMethods.contentTypeID) // Set the content type
         request.httpBody = jsonData // Set the body of the request with the encoded data
         
+        // Send the request and await the response
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        // Ensure the response is a valid HTTP response
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw PKError.errorFromApi(statusCode: -1) // Throw an error if the response is invalid
+        }
+        // Check the status code of the response
+        guard httpResponse.statusCode == HttpResponseCodes.SUCESS else {
+            throw PKError.errorFromApi(statusCode: httpResponse.statusCode) // Throw an error if the status code indicates failure
+        }
+        
         do {
-            // Send the request and await the response
-            let (data, response) = try await URLSession.shared.data(for: request)
-            
-            // Ensure the response is a valid HTTP response
-            guard let httpResponse = response as? HTTPURLResponse else {
-                throw PKError.errorFromApi(statusCode: -1) // Throw an error if the response is invalid
-            }
-            // Check the status code of the response
-            guard httpResponse.statusCode == HttpResponseCodes.SUCESS else {
-                throw PKError.errorFromApi(statusCode: httpResponse.statusCode) // Throw an error if the status code indicates failure
-            }
-            
+
             let result = try JSONDecoder().decode(UserModel.self, from: data)
             tokenJWT = result.token
             

@@ -10,7 +10,7 @@ import Foundation
 protocol LoginUseCaseProtocol {
     var repo: LoginRepositoryProtocol { get set }
     
-    func loginUser(user: String, password: String) async throws -> Bool
+    func loginUser(user: String, password: String) async throws -> UserModel
     func logout() async -> Void
     func validateToken() async -> Bool
 }
@@ -25,16 +25,16 @@ final class LoginUseCase: LoginUseCaseProtocol {
         self.repo = repo
     }
     
-    func loginUser(user: String, password: String) async throws -> Bool {
-        let token = try await repo.loginUser(user: user, password: password)
+    func loginUser(user: String, password: String) async throws -> UserModel {
+        let userProfile = try await repo.loginUser(user: user, password: password)
         
-        if token != ""{
-            tokenJWT = token
-            return true
+        if userProfile.token != ""{
+            tokenJWT = userProfile.token
         } else {
             tokenJWT = ""
-            return false
         }
+        
+        return userProfile
     }
     
     func logout() async {
@@ -60,10 +60,10 @@ final class LoginUseCaseSucessMock: LoginUseCaseProtocol {
         self.repo = repo
     }
     
-    func loginUser(user: String, password: String) async throws -> Bool {
+    func loginUser(user: String, password: String) async throws -> UserModel {
         let result = try await repo.loginUser(user: user, password: password)
-        token = result
-        return !token.isEmpty
+        token = result.token
+        return result
     }
     
     func logout() async {
@@ -80,8 +80,8 @@ final class LoginUseCaseSucessMock: LoginUseCaseProtocol {
 final class LoginUseCaseFailureMock: LoginUseCaseProtocol {
     var repo: LoginRepositoryProtocol = DefaultLoginRepositoryMock()
     
-    func loginUser(user: String, password: String) async throws -> Bool {
-        return false
+    func loginUser(user: String, password: String) async throws -> UserModel {
+        throw PKError.authenticationFailed
     }
     
     func logout() async { }

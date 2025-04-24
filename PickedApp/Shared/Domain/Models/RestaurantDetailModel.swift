@@ -13,18 +13,17 @@ struct RestaurantDetailModel: Codable {
     let photo: String
     let address: String
     let country: String
-    let meals: [MealModel]
+    let meals: [Meal]
     let name: String
     let city: String
     let zipCode: String
     let info: String
     let latitude, longitude: Double
-}
-
-// MARK: - Meal
-struct MealModel: Codable {
-    let id: String
-    let photo: String
-    let name: String
-    let price: Int
+    
+    var photoRestaurant: URL? {
+        guard let url = URL(string: "\(ConstantsApp.CONS_API_URL)\(photo)") else {
+            return nil
+        }
+        return url
+    }
 }

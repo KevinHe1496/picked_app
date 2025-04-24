@@ -14,3 +14,10 @@ struct UserModel: Codable, Identifiable {
     let role: String
     let token: String
 }
+
+
+struct UserProfile: Codable {
+    let name: String
+    let email: String
+    let role: String
+}

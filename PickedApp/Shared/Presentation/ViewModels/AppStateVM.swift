@@ -17,6 +17,7 @@ final class AppStateVM {
     var status = Status.none // Current app state (loading, login, etc.)
     var tokenJWT: String = "" // Auth token
     var loginError: String? // Login error message
+    var userProfileData = UserProfile(name: "", email: "", role: "")
     
     @ObservationIgnored
     private var loginUseCase: LoginUseCaseProtocol
@@ -28,6 +29,8 @@ final class AppStateVM {
     /// Creates the view model and validates login status on launch.
     init(loginUseCase: LoginUseCaseProtocol = LoginUseCase()) {
         self.loginUseCase = loginUseCase
+        
+        getUser()
         
         Task {
             await validateControlLogin()
@@ -48,9 +51,12 @@ final class AppStateVM {
         self.status = .loading
         
         do {
-            let success = try await loginUseCase.loginUser(user: user, password: pass)
-            if success {
+            let userProfile = try await loginUseCase.loginUser(user: user, password: pass)
+            if  !userProfile.token.isEmpty {
                 self.tokenJWT = KeyChainPK().loadPK(key: ConstantsApp.CONS_TOKEN_ID_KEYCHAIN) ?? ""
+                
+                userProfileData = UserProfile(name: userProfile.name, email: userProfile.email, role: userProfile.role)
+                UserSessionManager.saveUser(userProfileData)
 
                 if let role = JWTDecoder.decodeRole(from: self.tokenJWT) {
                     if role == "restaurant" {
@@ -77,6 +83,8 @@ final class AppStateVM {
     @MainActor
     func closeSessionUser() {
         Task {
+            UserSessionManager.deleteUser()
+            self.userProfileData = UserProfile(name: "", email: "", role: "")
             await loginUseCase.logout()
             self.status = .login
         }
@@ -134,5 +142,12 @@ final class AppStateVM {
             return "Invalid email or password."
         }
         return nil
+    }
+    
+    func getUser() {
+        if let savedUser = UserSessionManager.getUser() {
+            self.userProfileData = savedUser
+        }
+        
     }
 }

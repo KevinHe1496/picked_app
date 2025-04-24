@@ -12,9 +12,16 @@ protocol NetworkRestaurantDetailProtocol {
 }
 
 final class NetworkRestaurantDetail: NetworkRestaurantDetailProtocol {
+    
+    var session: URLSession
+    
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
+    
     func getRestaurantDetail(restaurantId: String) async throws -> RestaurantDetailModel {
         
-        var modelReturn = RestaurantDetailModel(id: "", photo: "", address: "", country: "", meals: [MealModel(id: "", photo: "", name: "", price: 0)], name: "", city: "", zipCode: "", info: "", latitude: 0.0, longitude: 0.0)
+        var modelReturn = RestaurantDetailModel(id: "", photo: "", address: "", country: "", meals: [Meal(id: UUID(), name: "", info: "", units: 0, price: 0.0, photo: "")], name: "", city: "", zipCode: "", info: "", latitude: 0.0, longitude: 0.0)
         
         let urlCad = "\(ConstantsApp.CONS_API_URL)\(EndPoints.restaurantDetail.rawValue)\(restaurantId)"
         
@@ -28,24 +35,18 @@ final class NetworkRestaurantDetail: NetworkRestaurantDetailProtocol {
         let jwtToken = KeyChainPK().loadPK(key: ConstantsApp.CONS_TOKEN_ID_KEYCHAIN)
         request.addValue("Bearer \(jwtToken)", forHTTPHeaderField: "Authorization")
         
+        let (data, response) = try await session.data(for: request)
+        // Verifica que la respuesta sea válida y del tipo HTTPURLResponse.
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw PKError.errorFromApi(statusCode: -1)
+        }
+        
+        // Valida que el código de respuesta HTTP sea exitoso.
+        guard httpResponse.statusCode == HttpResponseCodes.SUCESS else {
+            throw PKError.errorFromApi(statusCode: httpResponse.statusCode)
+        }
+        
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
-            
-            // Verifica que la respuesta sea válida y del tipo HTTPURLResponse.
-            guard let httpResponse = response as? HTTPURLResponse else {
-                throw PKError.errorFromApi(statusCode: -1)
-            }
-            
-            // Imprime la respuesta en formato string para depuración.
-            if let responseString = String(data: data, encoding: .utf8) {
-                print("✅ Respuesta: \(responseString)")
-            }
-            
-            // Valida que el código de respuesta HTTP sea exitoso.
-            guard httpResponse.statusCode == HttpResponseCodes.SUCESS else {
-                throw PKError.errorFromApi(statusCode: httpResponse.statusCode)
-            }
-            
             let result = try JSONDecoder().decode(RestaurantDetailModel.self, from: data)
             modelReturn = result
         } catch {

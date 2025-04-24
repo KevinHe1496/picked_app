@@ -17,38 +17,47 @@ import _MapKit_SwiftUI
 
 struct LocationMapView: View {
     @StateObject private var locationManager = LocationManager()
-
+    
     // Posición del mapa que se actualiza cuando la ubicación está disponible
     @State private var cameraPosition: MapCameraPosition = .automatic
-    
+    @State private var selectedRestaurant: RestaurantModel?
     @State var viewModel: AllRestaurantsViewModel
     
     init(viewModel: AllRestaurantsViewModel = AllRestaurantsViewModel()) {
         self.viewModel = viewModel
     }
-
+    
     var body: some View {
         Map(position: $cameraPosition) {
             
             // Marcador para el usuario
             UserAnnotation()
-
+            
             // Marcadores de restaurantes
             ForEach(viewModel.restaurantsData) { restaurant in
                 Annotation(restaurant.name, coordinate: restaurant.coordinate) {
-                    VStack {
-                        Image(systemName: "mappin.circle.fill")
-                            .foregroundColor(.red)
-                            .font(.title)
-                        Text(restaurant.name)
-                            .font(.caption)
-                            .fixedSize()
-                            .padding(4)
-                            .background(Color.white.opacity(0.8))
-                            .cornerRadius(5)
+                    Button {
+                        selectedRestaurant = restaurant
+                    } label: {
+                        VStack {
+                            Image(.locationMap)
+                                .foregroundColor(.red)
+                                .font(.title)
+                            Text(restaurant.name)
+                                .font(.caption)
+                                .fixedSize()
+                                .padding(4)
+                                .background(Color.white.opacity(0.8))
+                                .cornerRadius(5)
+                        }
                     }
+                    
                 }
             }
+        }
+        .sheet(item: $selectedRestaurant) { restaurant in
+            RestaurantMapDetailView(restaurant: restaurant)
+                .presentationDetents([.medium])
         }
         .mapControls {
             MapUserLocationButton() // Botón para centrar en la ubicación del usuario

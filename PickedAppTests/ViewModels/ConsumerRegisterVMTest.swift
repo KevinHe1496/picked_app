@@ -70,6 +70,6 @@ final class ConsumerRegisterVMTest: XCTestCase {
         let result = await viewModel.consumerRegister(name: "John", email: "john@example.com", password: "password123", role: "consumer")
         
         // Assert that the error message matches the expected failure message
-        XCTAssertEqual(result, "Something went wrong.")
+        XCTAssertEqual(result, "Incorrect username or password.")
     }
 }

@@ -31,7 +31,7 @@ struct RootView: View {
             }
         case .loaded:
             withAnimation {
-                CustomTabBarView()
+                AppTabBarView()
             }
         case .error(error: let errorString):
             withAnimation {
