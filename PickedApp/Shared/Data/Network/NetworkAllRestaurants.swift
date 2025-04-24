@@ -13,6 +13,12 @@ protocol NetworkAllRestaurantsProtocol {
 
 final class NetworkAllRestaurants: NetworkAllRestaurantsProtocol {
     
+    var session: URLSession
+    
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
+    
     func getRestaurants() async throws -> [RestaurantModel] {
         var modelReturn = [RestaurantModel]()
         
@@ -28,19 +34,21 @@ final class NetworkAllRestaurants: NetworkAllRestaurantsProtocol {
         let jwtToken = KeyChainPK().loadPK(key: ConstantsApp.CONS_TOKEN_ID_KEYCHAIN)
         request.addValue("Bearer \(jwtToken)", forHTTPHeaderField: "Authorization")
         
-        do {
-            let (data,response) = try await URLSession.shared.data(for: request)
-            
-            // Verifica que la respuesta sea válida y del tipo HTTPURLResponse.
-            guard let httpResponse = response as? HTTPURLResponse else {
-                throw PKError.errorFromApi(statusCode: -1)
-            }
+        
+        let (data,response) = try await session.data(for: request)
+        
+        // Verifica que la respuesta sea válida y del tipo HTTPURLResponse.
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw PKError.errorFromApi(statusCode: -1)
+        }
 
-            // Valida que el código de respuesta HTTP sea exitoso.
-            guard httpResponse.statusCode == HttpResponseCodes.SUCESS else {
-                throw PKError.errorFromApi(statusCode: httpResponse.statusCode)
-            }
-            
+        // Valida que el código de respuesta HTTP sea exitoso.
+        guard httpResponse.statusCode == HttpResponseCodes.SUCESS else {
+            throw PKError.errorFromApi(statusCode: httpResponse.statusCode)
+        }
+        
+        do {
+ 
             let result = try JSONDecoder().decode([RestaurantModel].self, from: data)
             modelReturn = result
             

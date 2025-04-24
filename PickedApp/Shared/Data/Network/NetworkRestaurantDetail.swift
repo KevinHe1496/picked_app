@@ -28,19 +28,18 @@ final class NetworkRestaurantDetail: NetworkRestaurantDetailProtocol {
         let jwtToken = KeyChainPK().loadPK(key: ConstantsApp.CONS_TOKEN_ID_KEYCHAIN)
         request.addValue("Bearer \(jwtToken)", forHTTPHeaderField: "Authorization")
         
+        let (data, response) = try await URLSession.shared.data(for: request)
+        // Verifica que la respuesta sea válida y del tipo HTTPURLResponse.
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw PKError.errorFromApi(statusCode: -1)
+        }
+        
+        // Valida que el código de respuesta HTTP sea exitoso.
+        guard httpResponse.statusCode == HttpResponseCodes.SUCESS else {
+            throw PKError.errorFromApi(statusCode: httpResponse.statusCode)
+        }
+        
         do {
-            let (data, response) = try await URLSession.shared.data(for: request)
-            
-            // Verifica que la respuesta sea válida y del tipo HTTPURLResponse.
-            guard let httpResponse = response as? HTTPURLResponse else {
-                throw PKError.errorFromApi(statusCode: -1)
-            }
-            
-            // Valida que el código de respuesta HTTP sea exitoso.
-            guard httpResponse.statusCode == HttpResponseCodes.SUCESS else {
-                throw PKError.errorFromApi(statusCode: httpResponse.statusCode)
-            }
-            
             let result = try JSONDecoder().decode(RestaurantDetailModel.self, from: data)
             modelReturn = result
         } catch {

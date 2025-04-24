@@ -35,20 +35,22 @@ final class NetworkRestaurantRegister: NetworkRestaurantRegisterProtocol {
         let body = try createMultipartBody(from: formData, boundary: boundary)
 
         request.httpBody = body
+        
+        // Envía la solicitud y espera la respuesta de forma asíncrona.
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        // Verifica que la respuesta sea válida y del tipo HTTPURLResponse.
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw PKError.errorFromApi(statusCode: -1)
+        }
+        
+        // Valida que el código de respuesta HTTP sea exitoso.
+        guard httpResponse.statusCode == HttpResponseCodes.SUCESS else {
+            throw PKError.errorFromApi(statusCode: httpResponse.statusCode)
+        }
+        
         do {
-            // Envía la solicitud y espera la respuesta de forma asíncrona.
-            let (data, response) = try await URLSession.shared.data(for: request)
-            
-            // Verifica que la respuesta sea válida y del tipo HTTPURLResponse.
-            guard let httpResponse = response as? HTTPURLResponse else {
-                throw PKError.errorFromApi(statusCode: -1)
-            }
-            
-            // Valida que el código de respuesta HTTP sea exitoso.
-            guard httpResponse.statusCode == HttpResponseCodes.SUCESS else {
-                throw PKError.errorFromApi(statusCode: httpResponse.statusCode)
-            }
-            
+
             // Decodifica el usuario de la respuesta JSON y obtiene el token.
             let result  = try JSONDecoder().decode(UserModel.self, from: data)
             tokenJWT = result.token

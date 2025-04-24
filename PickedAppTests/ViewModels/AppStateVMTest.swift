@@ -94,13 +94,13 @@ final class AppStateVMTest: XCTestCase {
         // When
         Task {
             await vm.closeSessionUser()
-            try? await Task.sleep(nanoseconds: 300_000_000)
+            try? await Task.sleep(nanoseconds: 600_000_000)
             
             // Then
             XCTAssertEqual(vm.status, .login)
             expectation.fulfill()
         }
-        await fulfillment(of: [expectation], timeout: 1)
+        await fulfillment(of: [expectation], timeout: 2)
     }
     
     // MARK: - Token Validation

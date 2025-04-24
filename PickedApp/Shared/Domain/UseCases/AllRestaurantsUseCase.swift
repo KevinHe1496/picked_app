@@ -28,7 +28,19 @@ final class AllRestaurantsUseCase: AllRestaurantsUseCaseProtocol {
 final class AllRestaurantsUseCaseSuccessMock: AllRestaurantsUseCaseProtocol {
     var repo: AllRestaurantsRepositoryProtocol
     
-    init(repo: AllRestaurantsRepositoryProtocol) {
+    init(repo: AllRestaurantsRepositoryProtocol = DefaultAllRestaurantsRepositorySuccessMock()) {
+        self.repo = repo
+    }
+    
+    func getRestaurants() async throws -> [RestaurantModel] {
+        return try await repo.getRestaurants()
+    }
+}
+
+final class AllRestaurantsUseCaseFailureMock: AllRestaurantsUseCaseProtocol {
+    var repo: AllRestaurantsRepositoryProtocol
+    
+    init(repo: AllRestaurantsRepositoryProtocol = DefaultAllRestaurantsRepositoryFailureMock()) {
         self.repo = repo
     }
     
