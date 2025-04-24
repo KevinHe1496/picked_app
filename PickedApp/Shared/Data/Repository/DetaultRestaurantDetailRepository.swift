@@ -18,3 +18,29 @@ final class DetaultRestaurantDetailRepository: RestaurantDetailRepositoryProtoco
         return try await network.getRestaurantDetail(restaurantId: restaurantId)
     }
 }
+
+// MOCK SUCCESS
+final class DetaultRestaurantDetailRepositorySuccessMock: RestaurantDetailRepositoryProtocol {
+    private var network: NetworkRestaurantDetailProtocol
+    
+    init(network: NetworkRestaurantDetailProtocol = NetworkRestaurantDetailSuccessMock()) {
+        self.network = network
+    }
+    
+    func getRestaurantDetail(restaurantId: String) async throws -> RestaurantDetailModel {
+        return try await network.getRestaurantDetail(restaurantId: restaurantId)
+    }
+}
+
+// MOCK FAILURE
+final class DetaultRestaurantDetailRepositoryFailureMock: RestaurantDetailRepositoryProtocol {
+    private var network: NetworkRestaurantDetailProtocol
+    
+    init(network: NetworkRestaurantDetailProtocol = NetworkRestaurantDetailFailureMock()) {
+        self.network = network
+    }
+    
+    func getRestaurantDetail(restaurantId: String) async throws -> RestaurantDetailModel {
+        throw PKError.badUrl
+    }
+}

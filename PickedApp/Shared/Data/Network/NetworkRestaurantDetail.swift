@@ -69,3 +69,15 @@ final class NetworkRestaurantDetail: NetworkRestaurantDetailProtocol {
         return modelReturn
     }
 }
+
+final class NetworkRestaurantDetailSuccessMock: NetworkRestaurantDetailProtocol {
+    func getRestaurantDetail(restaurantId: String) async throws -> RestaurantDetailModel {
+        return RestaurantDetailModel(id: "516379B2-AECA-405A-87D3-B202F778EE6B", photo: "photoTest", address: "1529 Fillmore St", country: "Estados Unidos", meals: [Meal(id: UUID(), name: "Locro de papa", info: "", units: 0, price: 5, photo: "/restaurant_photos/58D131BA-A84C-41C6-8C8F-3D66F30A861A.jpg")], name: "Restaurant Test", city: "San Francisco", zipCode: "78253", info: "Comida tipica", latitude: 0.0, longitude: 0.0)
+    }
+}
+
+final class NetworkRestaurantDetailFailureMock: NetworkRestaurantDetailProtocol {
+    func getRestaurantDetail(restaurantId: String) async throws -> RestaurantDetailModel {
+        throw PKError.badUrl
+    }
+}

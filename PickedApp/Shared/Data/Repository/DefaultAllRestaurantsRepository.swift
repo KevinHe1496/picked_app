@@ -20,7 +20,7 @@ final class DefaultAllRestaurantsRepository: AllRestaurantsRepositoryProtocol {
     }
 }
 
-
+// MOCK SUCCESS
 final class DefaultAllRestaurantsRepositorySuccessMock: AllRestaurantsRepositoryProtocol {
     
     private var network: NetworkAllRestaurantsProtocol
@@ -33,7 +33,7 @@ final class DefaultAllRestaurantsRepositorySuccessMock: AllRestaurantsRepository
         try await network.getRestaurants()
     }
 }
-
+// MOCK FAILURE
 final class DefaultAllRestaurantsRepositoryFailureMock: AllRestaurantsRepositoryProtocol {
     
     private var network: NetworkAllRestaurantsProtocol
