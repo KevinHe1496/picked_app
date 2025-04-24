@@ -34,7 +34,7 @@ final class RestaurantRegisterVMTest: XCTestCase {
         )
         // Then
         XCTAssertNil(error)
-        XCTAssertEqual(mockAppState.status, .loaded)
+        XCTAssertEqual(mockAppState.status, .restaurantMeals)
         XCTAssertEqual(viewModel.latitude, 37.91149732310269)
         XCTAssertEqual(viewModel.longitude, -121.31035538536838)
         XCTAssertFalse(viewModel.isLoading)

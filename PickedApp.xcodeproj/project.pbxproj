@@ -35,6 +35,12 @@
 		C96A31892DBA7E1600890393 /* NetworkRestaurantDetailTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A31882DBA7E1600890393 /* NetworkRestaurantDetailTest.swift */; };
 		C96A318D2DBA865200890393 /* DetailRestaurantMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C96A318C2DBA864600890393 /* DetailRestaurantMock.json */; };
 		C96A31912DBA980900890393 /* RestaurantDetailVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A31902DBA980900890393 /* RestaurantDetailVMTest.swift */; };
+		C96A31942DBAB50000890393 /* RestaurantDetailUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A31932DBAB50000890393 /* RestaurantDetailUseCaseTest.swift */; };
+		C96A31962DBAB88C00890393 /* GetAllRestaurantsUsecaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A31952DBAB88C00890393 /* GetAllRestaurantsUsecaseTest.swift */; };
+		C96A31982DBABB6700890393 /* ConsumerRegisterUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A31972DBABB6700890393 /* ConsumerRegisterUseCaseTest.swift */; };
+		C96A319A2DBAC10500890393 /* RestaurantRegisterUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A31992DBAC10500890393 /* RestaurantRegisterUseCaseTest.swift */; };
+		C96A31B72DBAD51B00890393 /* LoginUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A31B62DBAD51B00890393 /* LoginUseCaseTest.swift */; };
+		C96A31B92DBADA8E00890393 /* LoginUseCaseSuccessMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96A31B82DBADA8E00890393 /* LoginUseCaseSuccessMock.swift */; };
 		C981CD812DB6E499004AA9EE /* RestaurantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C981CD802DB6E499004AA9EE /* RestaurantDetail.swift */; };
 		C981CE182DB6F645004AA9EE /* NetworkRestaurantDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C981CE172DB6F645004AA9EE /* NetworkRestaurantDetail.swift */; };
 		C981CE1A2DB6F8BE004AA9EE /* RestaurantDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C981CE192DB6F8BE004AA9EE /* RestaurantDetailModel.swift */; };
@@ -147,6 +153,12 @@
 		C96A31882DBA7E1600890393 /* NetworkRestaurantDetailTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRestaurantDetailTest.swift; sourceTree = "<group>"; };
 		C96A318C2DBA864600890393 /* DetailRestaurantMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DetailRestaurantMock.json; sourceTree = "<group>"; };
 		C96A31902DBA980900890393 /* RestaurantDetailVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailVMTest.swift; sourceTree = "<group>"; };
+		C96A31932DBAB50000890393 /* RestaurantDetailUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailUseCaseTest.swift; sourceTree = "<group>"; };
+		C96A31952DBAB88C00890393 /* GetAllRestaurantsUsecaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllRestaurantsUsecaseTest.swift; sourceTree = "<group>"; };
+		C96A31972DBABB6700890393 /* ConsumerRegisterUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerRegisterUseCaseTest.swift; sourceTree = "<group>"; };
+		C96A31992DBAC10500890393 /* RestaurantRegisterUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRegisterUseCaseTest.swift; sourceTree = "<group>"; };
+		C96A31B62DBAD51B00890393 /* LoginUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseTest.swift; sourceTree = "<group>"; };
+		C96A31B82DBADA8E00890393 /* LoginUseCaseSuccessMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseSuccessMock.swift; sourceTree = "<group>"; };
 		C981CD802DB6E499004AA9EE /* RestaurantDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetail.swift; sourceTree = "<group>"; };
 		C981CE172DB6F645004AA9EE /* NetworkRestaurantDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRestaurantDetail.swift; sourceTree = "<group>"; };
 		C981CE192DB6F8BE004AA9EE /* RestaurantDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailModel.swift; sourceTree = "<group>"; };
@@ -253,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				C90FAFC92DB9BB170030DA93 /* PickedAppTests.xctestplan */,
+				C96A31922DBAB4D300890393 /* UseCases */,
 				C92112772DAEEAC000D67BA4 /* ViewModels */,
 				C92112682DAEE25600D67BA4 /* Mocks */,
 				C92112642DAEE0F100D67BA4 /* Data */,
@@ -287,6 +300,7 @@
 				C93100672DB9AFC60053223D /* URLProtocolMock.swift */,
 				C96A318C2DBA864600890393 /* DetailRestaurantMock.json */,
 				C93100692DB9B2840053223D /* GetAllRestaurantsMock.json */,
+				C96A31B82DBADA8E00890393 /* LoginUseCaseSuccessMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -301,6 +315,18 @@
 				C96A31902DBA980900890393 /* RestaurantDetailVMTest.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C96A31922DBAB4D300890393 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				C96A31932DBAB50000890393 /* RestaurantDetailUseCaseTest.swift */,
+				C96A31952DBAB88C00890393 /* GetAllRestaurantsUsecaseTest.swift */,
+				C96A31972DBABB6700890393 /* ConsumerRegisterUseCaseTest.swift */,
+				C96A31992DBAC10500890393 /* RestaurantRegisterUseCaseTest.swift */,
+				C96A31B62DBAD51B00890393 /* LoginUseCaseTest.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		C981CD7F2DB6E47E004AA9EE /* Restaurant Detail */ = {
@@ -852,18 +878,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96A31942DBAB50000890393 /* RestaurantDetailUseCaseTest.swift in Sources */,
 				C93100662DB9A84E0053223D /* GetAllRestaurantsVMTest.swift in Sources */,
 				C93100682DB9AFCE0053223D /* URLProtocolMock.swift in Sources */,
 				C9298D532DB991D000D3649B /* NetworkGetAllRestaurantsTest.swift in Sources */,
 				C92112792DAEEAEB00D67BA4 /* AppStateVMTest.swift in Sources */,
+				C96A31982DBABB6700890393 /* ConsumerRegisterUseCaseTest.swift in Sources */,
 				C9E81C942DB02B4C00B4FD0D /* NetworkConsumerRegisterTest.swift in Sources */,
 				C9298D512DB9869E00D3649B /* RestaurantRegisterVMTest.swift in Sources */,
 				C9E81C962DB02F9900B4FD0D /* ConsumerRegisterVMTest.swift in Sources */,
 				C92112672DAEE12000D67BA4 /* NetworkLogin.swift in Sources */,
+				C96A31B72DBAD51B00890393 /* LoginUseCaseTest.swift in Sources */,
+				C96A31962DBAB88C00890393 /* GetAllRestaurantsUsecaseTest.swift in Sources */,
 				C9298D4F2DB9513E00D3649B /* NetworkRestaurantRegisterTest.swift in Sources */,
 				C96A31892DBA7E1600890393 /* NetworkRestaurantDetailTest.swift in Sources */,
+				C96A319A2DBAC10500890393 /* RestaurantRegisterUseCaseTest.swift in Sources */,
 				C96A31912DBA980900890393 /* RestaurantDetailVMTest.swift in Sources */,
 				C931006C2DB9B2A10053223D /* MockData.swift in Sources */,
+				C96A31B92DBADA8E00890393 /* LoginUseCaseSuccessMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
