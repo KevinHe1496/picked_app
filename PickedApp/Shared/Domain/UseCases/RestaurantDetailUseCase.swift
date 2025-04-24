@@ -23,3 +23,29 @@ final class RestaurantDetailUseCase: RestaurantDetailUseCaseProtocol {
         return try await repo.getRestaurantDetail(restaurantId: restaurantId)
     }
 }
+
+// MOCK SUCCESS
+final class RestaurantDetailUseCaseSucessMock: RestaurantDetailUseCaseProtocol {
+    var repo: RestaurantDetailRepositoryProtocol
+    
+    init(repo: RestaurantDetailRepositoryProtocol = DetaultRestaurantDetailRepositorySuccessMock()) {
+        self.repo = repo
+    }
+    
+    func getRestaurantDetail(restaurantId: String) async throws -> RestaurantDetailModel {
+        return try await repo.getRestaurantDetail(restaurantId: restaurantId)
+    }
+}
+
+// MOCK FAILURE
+final class RestaurantDetailUseCaseFailureMock: RestaurantDetailUseCaseProtocol {
+    var repo: RestaurantDetailRepositoryProtocol
+    
+    init(repo: RestaurantDetailRepositoryProtocol = DetaultRestaurantDetailRepositoryFailureMock()) {
+        self.repo = repo
+    }
+    
+    func getRestaurantDetail(restaurantId: String) async throws -> RestaurantDetailModel {
+        throw PKError.badUrl
+    }
+}
