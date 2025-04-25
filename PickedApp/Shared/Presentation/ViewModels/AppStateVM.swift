@@ -53,7 +53,7 @@ final class AppStateVM {
         do {
             let userProfile = try await loginUseCase.loginUser(user: user, password: pass)
             if  !userProfile.token.isEmpty {
-                self.tokenJWT = KeyChainPK().loadPK(key: ConstantsApp.CONS_TOKEN_ID_KEYCHAIN) ?? ""
+                self.tokenJWT = KeyChainPK().loadPK(key: ConstantsApp.CONS_TOKEN_ID_KEYCHAIN)
                 
                 userProfileData = UserProfile(name: userProfile.name, email: userProfile.email, role: userProfile.role)
                 UserSessionManager.saveUser(userProfileData)

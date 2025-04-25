@@ -27,12 +27,27 @@ final class NetworkRestaurantRegister: NetworkRestaurantRegisterProtocol {
         var request = URLRequest(url: url)
         request.httpMethod = HttpMethods.post
         
-        // Establece el encabezado 'Content-Type' con un boundary único para el multipart/form-data.
+        //Establece el encabezado 'Content-Type' con un boundary único para el multipart/form-data.
         let boundary = "Boundary-\(UUID().uuidString)"
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
-        // Crea el cuerpo de la solicitud con los datos del formulario codificados como multipart.
-        let body = try createMultipartBody(from: formData, boundary: boundary)
+        //Crea el cuerpo de la solicitud con los datos del formulario codificados como multipart.
+        let fields: [String: String] = [
+            "email": formData.email,
+            "password": formData.password,
+            "role": formData.role,
+            "restaurantName": formData.restaurantName,
+            "info": formData.info,
+            "address": formData.address,
+            "country": formData.country,
+            "city": formData.city,
+            "zipCode": formData.zipCode,
+            "latitude": String(formData.latitude),
+            "longitude": String(formData.longitude),
+            "name": formData.name
+        ]
+
+        let body = createMultipartBody(from: fields, imageData: formData.photo, imageFieldName: "photo", boundary: boundary)
 
         request.httpBody = body
         

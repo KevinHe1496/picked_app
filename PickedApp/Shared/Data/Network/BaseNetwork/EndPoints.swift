@@ -15,4 +15,5 @@ enum EndPoints: String {
     case allRestaurants = "/restaurants/all"
     case myMeals = "/meals/mine"
     case restaurantDetail = "/restaurants/"
+    case createMeal = "/meals/create"
 }
