@@ -104,6 +104,8 @@
 		FCC1AA6D2DB79FD700370886 /* MealUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1AA6C2DB79FD300370886 /* MealUseCase.swift */; };
 		FCC1AA6F2DB7A0F500370886 /* RestaurantMealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1AA6E2DB7A0CD00370886 /* RestaurantMealsViewModel.swift */; };
 		FCC1AA712DB7A2CC00370886 /* MealRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC1AA702DB7A2CC00370886 /* MealRepositoryProtocol.swift */; };
+		FCEB10E22DBAA85200A2CC86 /* CreateMealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB10E12DBAA85200A2CC86 /* CreateMealViewModel.swift */; };
+		FCEB10E52DBAA9E000A2CC86 /* CreateMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEB10E42DBAA9E000A2CC86 /* CreateMealView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,6 +218,8 @@
 		FCC1AA6C2DB79FD300370886 /* MealUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealUseCase.swift; sourceTree = "<group>"; };
 		FCC1AA6E2DB7A0CD00370886 /* RestaurantMealsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMealsViewModel.swift; sourceTree = "<group>"; };
 		FCC1AA702DB7A2CC00370886 /* MealRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealRepositoryProtocol.swift; sourceTree = "<group>"; };
+		FCEB10E12DBAA85200A2CC86 /* CreateMealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMealViewModel.swift; sourceTree = "<group>"; };
+		FCEB10E42DBAA9E000A2CC86 /* CreateMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMealView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -509,6 +513,7 @@
 		C995D13F2DA566E800E72B7A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FCEB10E32DBAA8E500A2CC86 /* Meals */,
 				C981CD7F2DB6E47E004AA9EE /* Restaurant Detail */,
 				C9AFDFE72DB30C99009B84B4 /* Consumer View */,
 				C9AFDFE12DB3032F009B84B4 /* RestaurantOwner */,
@@ -529,6 +534,7 @@
 		C995D1402DA568B600E72B7A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				FCEB10E12DBAA85200A2CC86 /* CreateMealViewModel.swift */,
 				FCC1AA6E2DB7A0CD00370886 /* RestaurantMealsViewModel.swift */,
 				C9CD49922DADD2B000E5B250 /* AppStateVM.swift */,
 				C92112862DAF1B8800D67BA4 /* ConsumerRegisterViewModel.swift */,
@@ -654,6 +660,14 @@
 			path = Rows;
 			sourceTree = "<group>";
 		};
+		FCEB10E32DBAA8E500A2CC86 /* Meals */ = {
+			isa = PBXGroup;
+			children = (
+				FCEB10E42DBAA9E000A2CC86 /* CreateMealView.swift */,
+			);
+			path = Meals;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -768,6 +782,7 @@
 			files = (
 				C9CD49932DADD2B000E5B250 /* AppStateVM.swift in Sources */,
 				C981CD812DB6E499004AA9EE /* RestaurantDetail.swift in Sources */,
+				FCEB10E52DBAA9E000A2CC86 /* CreateMealView.swift in Sources */,
 				C981CE222DB7026B004AA9EE /* RestaurantDetailViewModel.swift in Sources */,
 				C9E4F77D2DB6C05000A611B7 /* AllRestaurantsViewModel.swift in Sources */,
 				C93C1A032DB8077F00608806 /* TabBarItem.swift in Sources */,
@@ -801,6 +816,7 @@
 				C9E4F77B2DB6BF6500A611B7 /* AllRestaurantsUseCase.swift in Sources */,
 				C93DBE2C2DA6BC3B00365931 /* CustomButtonView.swift in Sources */,
 				C9CD492E2DADD1A900E5B250 /* LoadingView.swift in Sources */,
+				FCEB10E22DBAA85200A2CC86 /* CreateMealViewModel.swift in Sources */,
 				C9CD491C2DADCB0C00E5B250 /* KeyChainPK.swift in Sources */,
 				FCC1AA712DB7A2CC00370886 /* MealRepositoryProtocol.swift in Sources */,
 				C93C1A012DB8038600608806 /* TabBarItemsPreferenceKey.swift in Sources */,

@@ -85,7 +85,7 @@ final class RestaurantResgisterViewModel {
             let result = try await useCase.restaurantRegister(formData: formData)
             
             if result {
-                appState.status = .loaded
+                appState.status = .restaurantMeals
                 isLoading = false
                 return nil
             } else {
