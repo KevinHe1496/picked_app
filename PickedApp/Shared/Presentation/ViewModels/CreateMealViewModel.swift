@@ -13,9 +13,9 @@ final class CreateMealViewModel {
     var successMessage: String = ""
     var isLoading: Bool = false
     
-    init(appState: AppStateVM, useCase: MealUseCaseProtocol = MealUseCase()) {
-        self.appState = appState
+    init(useCase: MealUseCaseProtocol = MealUseCase(), appState: AppStateVM) {
         self.useCase = useCase
+        self.appState = appState
     }
     
     //Método para crear un nuevo plato con validación de datos
@@ -28,13 +28,13 @@ final class CreateMealViewModel {
         photo: Data?
     ) async throws -> Bool {
         
-        //Validar que los campos requeridos no estén vacíos
+        //Validar campos obligatorios
         guard !name.isEmpty, !price.isEmpty, !units.isEmpty else {
             errorMessage = "All fields are required."
             return false
         }
         
-        //Validar que price y units sean valores numéricos válidos
+        //Validar que price y units sean números válidos
         guard let priceFloat = Float(price), let unitsInt = Int(units) else {
             errorMessage = "Price and Units must be valid numbers."
             return false
@@ -53,15 +53,14 @@ final class CreateMealViewModel {
                 photo: photo
             )
             
-            let _ = try await useCase.createMeal(requestData: requestData)
-                appState.status = .restaurantMeals
-                isLoading = false
-                return true
-            } catch {
-                appState.status = .error(error: "Incorrect form")
-                isLoading = false
-                return false
-            }
+            let result = try await useCase.createMeal(requestData: requestData)
+            successMessage = "Dish '\(result.name)' was successfully created!"
+            showSuccessAlert = true
             
+            return true
+        } catch {
+            errorMessage = "Incorrect form"
+            return false
         }
+    }
 }

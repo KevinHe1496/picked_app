@@ -41,6 +41,11 @@ struct RootView: View {
             withAnimation {
                 RestaurantMealsView()
             }
+            
+        case .createMeal:
+            withAnimation {
+                CreateMealView()
+            }
         }
     }
 }

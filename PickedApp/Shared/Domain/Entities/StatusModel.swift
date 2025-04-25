@@ -8,5 +8,5 @@
 import Foundation
 
 enum Status: Equatable {
-    case none, loading, login, register, loaded, error(error: String), restaurantMeals
+    case none, loading, login, register, loaded, error(error: String), restaurantMeals, createMeal
 }
