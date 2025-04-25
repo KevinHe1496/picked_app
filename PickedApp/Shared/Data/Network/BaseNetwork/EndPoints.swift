@@ -13,6 +13,7 @@ enum EndPoints: String {
     case consumerRegister = "/auth/register-consumer"
     case restaurantRegister = "/restaurants/register"
     case allRestaurants = "/restaurants/all"
+    case getNearbyRestaurants = "/restaurants/nearby"
     case myMeals = "/meals/mine"
     case restaurantDetail = "/restaurants/"
     case createMeal = "/meals/create"

@@ -1,0 +1,23 @@
+//
+//  DefaultGetNearbyRestaurantsRepository.swift
+//  PickedApp
+//
+//  Created by Kevin Heredia on 25/4/25.
+//
+
+import Foundation
+import CoreLocation
+
+final class DefaultGetNearbyRestaurantsRepository: GetNearbyRestaurantsRepositoryProtocol {
+    
+    private var network: NetworkGetNearbyRestaurantsProtocol
+    
+    init(network: NetworkGetNearbyRestaurantsProtocol = NetworkGetNearbyRestaurants()) {
+        self.network = network
+    }
+    
+    func getRestaurantNearby(coordinate: CLLocationCoordinate2D) async throws -> [RestaurantModel] {
+        return try await network.getRestaurantNearby(coordinate: coordinate)
+    }
+    
+}

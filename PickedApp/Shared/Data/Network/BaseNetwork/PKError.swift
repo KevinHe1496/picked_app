@@ -16,6 +16,8 @@ enum PKError: Error, CustomStringConvertible {
     case sessionTokenMissing
     case badUrl
     case authenticationFailed
+    case locationDisabled
+    case noLocationFound
     
     var description: String {
         switch self {
@@ -35,7 +37,11 @@ enum PKError: Error, CustomStringConvertible {
         case .badUrl:
             return "Bad url"
         case .authenticationFailed:
-            return "Authentication Failed"
+            return "Authentication failed"
+        case .locationDisabled:
+            return "Location disabled"
+        case .noLocationFound:
+            return "No location found"
         }
     }
 }

@@ -16,7 +16,7 @@ import SwiftUI
 import _MapKit_SwiftUI
 
 struct LocationMapView: View {
-    @StateObject private var locationManager = LocationManager()
+    @StateObject private var locationService = LocationService()
     
     // Posición del mapa que se actualiza cuando la ubicación está disponible
     @State private var cameraPosition: MapCameraPosition = .automatic
@@ -51,8 +51,12 @@ struct LocationMapView: View {
                                 .cornerRadius(5)
                         }
                     }
-                    
                 }
+            }
+        }
+        .onAppear {
+            Task {
+                try await locationService.requestLocation()
             }
         }
         .sheet(item: $selectedRestaurant) { restaurant in
@@ -64,7 +68,7 @@ struct LocationMapView: View {
             MapCompass()
         }
         .edgesIgnoringSafeArea(.top)
-        .onChange(of: locationManager.userLocation) { (oldLocation, newLocation) in
+        .onChange(of: locationService.userLocation) { (oldLocation, newLocation) in
             if let newCoordinate = newLocation {
                 // Actualizamos la posición del mapa con la nueva ubicación del usuario
                 cameraPosition = .region(

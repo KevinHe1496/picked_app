@@ -16,7 +16,7 @@ struct AppTabBarView: View {
     
     var body: some View {
         CustomTabBarContainerView(selection: $tabSelection) {
-            ConsumerView()
+            ConsumerPruebaView()
                 .tabBarItem(tab: .home, selection: $tabSelection)
             
             LocationMapView()

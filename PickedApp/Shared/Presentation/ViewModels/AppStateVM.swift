@@ -148,6 +148,5 @@ final class AppStateVM {
         if let savedUser = UserSessionManager.getUser() {
             self.userProfileData = savedUser
         }
-        
     }
 }

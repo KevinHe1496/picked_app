@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ConsumerRegisterRepositoryProtocol {
-    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> String
+    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> ConsumerUserModel
 }
