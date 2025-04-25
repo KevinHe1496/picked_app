@@ -30,3 +30,15 @@ final class DefaultLoginRepositoryMock: LoginRepositoryProtocol {
         return try await network.loginUser(user: user, password: password)
     }
 }
+
+final class DefaultLoginRepositoryFailureMock: LoginRepositoryProtocol {
+    private var network: NetworkLoginProtocol
+    
+    init(network: NetworkLoginProtocol = NetworkLoginErrorMock()) {
+        self.network = network
+    }
+    
+    func loginUser(user: String, password: String) async throws -> UserModel {
+        throw PKError.authenticationFailed
+    }
+}

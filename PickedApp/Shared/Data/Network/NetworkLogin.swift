@@ -77,7 +77,7 @@ final class NetworkLoginMock: NetworkLoginProtocol {
         return UserModel(
                     id: UUID(),
                     name: "Test User",
-                    email: user,
+                    email: "test@example.com",
                     role: "admin",
                     token: "mocked_jwt_token"
                 )
