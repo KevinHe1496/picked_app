@@ -61,7 +61,6 @@ extension SSLPinningDelegate: URLSessionDelegate {
         let serverHashKeyBase64 = sha256CryptoKit(data: serverPublicKeyData)
         
         // Print public keys
-        print("Local key is \(self.localPublicKeyHashBase64)")
         print("Decrypted key is \(String(describing: Crypto().getDecryptedPublicKey()))")
         print("Server key is \(serverHashKeyBase64)")
         
