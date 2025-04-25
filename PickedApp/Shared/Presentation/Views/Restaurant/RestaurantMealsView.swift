@@ -3,11 +3,10 @@ import SwiftUI
 //MARK: Vista de los platos del restaurante
 struct RestaurantMealsView: View {
     
-    @Environment(AppStateVM.self) var appState  //Estado global de la app
-    @State var viewModel: RestaurantMealsViewModel  //ViewModel encargado de gestionar los platos
-    @State private var isShowingCreateMeal = false  //Controla la navegación al formulario de creación de platos
+    @Environment(AppStateVM.self) var appState
+    @State var viewModel: RestaurantMealsViewModel
+    @State private var isShowingCreateMeal = false
 
-    //Inicializador que permite inyectar un ViewModel personalizado (por defecto crea uno nuevo)
     init(viewModel: RestaurantMealsViewModel = RestaurantMealsViewModel(appState: AppStateVM())) {
         self.viewModel = viewModel
     }
@@ -15,16 +14,15 @@ struct RestaurantMealsView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                
-                //Cabecera con el nombre del restaurante y botón para añadir plato
+                //Encabezado con título y botón para añadir plato
                 HStack {
-                    Text("My Dishes")  //Este texto se puede hacer dinámico en el futuro
+                    Text("My Dishes")
                         .font(.title)
                         .bold()
 
                     Spacer()
 
-                    //Botón para navegar al formulario de nuevo plato
+                    //Botón que activa la navegación al formulario
                     Button(action: {
                         isShowingCreateMeal = true
                     }) {
@@ -35,38 +33,33 @@ struct RestaurantMealsView: View {
                 }
                 .padding()
 
-                //Mostrar el estado actual de la app (cargando, error, datos)
+                //Mostrar el estado actual de la app
                 switch appState.status {
                 case .loading:
-                    //Indicador de carga
                     ProgressView("loading meals...")
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
 
                 case .error(let errorMsg):
-                    //Mensaje de error
                     Text("Error: \(errorMsg)")
                         .foregroundColor(.red)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
 
                 default:
-                    //Listado de platos del restaurante
                     ScrollView {
                         VStack(spacing: 12) {
                             ForEach(viewModel.meals) { meal in
-                                MealRowView(meal: meal)  //Cada fila representa un plato
+                                MealRowView(meal: meal)
                                     .padding(.horizontal)
                             }
                         }
                     }
                 }
             }
-            //Cargar los platos cuando aparece la vista
             .onAppear {
                 Task {
                     await viewModel.loadMyMeals()
                 }
             }
-            //Botón para cerrar sesión en la barra de navegación
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
@@ -78,9 +71,9 @@ struct RestaurantMealsView: View {
                     }
                 }
             }
-            //Navegación al formulario de nuevo plato
+            //Navegación al formulario con NavigationLink
             .navigationDestination(isPresented: $isShowingCreateMeal) {
-                CreateMealView(appState: appState)
+                CreateMealView()
             }
         }
     }

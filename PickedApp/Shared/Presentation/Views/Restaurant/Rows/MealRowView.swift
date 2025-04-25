@@ -62,7 +62,6 @@ struct MealRowView: View {
         price: 9.99,
         photo: "/images/example.jpg"
     ))
-    //.previewLayout(.sizeThatFits)
     .padding()
     .background(Color.gray.opacity(0.1))
 }
