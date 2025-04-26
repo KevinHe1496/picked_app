@@ -1,13 +1,19 @@
 import Foundation
 
-//MARK: Protocolo para gestionar las operaciones de red relacionadas con platos
+//MARK: NetworkProtocol de Meals
 protocol NetworkMealProtocol {
-    func fetchMyMeals() async throws -> [Meal]           // Obtener todos los platos del restaurante autenticado
-    func createMeal(requestData: MealCreateRequest) async throws -> Meal  // Crear un nuevo plato
+    func fetchMyMeals() async throws -> [Meal]
+    func createMeal(requestData: MealCreateRequest) async throws -> Meal
 }
 
-//MARK: Implementación de NetworkMealProtocol para realizar peticiones HTTP relacionadas con platos
+//MARK: Network de Meals
 final class NetworkMeal: NetworkMealProtocol {
+    
+    var session: URLSession
+    
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
     
     //Método para obtener todos los platos del restaurante autenticado
     func fetchMyMeals() async throws -> [Meal] {
@@ -20,7 +26,7 @@ final class NetworkMeal: NetworkMealProtocol {
         }
         
         var request = URLRequest(url: url)
-        request.httpMethod = HttpMethods.get  //Método GET
+        request.httpMethod = HttpMethods.get
         
         //Añadir token JWT para autenticación
         let jwtToken = KeyChainPK().loadPK(key: ConstantsApp.CONS_TOKEN_ID_KEYCHAIN)
@@ -28,7 +34,7 @@ final class NetworkMeal: NetworkMealProtocol {
         
         do {
             //Realizar la solicitud
-            let (data, response) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await session.data(for: request)
             
             //Validar la respuesta
             guard let httpResponse = response as? HTTPURLResponse else {
@@ -58,16 +64,16 @@ final class NetworkMeal: NetworkMealProtocol {
         return meals
     }
     
-    //Método para crear un nuevo plato en el restaurante autenticado
+    //Método para crear un nuevo plato
     func createMeal(requestData: MealCreateRequest) async throws -> Meal {
         
         //Construir la URL para crear un plato
         guard let url = URL(string: "\(ConstantsApp.CONS_API_URL)\(EndPoints.createMeal.rawValue)") else {
-            throw PKError.badUrl  //Error si la URL no es válida
+            throw PKError.badUrl
         }
 
         var request = URLRequest(url: url)
-        request.httpMethod = HttpMethods.post  //Método POST
+        request.httpMethod = HttpMethods.post
 
         //Configurar el boundary para multipart/form-data
         let boundary = "Boundary-\(UUID().uuidString)"
@@ -91,7 +97,7 @@ final class NetworkMeal: NetworkMealProtocol {
         request.httpBody = body
 
         //Enviar la solicitud
-        let (data, response) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await session.data(for: request)
 
         //Validar la respuesta HTTP
         guard let httpResponse = response as? HTTPURLResponse else {
@@ -103,8 +109,61 @@ final class NetworkMeal: NetworkMealProtocol {
             throw PKError.errorFromApi(statusCode: httpResponse.statusCode)
         }
 
-        //Decodificar la respuesta y obtener el plato creado
+        //Decodificar la respuesta
         let createdMeal = try JSONDecoder().decode(Meal.self, from: data)
         return createdMeal
+    }
+}
+
+
+//MARK: Mock de éxito para NetworkMealProtocol
+final class NetworkMealSuccessMock: NetworkMealProtocol {
+    
+    //Devuelve una lista simulada de platos
+    func fetchMyMeals() async throws -> [Meal] {
+        return [
+            Meal(
+                id: UUID(),
+                name: "Pizza Margherita",
+                info: "Classic Italian pizza with fresh tomatoes and mozzarella",
+                units: 5,
+                price: 12.99,
+                photo: "/images/pizza.jpg"
+            ),
+            Meal(
+                id: UUID(),
+                name: "Vegan Burger",
+                info: "Delicious plant-based burger",
+                units: 10,
+                price: 9.5,
+                photo: "/images/burger.jpg"
+            )
+        ]
+    }
+    
+    //Devuelve un plato creado de forma simulada
+    func createMeal(requestData: MealCreateRequest) async throws -> Meal {
+        return Meal(
+            id: UUID(),
+            name: requestData.name,
+            info: requestData.info,
+            units: requestData.units,
+            price: requestData.price,
+            photo: "/images/\(UUID().uuidString).jpg"
+        )
+    }
+}
+
+//MARK: Mock de fallo para NetworkMealProtocol
+final class NetworkMealFailureMock: NetworkMealProtocol {
+    
+    //Lanza un error simulado al intentar obtener platos
+    func fetchMyMeals() async throws -> [Meal] {
+        throw PKError.errorFromApi(statusCode: 500)
+    }
+    
+    //Lanza un error simulado al intentar crear un plato
+    func createMeal(requestData: MealCreateRequest) async throws -> Meal {
+        throw PKError.badUrl
     }
 }

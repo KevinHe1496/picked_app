@@ -97,7 +97,7 @@ struct CreateMealView: View {
                             .frame(width: 200, height: 200)
                             .clipped()
                             .cornerRadius(8)
-                    } else { //si no, muestra icono de camara
+                    } else {
                         PhotosPicker(selection: $pickerItem, matching: .images) {
                             VStack {
                                 Text("Take a picture or select one from gallery")
