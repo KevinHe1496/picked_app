@@ -71,7 +71,6 @@
 		C9AB41892DA5957200752614 /* ConsumerRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB41882DA5957200752614 /* ConsumerRegisterView.swift */; };
 		C9AB418B2DA5957D00752614 /* RestaurantRegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AB418A2DA5957D00752614 /* RestaurantRegisterView.swift */; };
 		C9AFDFDE2DB2D2F7009B84B4 /* Data-extesion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFDFDD2DB2D2F7009B84B4 /* Data-extesion.swift */; };
-		C9AFDFE02DB3032A009B84B4 /* RestaurantOwnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFDFDF2DB3032A009B84B4 /* RestaurantOwnerView.swift */; };
 		C9AFDFE32DB30C31009B84B4 /* RestaurantModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFDFE22DB30C31009B84B4 /* RestaurantModel.swift */; };
 		C9AFDFE52DB30C8F009B84B4 /* ConsumerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFDFE42DB30C8F009B84B4 /* ConsumerView.swift */; };
 		C9AFE00E2DB30D12009B84B4 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFE00D2DB30D12009B84B4 /* Bundle-Decodable.swift */; };
@@ -81,6 +80,7 @@
 		C9AFE0182DB323B4009B84B4 /* location-equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AFE0172DB323B4009B84B4 /* location-equatable.swift */; };
 		C9B69CC32DBD4002001062A7 /* GetNearbyRestaurantsVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B69CC22DBD4002001062A7 /* GetNearbyRestaurantsVMTest.swift */; };
 		C9B69CC52DBD44B7001062A7 /* GetNearbyRestaurantsUseCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B69CC42DBD44B7001062A7 /* GetNearbyRestaurantsUseCaseTest.swift */; };
+		C9B69CCB2DBD4771001062A7 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C9B69CC92DBD4771001062A7 /* Localizable.strings */; };
 		C9B777792DA5F78B00E7CA95 /* IconTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B777782DA5F78B00E7CA95 /* IconTextFieldView.swift */; };
 		C9CCC18E2DA804DF0086324B /* LocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CCC18D2DA804DF0086324B /* LocationMapView.swift */; };
 		C9CD490E2DADB2F000E5B250 /* PKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD490D2DADB2F000E5B250 /* PKError.swift */; };
@@ -205,7 +205,6 @@
 		C9AB41882DA5957200752614 /* ConsumerRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsumerRegisterView.swift; sourceTree = "<group>"; };
 		C9AB418A2DA5957D00752614 /* RestaurantRegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRegisterView.swift; sourceTree = "<group>"; };
 		C9AFDFDD2DB2D2F7009B84B4 /* Data-extesion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data-extesion.swift"; sourceTree = "<group>"; };
-		C9AFDFDF2DB3032A009B84B4 /* RestaurantOwnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantOwnerView.swift; sourceTree = "<group>"; };
 		C9AFDFE22DB30C31009B84B4 /* RestaurantModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantModel.swift; sourceTree = "<group>"; };
 		C9AFDFE42DB30C8F009B84B4 /* ConsumerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConsumerView.swift; path = ../ConsumerView.swift; sourceTree = "<group>"; };
 		C9AFE00D2DB30D12009B84B4 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
@@ -215,6 +214,8 @@
 		C9AFE0172DB323B4009B84B4 /* location-equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "location-equatable.swift"; sourceTree = "<group>"; };
 		C9B69CC22DBD4002001062A7 /* GetNearbyRestaurantsVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNearbyRestaurantsVMTest.swift; sourceTree = "<group>"; };
 		C9B69CC42DBD44B7001062A7 /* GetNearbyRestaurantsUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNearbyRestaurantsUseCaseTest.swift; sourceTree = "<group>"; };
+		C9B69CCA2DBD4771001062A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C9B69D2D2DBD48DC001062A7 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		C9B777782DA5F78B00E7CA95 /* IconTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextFieldView.swift; sourceTree = "<group>"; };
 		C9CCC18D2DA804DF0086324B /* LocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationMapView.swift; sourceTree = "<group>"; };
 		C9CD490D2DADB2F000E5B250 /* PKError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PKError.swift; sourceTree = "<group>"; };
@@ -403,6 +404,7 @@
 				C93DBE2F2DA6ED2F00365931 /* Info.plist */,
 				C995D1302DA565ED00E72B7A /* Shared */,
 				C995D1232DA5655700E72B7A /* Assets.xcassets */,
+				C9B69CC92DBD4771001062A7 /* Localizable.strings */,
 				C995D1252DA5655700E72B7A /* PickedAppApp.swift */,
 			);
 			path = PickedApp;
@@ -585,7 +587,6 @@
 				FCEB10E32DBAA8E500A2CC86 /* Meals */,
 				C981CD7F2DB6E47E004AA9EE /* Restaurant Detail */,
 				C9AFDFE72DB30C99009B84B4 /* Consumer View */,
-				C9AFDFE12DB3032F009B84B4 /* RestaurantOwner */,
 				C9CD49982DADE58E00E5B250 /* UserProfile */,
 				C905B8002DA88A480034EB14 /* CustomTabBar */,
 				C9CCC18C2DA804D10086324B /* LocationMap */,
@@ -665,14 +666,6 @@
 				C9298D4C2DB923A100D3649B /* UserSessionManager.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		C9AFDFE12DB3032F009B84B4 /* RestaurantOwner */ = {
-			isa = PBXGroup;
-			children = (
-				C9AFDFDF2DB3032A009B84B4 /* RestaurantOwnerView.swift */,
-			);
-			path = RestaurantOwner;
 			sourceTree = "<group>";
 		};
 		C9AFDFE72DB30C99009B84B4 /* Consumer View */ = {
@@ -806,6 +799,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
 			);
 			mainGroup = C995D0F02DA5653600E72B7A;
 			minimizedProjectReferenceProxies = 1;
@@ -829,6 +823,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C995D1292DA5655700E72B7A /* Assets.xcassets in Resources */,
+				C9B69CCB2DBD4771001062A7 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -933,7 +928,6 @@
 				C9AFE0102DB30E31009B84B4 /* RestaurantRowView.swift in Sources */,
 				C9AFDFE52DB30C8F009B84B4 /* ConsumerView.swift in Sources */,
 				C982D0C92DB177C1006ED714 /* RestaurantResgisterViewModel.swift in Sources */,
-				C9AFDFE02DB3032A009B84B4 /* RestaurantOwnerView.swift in Sources */,
 				C9CD49252DADCF0E00E5B250 /* StatusModel.swift in Sources */,
 				C9CD491A2DADC94A00E5B250 /* UserModel.swift in Sources */,
 				C92084622DBC1CE8008BB69A /* NetworkGetNearbyRestaurants.swift in Sources */,
@@ -981,12 +975,25 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		C9B69CC92DBD4771001062A7 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C9B69CCA2DBD4771001062A7 /* en */,
+				C9B69D2D2DBD48DC001062A7 /* es-419 */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		C995D1182DA5653700E72B7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1051,6 +1058,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

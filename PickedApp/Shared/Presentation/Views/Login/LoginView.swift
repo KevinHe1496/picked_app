@@ -14,8 +14,8 @@ struct LoginView: View {
     @Environment(AppStateVM.self) var appState // Access to app state
     
     // MARK: - State Properties
-    @State private var email = "kevin@example.com" // Email input
-    @State private var password = "123456" // Password input
+    @State private var email = "" // Email input
+    @State private var password = "" // Password input
     
     // MARK: - Alert state
     @State private var showAlert = false // Determines if the alert is shown
