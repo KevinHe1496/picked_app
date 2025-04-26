@@ -26,3 +26,27 @@ final class GetNearbyRestaurantsUseCase: GetNearbyRestaurantsUseCaseProtocol {
         return try await repo.getRestaurantNearby(coordinate: coordinate)
     }
 }
+
+final class GetNearbyRestaurantsUseCaseSuccessMock: GetNearbyRestaurantsUseCaseProtocol {
+    var repo: GetNearbyRestaurantsRepositoryProtocol
+    
+    init(repo: GetNearbyRestaurantsRepositoryProtocol = DefaultGetNearbyRestaurantsRepositorySuccessMock()) {
+        self.repo = repo
+    }
+    
+    func getRestaurantNearby(coordinate: CLLocationCoordinate2D) async throws -> [RestaurantModel] {
+        return try await repo.getRestaurantNearby(coordinate: coordinate)
+    }
+}
+
+final class GetNearbyRestaurantsUseCaseFailureMock: GetNearbyRestaurantsUseCaseProtocol {
+    var repo: GetNearbyRestaurantsRepositoryProtocol
+    
+    init(repo: GetNearbyRestaurantsRepositoryProtocol = DefaultGetNearbyRestaurantsRepositoryFailureMock()) {
+        self.repo = repo
+    }
+    
+    func getRestaurantNearby(coordinate: CLLocationCoordinate2D) async throws -> [RestaurantModel] {
+        throw PKError.badUrl
+    }
+}

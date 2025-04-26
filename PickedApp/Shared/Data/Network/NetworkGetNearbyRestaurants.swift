@@ -13,6 +13,13 @@ protocol NetworkGetNearbyRestaurantsProtocol {
 }
 
 final class NetworkGetNearbyRestaurants: NetworkGetNearbyRestaurantsProtocol {
+    
+    var session: URLSession
+    
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
+    
     func getRestaurantNearby(coordinate: CLLocationCoordinate2D) async throws -> [RestaurantModel] {
         var modelReturn = [RestaurantModel]()
         
@@ -32,7 +39,7 @@ final class NetworkGetNearbyRestaurants: NetworkGetNearbyRestaurantsProtocol {
         request.addValue("Bearer \(jwtToken)", forHTTPHeaderField: "Authorization")
         request.httpBody = jsonData
         
-        let (data, response) = try await URLSession.shared.data(for: request)
+        let (data, response) = try await session.data(for: request)
         
         // Verifica que la respuesta sea válida y del tipo HTTPURLResponse.
         guard let httpResponse = response as? HTTPURLResponse else {
@@ -65,5 +72,67 @@ final class NetworkGetNearbyRestaurants: NetworkGetNearbyRestaurantsProtocol {
             }
         }
         return modelReturn
+    }
+}
+
+final class NetworkGetNearbyRestaurantsSuccessMock: NetworkGetNearbyRestaurantsProtocol {
+    
+    func getRestaurantNearby(coordinate: CLLocationCoordinate2D) async throws -> [RestaurantModel] {
+        let model1 = RestaurantModel(
+            id: "id",
+            name: "Test Restaurant",
+            info: "Info Test",
+            address: "test",
+            zipCode: "000000",
+            city: "test",
+            country: "test",
+            photo: "test",
+            latitude: 10.0,
+            longitude: 20.0,
+            createdAt: "",
+            updatedAt: "",
+            user: Editor(id: "")
+        )
+        
+        let model2 = RestaurantModel(
+            id: "id",
+            name: "Test Restaurant",
+            info: "Info Test",
+            address: "test",
+            zipCode: "000000",
+            city: "test",
+            country: "test",
+            photo: "test",
+            latitude: 10.0,
+            longitude: 20.0,
+            createdAt: "",
+            updatedAt: "",
+            user: Editor(id: "")
+        )
+        
+        let model3 = RestaurantModel(
+            id: "id",
+            name: "Test Restaurant",
+            info: "Info Test",
+            address: "test",
+            zipCode: "000000",
+            city: "test",
+            country: "test",
+            photo: "test",
+            latitude: 10.0,
+            longitude: 20.0,
+            createdAt: "",
+            updatedAt: "",
+            user: Editor(id: "")
+        )
+        
+        return [model1, model2, model3]
+    }
+}
+
+final class NetworkGetNearbyRestaurantsFailureMock: NetworkGetNearbyRestaurantsProtocol {
+    
+    func getRestaurantNearby(coordinate: CLLocationCoordinate2D) async throws -> [RestaurantModel] {
+        throw PKError.badUrl
     }
 }

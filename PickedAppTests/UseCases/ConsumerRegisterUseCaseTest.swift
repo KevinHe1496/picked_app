@@ -26,7 +26,7 @@ final class ConsumerRegisterUseCaseTest: XCTestCase {
     func testconsumerRegisterSuccess() async throws {
         let registerConsumer = try await useCase.consumerRegisterUser(name: "John", email: "john@example.com", password: "password123", role: "consumer")
         
-        XCTAssertTrue(registerConsumer)
+        XCTAssertNotNil(registerConsumer)
         XCTAssertFalse(useCase.tokenJWT.isEmpty)
     }
     

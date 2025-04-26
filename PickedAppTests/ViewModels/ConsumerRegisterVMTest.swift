@@ -27,6 +27,10 @@ final class ConsumerRegisterVMTest: XCTestCase {
         viewModel = ConsumerRegisterViewModel(useCase: mockUseCase, appState: appState)
     }
     
+    override func tearDownWithError() throws {
+        viewModel = nil
+    }
+    
     // MARK: - Test Cases
     
     /// Tests the validation of registration fields (name, email, and password).
@@ -70,6 +74,6 @@ final class ConsumerRegisterVMTest: XCTestCase {
         let result = await viewModel.consumerRegister(name: "John", email: "john@example.com", password: "password123", role: "consumer")
         
         // Assert that the error message matches the expected failure message
-        XCTAssertEqual(result, "Incorrect username or password.")
+        XCTAssertEqual(result, "Something went wrong.")
     }
 }

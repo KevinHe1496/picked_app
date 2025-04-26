@@ -70,7 +70,13 @@ final class NetworkConsumerRegister: NetworkConsumerRegisterProtocol {
 final class NetworkConsumerRegisterMock: NetworkConsumerRegisterProtocol {
     func consumerRegister(name: String, email: String, password: String, role: String) async throws -> ConsumerUserModel {
         // Simulate successful registration
-        return try await consumerRegister(name: "Kevin", email: "kevin@example", password: "123456", role: "consumer")
+        return ConsumerUserModel(
+            email: email,
+            token: "mockToken123",
+            id: UUID(),
+            role: role,
+            name: name
+        )
     }
 }
 
