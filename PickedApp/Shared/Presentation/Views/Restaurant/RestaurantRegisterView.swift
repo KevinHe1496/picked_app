@@ -141,10 +141,10 @@ struct RestaurantRegisterView: View {
                                 if let data = try await selectedItem.loadTransferable(type: Data.self) {
                                     // Store the data in the selectedPhotoData variable
                                     self.selectedPhotoData = data
-                                    print("✅ Image loaded with size: \(data.count) bytes")
+                                    print("Image loaded with size: \(data.count) bytes")
                                 }
                             } catch {
-                                print("❌ Error loading image: \(error)")
+                                print("Error loading image: \(error)")
                             }
                         }
                     }
