@@ -36,7 +36,7 @@ final class NetworkGetNearbyRestaurants: NetworkGetNearbyRestaurantsProtocol {
         request.httpMethod = HttpMethods.post
         request.addValue(HttpMethods.content, forHTTPHeaderField: HttpMethods.contentTypeID)
         let jwtToken = KeyChainPK().loadPK(key: ConstantsApp.CONS_TOKEN_ID_KEYCHAIN)
-        request.addValue("Bearer \(jwtToken)", forHTTPHeaderField: "Authorization")
+        request.addValue("\(HttpMethods.bearer) \(jwtToken)", forHTTPHeaderField: HttpMethods.authorization)
         request.httpBody = jsonData
         
         let (data, response) = try await session.data(for: request)

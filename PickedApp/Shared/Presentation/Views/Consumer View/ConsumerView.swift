@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ConsumerPruebaView: View {
+struct ConsumerView: View {
     
     @State private var viewModel = GetNearbyRestaurantViewModel()
     @State private var isLoading = false
@@ -43,7 +43,7 @@ struct ConsumerPruebaView: View {
             .searchable(text: $viewModel.search, prompt: "Search")
             .onAppear {
                 Task {
-                    try await viewModel.getNearbyRestaurants()
+                  try await viewModel.loadData()
                 }
             }
         }
@@ -51,5 +51,5 @@ struct ConsumerPruebaView: View {
 }
 
 #Preview {
-    ConsumerPruebaView()
+    ConsumerView()
 }

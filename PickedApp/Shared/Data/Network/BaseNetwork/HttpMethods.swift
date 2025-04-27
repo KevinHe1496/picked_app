@@ -15,4 +15,7 @@ struct HttpMethods {
     static let delete = "DELETE"
     static let content = "application/json"
     static let contentTypeID = "Content-Type"
+    static let multipartFormData = "multipart/form-data; boundary="
+    static let bearer = "Bearer"
+    static let authorization = "Authorization"
 }

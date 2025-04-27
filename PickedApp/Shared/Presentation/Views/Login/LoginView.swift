@@ -16,6 +16,7 @@ struct LoginView: View {
     // MARK: - State Properties
     @State private var email = "" // Email input
     @State private var password = "" // Password input
+    @StateObject private var locationManager = LocationService()
     
     // MARK: - Alert state
     @State private var showAlert = false // Determines if the alert is shown
@@ -88,6 +89,11 @@ struct LoginView: View {
                 .frame(maxHeight: .infinity, alignment: .bottom)
                 .padding(.bottom, 30)
                 .ignoresSafeArea(.keyboard)
+            }
+            .onAppear {
+                Task {
+                    try await locationManager.requestLocation()
+                }
             }
             .padding(.horizontal, 16)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
