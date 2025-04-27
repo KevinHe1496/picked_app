@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RestaurantSelectedMapDetailView: View {
+struct RestaurantMapDetailView: View {
     @Environment(\.dismiss) var dismiss
     let restaurant: RestaurantModel
     
@@ -49,5 +49,5 @@ struct RestaurantSelectedMapDetailView: View {
 }
 
 #Preview {
-    RestaurantSelectedMapDetailView(restaurant: RestaurantModel(id: "", name: "", info: "", address: "", zipCode: "", city: "", country: "", photo: "", latitude: 0.0, longitude: 0.0, createdAt: "", updatedAt: "", user: Editor(id: "")))
+    RestaurantMapDetailView(restaurant: RestaurantModel(id: "", name: "", info: "", address: "", zipCode: "", city: "", country: "", photo: "", latitude: 0.0, longitude: 0.0, createdAt: "", updatedAt: "", user: Editor(id: "")))
 }

@@ -23,7 +23,6 @@ final class NetworkConsumerRegisterTest: XCTestCase {
         networkConsumerRegisterFailureMock = NetworkConsumerRegisterFailureMock() // Simulates failure
     }
     
-    
     // Test that verifies the successful registration of a consumer.
     func testConsumerRegisterSuccess() async {
         // Input data for the registration.

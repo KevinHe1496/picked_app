@@ -43,8 +43,3 @@ struct MealCreateRequest: Codable {
     let type: String
     let photo: Data?
 }
-
-struct GetRestaurantNearbyRequest: Codable {
-    let latitude: Double
-    let longitude: Double
-}

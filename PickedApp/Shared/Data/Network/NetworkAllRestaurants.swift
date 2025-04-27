@@ -1,18 +1,17 @@
 //
-//  NetworkGetNearbyRestaurants.swift
+//  NetworkAllRestaurants.swift
 //  PickedApp
 //
-//  Created by Kevin Heredia on 25/4/25.
+//  Created by Kevin Heredia on 21/4/25.
 //
 
 import Foundation
-import CoreLocation
 
-protocol NetworkGetNearbyRestaurantsProtocol {
-    func getRestaurantNearby(coordinate: CLLocationCoordinate2D) async throws -> [RestaurantModel]
+protocol NetworkAllRestaurantsProtocol {
+    func getRestaurants() async throws -> [RestaurantModel]
 }
 
-final class NetworkGetNearbyRestaurants: NetworkGetNearbyRestaurantsProtocol {
+final class NetworkAllRestaurants: NetworkAllRestaurantsProtocol {
     
     var session: URLSession
     
@@ -20,40 +19,39 @@ final class NetworkGetNearbyRestaurants: NetworkGetNearbyRestaurantsProtocol {
         self.session = session
     }
     
-    func getRestaurantNearby(coordinate: CLLocationCoordinate2D) async throws -> [RestaurantModel] {
+    func getRestaurants() async throws -> [RestaurantModel] {
         var modelReturn = [RestaurantModel]()
         
-        let urlCad = "\(ConstantsApp.CONS_API_URL)\(EndPoints.getNearbyRestaurants.rawValue)"
+        let urlCad = "\(ConstantsApp.CONS_API_URL)\(EndPoints.allRestaurants.rawValue)"
         
         guard let url = URL(string: urlCad) else {
             throw PKError.badUrl
         }
         
-        let requestBody = GetRestaurantNearbyRequest(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        let jsonData = try JSONEncoder().encode(requestBody)
+        var request = URLRequest(url: url)
+        request.httpMethod = HttpMethods.get
         
-        var request: URLRequest = URLRequest(url: url)
-        request.httpMethod = HttpMethods.post
-        request.addValue(HttpMethods.content, forHTTPHeaderField: HttpMethods.contentTypeID)
         let jwtToken = KeyChainPK().loadPK(key: ConstantsApp.CONS_TOKEN_ID_KEYCHAIN)
-        request.addValue("\(HttpMethods.bearer) \(jwtToken)", forHTTPHeaderField: HttpMethods.authorization)
-        request.httpBody = jsonData
+        request.addValue("Bearer \(jwtToken)", forHTTPHeaderField: "Authorization")
         
-        let (data, response) = try await session.data(for: request)
+        
+        let (data,response) = try await session.data(for: request)
         
         // Verifica que la respuesta sea válida y del tipo HTTPURLResponse.
         guard let httpResponse = response as? HTTPURLResponse else {
             throw PKError.errorFromApi(statusCode: -1)
         }
-        
+
         // Valida que el código de respuesta HTTP sea exitoso.
         guard httpResponse.statusCode == HttpResponseCodes.SUCESS else {
             throw PKError.errorFromApi(statusCode: httpResponse.statusCode)
         }
         
         do {
+ 
             let result = try JSONDecoder().decode([RestaurantModel].self, from: data)
             modelReturn = result
+            
         } catch {
             print("Decoding error: \(error)")
             if let decodingError = error as? DecodingError {
@@ -71,13 +69,13 @@ final class NetworkGetNearbyRestaurants: NetworkGetNearbyRestaurantsProtocol {
                 }
             }
         }
+        
         return modelReturn
     }
 }
 
-final class NetworkGetNearbyRestaurantsSuccessMock: NetworkGetNearbyRestaurantsProtocol {
-    
-    func getRestaurantNearby(coordinate: CLLocationCoordinate2D) async throws -> [RestaurantModel] {
+final class NetworkAllRestaurantsSuccessMock: NetworkAllRestaurantsProtocol {
+    func getRestaurants() async throws -> [RestaurantModel] {
         let model1 = RestaurantModel(
             id: "id",
             name: "Test Restaurant",
@@ -130,9 +128,8 @@ final class NetworkGetNearbyRestaurantsSuccessMock: NetworkGetNearbyRestaurantsP
     }
 }
 
-final class NetworkGetNearbyRestaurantsFailureMock: NetworkGetNearbyRestaurantsProtocol {
-    
-    func getRestaurantNearby(coordinate: CLLocationCoordinate2D) async throws -> [RestaurantModel] {
+final class NetworkAllRestaurantsFailureMock: NetworkAllRestaurantsProtocol {
+    func getRestaurants() async throws -> [RestaurantModel] {
         throw PKError.badUrl
     }
 }

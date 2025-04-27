@@ -4,7 +4,7 @@ import Foundation
 
 /// A protocol that defines a method for registering a consumer.
 protocol NetworkConsumerRegisterProtocol {
-    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> ConsumerUserModel
+    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> String
 }
 
 // MARK: - Network Consumer Register Implementation
@@ -19,10 +19,9 @@ final class NetworkConsumerRegister: NetworkConsumerRegisterProtocol {
     ///   - password: The password chosen by the consumer.
     ///   - role: The role assigned to the consumer (e.g., "consumer").
     /// - Throws: Throws an error if the registration request fails.
-    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> ConsumerUserModel {
+    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> String {
         
-        var consumerUser = ConsumerUserModel(email: "", token: "", id: UUID(), role: "", name: "")
-        
+        var tokenJWT = ""
         // Construct the URL for the consumer registration endpoint
         guard let url = URL(string: "\(ConstantsApp.CONS_API_URL)\(EndPoints.consumerRegister.rawValue)") else {
             throw PKError.badUrl // Throw an error if the URL is invalid
@@ -52,15 +51,15 @@ final class NetworkConsumerRegister: NetworkConsumerRegisterProtocol {
         
         do {
 
-            let result = try JSONDecoder().decode(ConsumerUserModel.self, from: data)
-            consumerUser = result
+            let result = try JSONDecoder().decode(UserModel.self, from: data)
+            tokenJWT = result.token
             
         } catch {
             // Handle any errors that occur during the registration process
             print("Error registering Consumer \(error.localizedDescription)")
         }
         
-        return consumerUser
+        return tokenJWT
     }
 }
 
@@ -68,21 +67,15 @@ final class NetworkConsumerRegister: NetworkConsumerRegisterProtocol {
 
 /// A mock implementation for successfully registering a consumer.
 final class NetworkConsumerRegisterMock: NetworkConsumerRegisterProtocol {
-    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> ConsumerUserModel {
+    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> String {
         // Simulate successful registration
-        return ConsumerUserModel(
-            email: email,
-            token: "mockToken123",
-            id: UUID(),
-            role: role,
-            name: name
-        )
+        return "mockToken"
     }
 }
 
 /// A mock implementation that simulates a registration failure.
 final class NetworkConsumerRegisterFailureMock: NetworkConsumerRegisterProtocol {
-    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> ConsumerUserModel {
+    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> String {
         // Simulate a failure with a specific error code
         throw PKError.errorFromApi(statusCode: 400)
     }
