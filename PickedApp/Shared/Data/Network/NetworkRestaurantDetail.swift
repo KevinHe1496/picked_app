@@ -33,7 +33,7 @@ final class NetworkRestaurantDetail: NetworkRestaurantDetailProtocol {
         request.httpMethod = HttpMethods.get
         
         let jwtToken = KeyChainPK().loadPK(key: ConstantsApp.CONS_TOKEN_ID_KEYCHAIN)
-        request.addValue("Bearer \(jwtToken)", forHTTPHeaderField: "Authorization")
+        request.addValue("\(HttpMethods.bearer) \(jwtToken)", forHTTPHeaderField: HttpMethods.authorization)
         
         let (data, response) = try await session.data(for: request)
         // Verifica que la respuesta sea válida y del tipo HTTPURLResponse.

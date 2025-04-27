@@ -39,7 +39,9 @@ struct UserProfileView: View {
                         .clipShape(Capsule())
 
                     CustomButtonView(title: "Log Out", color: .primaryColor) {
-                        appState.closeSessionUser()
+                        Task {
+                         await appState.closeSessionUser()
+                        }
                     }
                     .padding(.top, 30)
                     Spacer()

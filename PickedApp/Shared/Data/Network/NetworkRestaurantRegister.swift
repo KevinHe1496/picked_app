@@ -29,7 +29,7 @@ final class NetworkRestaurantRegister: NetworkRestaurantRegisterProtocol {
         
         //Establece el encabezado 'Content-Type' con un boundary único para el multipart/form-data.
         let boundary = "Boundary-\(UUID().uuidString)"
-        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+        request.setValue("\(HttpMethods.multipartFormData)\(boundary)", forHTTPHeaderField: HttpMethods.contentTypeID)
         
         //Crea el cuerpo de la solicitud con los datos del formulario codificados como multipart.
         let fields: [String: String] = [

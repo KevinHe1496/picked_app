@@ -14,7 +14,7 @@ final class DefaultConsumerRegisterRepository: ConsumerRegisterRepositoryProtoco
         self.network = network
     }
     
-    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> String{
+    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> ConsumerUserModel{
        
             try await network.consumerRegister(name: name, email: email, password: password, role: role)
           
@@ -28,7 +28,7 @@ final class DefaultConsumerRegisterRepositoryMock: ConsumerRegisterRepositoryPro
         self.network = network
     }
     
-    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> String{
+    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> ConsumerUserModel{
             try await network.consumerRegister(name: name, email: email, password: password, role: role)
     }
 }
@@ -40,7 +40,7 @@ final class DefaultConsumerRegisterRepositoryFailureMock: ConsumerRegisterReposi
         self.network = network
     }
     
-    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> String{
+    func consumerRegister(name: String, email: String, password: String, role: String) async throws -> ConsumerUserModel{
         throw PKError.errorFromApi(statusCode: 400)
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 protocol ConsumerRegisterUseCaseProtocol {
     var repo: ConsumerRegisterRepositoryProtocol { get set }
-    func consumerRegisterUser(name: String, email: String, password: String, role: String) async throws -> Bool
+    func consumerRegisterUser(name: String, email: String, password: String, role: String) async throws -> ConsumerUserModel
 }
 
 final class ConsumerRegisterUseCase: ConsumerRegisterUseCaseProtocol {
@@ -23,18 +23,16 @@ final class ConsumerRegisterUseCase: ConsumerRegisterUseCaseProtocol {
         self.repo = repo
     }
     
-    func consumerRegisterUser(name: String, email: String, password: String, role: String) async throws -> Bool {
-        let token = try await repo.consumerRegister(name: name, email: email, password: password, role: role)
+    func consumerRegisterUser(name: String, email: String, password: String, role: String) async throws -> ConsumerUserModel {
+        let consumerUser = try await repo.consumerRegister(name: name, email: email, password: password, role: role)
         
-        if token != "" {
-            tokenJWT = token
-            return true
+        if consumerUser.token != "" {
+            tokenJWT = consumerUser.token
         } else {
             tokenJWT = ""
-            return false
         }
+        return consumerUser
     }
-
 }
 
 
@@ -47,10 +45,10 @@ final class ConsumerRegisterUseCaseMock: ConsumerRegisterUseCaseProtocol {
         self.repo = repo
     }
     
-    func consumerRegisterUser(name: String, email: String, password: String, role: String) async throws -> Bool {
+    func consumerRegisterUser(name: String, email: String, password: String, role: String) async throws -> ConsumerUserModel {
         let result = try await repo.consumerRegister(name: name, email: email, password: password, role: role)
-        token = result
-        return !token.isEmpty
+        token = result.token
+        return result
     }
 }
 
@@ -62,7 +60,7 @@ final class ConsumerRegisterUseCaseFailureMock: ConsumerRegisterUseCaseProtocol 
         self.repo = repo
     }
     
-    func consumerRegisterUser(name: String, email: String, password: String, role: String) async throws -> Bool {
-        return false
+    func consumerRegisterUser(name: String, email: String, password: String, role: String) async throws -> ConsumerUserModel {
+        throw PKError.dataNoReveiced
     }
 }

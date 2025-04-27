@@ -52,5 +52,6 @@ struct RootView: View {
 
 #Preview {
     RootView()
+        .environment(\.locale, .init(identifier: "es"))
         .environment(AppStateVM())
 }

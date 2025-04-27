@@ -63,7 +63,9 @@ struct RestaurantMealsView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: {
-                        appState.closeSessionUser()
+                        Task{
+                            await appState.closeSessionUser()
+                        }
                     }) {
                         Image(systemName: "power.circle.fill")
                             .font(.title2)

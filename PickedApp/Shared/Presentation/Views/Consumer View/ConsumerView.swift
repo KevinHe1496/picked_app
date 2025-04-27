@@ -1,40 +1,36 @@
 //
-//  ConsumerView.swift
+//  ConsumerPruebaView.swift
 //  PickedApp
 //
-//  Created by Kevin Heredia on 18/4/25.
+//  Created by Kevin Heredia on 25/4/25.
 //
 
 import SwiftUI
 
 struct ConsumerView: View {
-    @Environment(AppStateVM.self) var appState
     
-    @State var viewModel: AllRestaurantsViewModel
+    @State private var viewModel = GetNearbyRestaurantViewModel()
+    @State private var isLoading = false
+    @State private var errorMessage: String?
+    @State private var filterText = ""
     
     let columns = [
         GridItem(.adaptive(minimum: 180))
     ]
     
-    @State private var filterText = ""
-    
-    init(viewModel: AllRestaurantsViewModel = AllRestaurantsViewModel()) {
-        self.viewModel = viewModel
-    }
     
     var body: some View {
-        NavigationStack{
+        NavigationStack {
             ScrollView {
-                
                 HStack {
                     Text("All")
                         .font(.title2)
                     Spacer()
                 }
                 .padding(.horizontal)
-                    
+                
                 LazyVGrid(columns: columns) {
-                    ForEach(viewModel.restaurantFilter){ restaurant in
+                    ForEach(viewModel.restaurantFilter) { restaurant in
                         NavigationLink {
                             RestaurantDetail(restaurantID: restaurant.id)
                         } label: {
@@ -45,11 +41,15 @@ struct ConsumerView: View {
             }
             .navigationTitle("Restaurants")
             .searchable(text: $viewModel.search, prompt: "Search")
+            .onAppear {
+                Task {
+                  try await viewModel.loadData()
+                }
+            }
         }
     }
 }
 
 #Preview {
     ConsumerView()
-        .environment(AppStateVM())
 }

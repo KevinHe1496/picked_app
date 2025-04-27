@@ -1,87 +1,52 @@
-//
-//  LocationMapView.swift
-//  PickedApp
-//
-//  Created by Kevin Heredia on 10/4/25.
-//
-
-//
-//  LocationMapView.swift
-//  PickedApp
-//
-//  Created by Kevin Heredia on 10/4/25.
-//
-
 import SwiftUI
 import _MapKit_SwiftUI
 
+// Vista que muestra el mapa con la ubicación del usuario y los restaurantes cercanos.
 struct LocationMapView: View {
-    @StateObject private var locationManager = LocationManager()
     
-    // Posición del mapa que se actualiza cuando la ubicación está disponible
-    @State private var cameraPosition: MapCameraPosition = .automatic
-    @State private var selectedRestaurant: RestaurantModel?
-    @State var viewModel: AllRestaurantsViewModel
+    @State var viewModel: GetNearbyRestaurantViewModel // ViewModel que maneja la lógica del mapa.
     
-    init(viewModel: AllRestaurantsViewModel = AllRestaurantsViewModel()) {
+    // Inicializa la vista con un ViewModel opcional.
+    init(viewModel: GetNearbyRestaurantViewModel = GetNearbyRestaurantViewModel()) {
         self.viewModel = viewModel
     }
     
     var body: some View {
-        Map(position: $cameraPosition) {
+        Map(position: $viewModel.cameraPosition) {
             
-            // Marcador para el usuario
+            // Marcador que muestra la ubicación actual del usuario.
             UserAnnotation()
             
-            // Marcadores de restaurantes
-            ForEach(viewModel.restaurantsData) { restaurant in
+            // Marcadores de cada restaurante en el mapa.
+            ForEach(viewModel.restaurantsNearby) { restaurant in
                 Annotation(restaurant.name, coordinate: restaurant.coordinate) {
                     Button {
-                        selectedRestaurant = restaurant
+                        viewModel.selectRestaurant(restaurant) // Selecciona un restaurante al pulsar.
                     } label: {
-                        VStack {
-                            Image(.locationMap)
-                                .foregroundColor(.red)
-                                .font(.title)
-                            Text(restaurant.name)
-                                .font(.caption)
-                                .fixedSize()
-                                .padding(4)
-                                .background(Color.white.opacity(0.8))
-                                .cornerRadius(5)
-                        }
+                        RestaurantAnnotationView(restaurant: restaurant) // Vista personalizada del marcador.
                     }
-                    
                 }
             }
         }
-        .sheet(item: $selectedRestaurant) { restaurant in
-            RestaurantMapDetailView(restaurant: restaurant)
+        .onAppear {
+            Task {
+             try await viewModel.loadData() // Carga ubicación y restaurantes al aparecer la vista.
+            }
+        }
+        .sheet(item: $viewModel.selectedRestaurant) { restaurant in
+            RestaurantSelectedMapDetailView(restaurant: restaurant) // Muestra detalle del restaurante seleccionado.
                 .presentationDetents([.medium])
         }
         .mapControls {
-            MapUserLocationButton() // Botón para centrar en la ubicación del usuario
-            MapCompass()
+            MapUserLocationButton() // Botón para centrar el mapa en la ubicación del usuario.
+            MapCompass() // Muestra una brújula en el mapa.
         }
-        .edgesIgnoringSafeArea(.top)
-        .onChange(of: locationManager.userLocation) { (oldLocation, newLocation) in
-            if let newCoordinate = newLocation {
-                // Actualizamos la posición del mapa con la nueva ubicación del usuario
-                cameraPosition = .region(
-                    MKCoordinateRegion(
-                        center: newCoordinate,
-                        span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
-                    )
-                )
-            }
-        }
-        .ignoresSafeArea()
+        .edgesIgnoringSafeArea(.top) // Extiende el mapa hasta los bordes superiores.
+        .ignoresSafeArea() // Ignora todos los márgenes seguros para el mapa.
     }
 }
 
+// Vista previa para SwiftUI.
 #Preview {
     LocationMapView()
 }
-
-
-

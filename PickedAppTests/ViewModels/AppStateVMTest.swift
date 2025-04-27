@@ -33,22 +33,14 @@ final class AppStateVMTest: XCTestCase {
     /// Tests that login with incorrect credentials sets the status to `.error`.
     func testLoginUserFailure() async {
         // Given
-        let expectation = XCTestExpectation(description: "Login should fail and set status to .error")
         let sut = AppStateVM(loginUseCase: LoginUseCaseFailureMock())
         
         // When
-        Task {
-            
-            let errorMessage = await sut.loginUser(user: "test@example.com", pass: "example")
-            _ = await sut.loginUser(user: "test@example.com", pass: "wrongPassword")
-            try? await Task.sleep(nanoseconds: 300_000_000)
-            
-            // Then
-            XCTAssertEqual(sut.status, .error(error: "An error occurred during login."))
-            XCTAssertEqual(errorMessage, "An error occurred during login.")
-            expectation.fulfill()
-        }
-        await fulfillment(of: [expectation], timeout: 1)
+        let errorMessage = await sut.loginUser(user: "test@example.com", pass: "example")
+        
+        // Then
+        XCTAssertEqual(sut.status, .error(error: "An error occurred during login."))
+        XCTAssertEqual(errorMessage, "An error occurred during login.")
     }
     
     /// Tests that login with invalid credentials does not proceed and shows validation error.
@@ -70,19 +62,13 @@ final class AppStateVMTest: XCTestCase {
     /// Tests that calling logout resets the status to `.login`.
     func testLogout_shouldSetStatusToLogin() async {
         // Given
-        let expectation = XCTestExpectation(description: "Session should return to .login")
         let vm = AppStateVM(loginUseCase: LoginUseCaseSucessMock())
         
         // When
-        Task {
-            await vm.closeSessionUser()
-            try? await Task.sleep(nanoseconds: 600_000_000)
-            
-            // Then
-            XCTAssertEqual(vm.status, .login)
-            expectation.fulfill()
-        }
-        await fulfillment(of: [expectation], timeout: 2)
+        await vm.closeSessionUser()
+        
+        // Then
+        XCTAssertEqual(vm.status, .login)
     }
     
     // MARK: - Token Validation
