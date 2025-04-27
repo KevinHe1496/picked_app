@@ -23,7 +23,7 @@ final class AppStateVM {
     private var loginUseCase: LoginUseCaseProtocol
     @ObservationIgnored
     var isLogged: Bool = false // Indicates if the user is logged in
-    
+
     // MARK: - Init
     
     /// Creates the view model and validates login status on launch.
@@ -57,7 +57,7 @@ final class AppStateVM {
                 
                 userProfileData = UserProfile(name: userProfile.name, email: userProfile.email, role: userProfile.role)
                 UserSessionManager.saveUser(userProfileData)
-                
+
                 if let role = JWTDecoder.decodeRole(from: self.tokenJWT) {
                     if role == "restaurant" {
                         self.status = .restaurantMeals
@@ -67,7 +67,7 @@ final class AppStateVM {
                 } else {
                     self.status = .error(error: "Invalid token role")
                 }
-                
+
                 return nil
             } else {
                 self.status = .error(error: "Incorrect username or password")
@@ -78,16 +78,18 @@ final class AppStateVM {
             return "An error occurred during login."
         }
     }
-    
+
     /// Logs out the user and resets the state.
     @MainActor
-    func closeSessionUser() async {
-        UserSessionManager.deleteUser()
-        self.userProfileData = UserProfile(name: "", email: "", role: "")
-        await loginUseCase.logout()
-        self.status = .login
+    func closeSessionUser() {
+        Task {
+            UserSessionManager.deleteUser()
+            self.userProfileData = UserProfile(name: "", email: "", role: "")
+            await loginUseCase.logout()
+            self.status = .login
+        }
     }
-    
+
     /// Validates if the user is already logged in using a stored token.
     @MainActor
     func validateControlLogin() {
@@ -95,7 +97,7 @@ final class AppStateVM {
             if await loginUseCase.validateToken() == true {
                 let savedToken = KeyChainPK().loadPK(key: ConstantsApp.CONS_TOKEN_ID_KEYCHAIN)
                 self.tokenJWT = savedToken
-                
+
                 if let role = JWTDecoder.decodeRole(from: self.tokenJWT) {
                     if role == "restaurant" {
                         self.status = .restaurantMeals
@@ -105,14 +107,14 @@ final class AppStateVM {
                 } else {
                     self.status = .error(error: "Invalid token role")
                 }
-                
+
                 NSLog("Login ok")
             } else {
                 self.startSplashToLoginView()
             }
         }
     }
-    
+
     // MARK: - Navigation Helpers
     
     /// Shows splash screen and then navigates to login view.
@@ -125,7 +127,7 @@ final class AppStateVM {
             }
         }
     }
-    
+
     // MARK: - Validation
     
     /// Validates email and password fields.
@@ -146,5 +148,6 @@ final class AppStateVM {
         if let savedUser = UserSessionManager.getUser() {
             self.userProfileData = savedUser
         }
+        
     }
 }

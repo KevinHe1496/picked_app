@@ -93,6 +93,5 @@ struct ConsumerRegisterView: View {
 
 #Preview {
     ConsumerRegisterView(appState: AppStateVM())
-        .environment(\.locale, .init(identifier: "es"))
         .environment(AppStateVM()) // Previews the view with app state
 }

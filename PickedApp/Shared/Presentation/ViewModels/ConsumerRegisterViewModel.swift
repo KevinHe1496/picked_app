@@ -49,11 +49,7 @@ final class ConsumerRegisterViewModel {
         
         do {
             let result = try await useCase.consumerRegisterUser(name: name, email: email, password: password, role: role)
-            
-            appState.userProfileData = UserProfile(name: result.name, email: result.email, role: result.role)
-            UserSessionManager.saveUser(appState.userProfileData)
-            
-            if !result.token.isEmpty {
+            if result {
                 appState.status = .loaded
                 isloading = false
                 return nil

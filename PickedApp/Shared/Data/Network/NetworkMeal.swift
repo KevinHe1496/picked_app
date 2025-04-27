@@ -77,11 +77,11 @@ final class NetworkMeal: NetworkMealProtocol {
 
         //Configurar el boundary para multipart/form-data
         let boundary = "Boundary-\(UUID().uuidString)"
-        request.setValue("\(HttpMethods.multipartFormData)\(boundary)", forHTTPHeaderField: HttpMethods.contentTypeID)
+        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
 
         //Añadir token JWT para autenticación
         let jwtToken = KeyChainPK().loadPK(key: ConstantsApp.CONS_TOKEN_ID_KEYCHAIN)
-        request.addValue("\(HttpMethods.bearer) \(jwtToken)", forHTTPHeaderField: HttpMethods.authorization)
+        request.addValue("Bearer \(jwtToken)", forHTTPHeaderField: "Authorization")
 
         //Preparar los campos de texto para la solicitud
         let fields: [String: String] = [
