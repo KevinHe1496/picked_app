@@ -34,7 +34,7 @@ struct LocationMapView: View {
             }
         }
         .sheet(item: $viewModel.selectedRestaurant) { restaurant in
-            RestaurantMapDetailView(restaurant: restaurant) // Muestra detalle del restaurante seleccionado.
+            RestaurantSelectedMapDetailView(restaurant: restaurant) // Muestra detalle del restaurante seleccionado.
                 .presentationDetents([.medium])
         }
         .mapControls {
