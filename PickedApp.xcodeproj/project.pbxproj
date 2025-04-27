@@ -26,7 +26,6 @@
 		C9298D4F2DB9513E00D3649B /* NetworkRestaurantRegisterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9298D4E2DB9513E00D3649B /* NetworkRestaurantRegisterTest.swift */; };
 		C9298D512DB9869E00D3649B /* RestaurantRegisterVMTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9298D502DB9869E00D3649B /* RestaurantRegisterVMTest.swift */; };
 		C93100682DB9AFCE0053223D /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93100672DB9AFC60053223D /* URLProtocolMock.swift */; };
-		C931006A2DB9B2910053223D /* GetAllRestaurantsMock.json in Resources */ = {isa = PBXBuildFile; fileRef = C93100692DB9B2840053223D /* GetAllRestaurantsMock.json */; };
 		C931006C2DB9B2A10053223D /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C931006B2DB9B29D0053223D /* MockData.swift */; };
 		C93C19FD2DB7F5B900608806 /* AppTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C19FC2DB7F5B900608806 /* AppTabBarView.swift */; };
 		C93C19FF2DB7FF3200608806 /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C19FE2DB7FF3200608806 /* CustomTabBarContainerView.swift */; };
@@ -146,7 +145,6 @@
 		C9298D4E2DB9513E00D3649B /* NetworkRestaurantRegisterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRestaurantRegisterTest.swift; sourceTree = "<group>"; };
 		C9298D502DB9869E00D3649B /* RestaurantRegisterVMTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantRegisterVMTest.swift; sourceTree = "<group>"; };
 		C93100672DB9AFC60053223D /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
-		C93100692DB9B2840053223D /* GetAllRestaurantsMock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetAllRestaurantsMock.json; sourceTree = "<group>"; };
 		C931006B2DB9B29D0053223D /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		C93C19FC2DB7F5B900608806 /* AppTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarView.swift; sourceTree = "<group>"; };
 		C93C19FE2DB7FF3200608806 /* CustomTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainerView.swift; sourceTree = "<group>"; };
@@ -307,7 +305,6 @@
 				C93100672DB9AFC60053223D /* URLProtocolMock.swift */,
 				C96A318C2DBA864600890393 /* DetailRestaurantMock.json */,
 				C9D85A6D2DBD31DF00096C5C /* GetNearbyRestaurantsMock.json */,
-				C93100692DB9B2840053223D /* GetAllRestaurantsMock.json */,
 				C96A31B82DBADA8E00890393 /* LoginUseCaseSuccessMock.swift */,
 			);
 			path = Mocks;
@@ -792,7 +789,6 @@
 			files = (
 				C9D85A6E2DBD31EA00096C5C /* GetNearbyRestaurantsMock.json in Resources */,
 				C96A318D2DBA865200890393 /* DetailRestaurantMock.json in Resources */,
-				C931006A2DB9B2910053223D /* GetAllRestaurantsMock.json in Resources */,
 				C9EFBC0C2DB9BBBD00C742AD /* PickedAppTests.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
